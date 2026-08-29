@@ -1,0 +1,60 @@
+{
+  "defaults": {
+    "language": "python"
+  },
+  "specs": [
+    {
+      "kind": "syntax",
+      "expect": "valid",
+      "tests": [
+        {
+          "source": {
+            "kind": "file",
+            "path": "examples/example1.py"
+          }
+        },
+        {
+          "source": {
+            "kind": "string",
+            "content": "def anything(): pass\nanything()"
+          }
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "examples/example2.py"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "unit",
+      "tests": [
+        {
+          "source": {
+            "kind": "file",
+            "path": "examples/example1.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "dig_pow"
+          },
+          "assertions":[
+            {
+              "args": [89, 1],
+              "expect": 1
+            },
+            {
+              "args": [695, 2],
+              "expect": 2
+            },
+            {
+              "args": [46288, 3],
+              "expect": 51
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
