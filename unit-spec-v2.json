@@ -1,0 +1,354 @@
+{
+  "defaults": {
+    "language": "python",
+    "kind": "unit"
+  },
+  "specs": [
+    {
+      "tests": [
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_2.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "create_phone_number"
+          },
+          "assertions": [
+            {
+              "name": "standard_digits",
+              "args": [[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]],
+              "expect": "(123) 456-7890"
+            },
+            {
+              "name": "all_zeroes",
+              "args": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
+              "expect": "(000) 000-0000"
+            },
+            {
+              "name": "descending_digits",
+              "args": [[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]],
+              "expect": "(987) 654-3210"
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_3.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "is_pangram"
+          },
+          "assertions": [
+            {
+              "name": "classic_pangram",
+              "args": ["The quick brown fox jumps over the lazy dog"],
+              "expect": true
+            },
+            {
+              "name": "alphabet_only",
+              "args": ["abcdefghijklmnopqrstuvwxyz"],
+              "expect": true
+            },
+            {
+              "name": "mixed_case_with_symbols",
+              "args": ["Sphinx of black quartz, judge my vow."],
+              "expect": true
+            },
+            {
+              "name": "missing_letters",
+              "args": ["Hello, World!"],
+              "expect": false
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_4.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "is_isogram"
+          },
+          "assertions": [
+            {
+              "name": "simple_isogram",
+              "args": ["Dermatoglyphics"],
+              "expect": true
+            },
+            {
+              "name": "mixed_case_duplicate",
+              "args": ["moOse"],
+              "expect": false
+            },
+            {
+              "name": "empty_string",
+              "args": [""],
+              "expect": true
+            },
+            {
+              "name": "repeated_letters",
+              "args": ["letter"],
+              "expect": false
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_5.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "persistence"
+          },
+          "assertions": [
+            {
+              "name": "example_thirty_nine",
+              "args": [39],
+              "expect": 3
+            },
+            {
+              "name": "example_nine_nine_nine",
+              "args": [999],
+              "expect": 4
+            },
+            {
+              "name": "single_digit",
+              "args": [4],
+              "expect": 0
+            },
+            {
+              "name": "double_sevens",
+              "args": [77],
+              "expect": 4
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_6.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "find_uniq"
+          },
+          "assertions": [
+            {
+              "name": "integer_outlier",
+              "args": [[1, 1, 1, 2, 1, 1]],
+              "expect": 2
+            },
+            {
+              "name": "float_outlier",
+              "args": [[0, 0, 0.55, 0, 0]],
+              "expect": 0.55
+            },
+            {
+              "name": "negative_outlier",
+              "args": [[-1, -1, -1, -3.5, -1]],
+              "expect": -3.5
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_10.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "sum_between"
+          },
+          "assertions": [
+            {
+              "name": "ascending_range",
+              "args": [1, 2],
+              "expect": 3
+            },
+            {
+              "name": "descending_range",
+              "args": [2, 1],
+              "expect": 3
+            },
+            {
+              "name": "same_number",
+              "args": [5, 5],
+              "expect": 5
+            },
+            {
+              "name": "negative_to_positive",
+              "args": [-1, 2],
+              "expect": 2
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_12.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "highest_scoring_word"
+          },
+          "assertions": [
+            {
+              "name": "taxi_wins",
+              "args": ["man i need a taxi up to ubud"],
+              "expect": "taxi"
+            },
+            {
+              "name": "volcano_wins",
+              "args": ["what time are we climbing up the volcano"],
+              "expect": "volcano"
+            },
+            {
+              "name": "single_word",
+              "args": ["hello"],
+              "expect": "hello"
+            },
+            {
+              "name": "empty_input",
+              "args": [""],
+              "expect": ""
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_13.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "isValidWalk"
+          },
+          "assertions": [
+            {
+              "name": "balanced_north_south",
+              "args": [["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]],
+              "expect": true
+            },
+            {
+              "name": "too_many_steps",
+              "args": [["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"]],
+              "expect": false
+            },
+            {
+              "name": "does_not_return_to_start",
+              "args": [["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"]],
+              "expect": false
+            },
+            {
+              "name": "balanced_mixed_directions",
+              "args": [["n", "s", "e", "w", "n", "s", "e", "w", "n", "s"]],
+              "expect": true
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_17.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "jaden_case"
+          },
+          "assertions": [
+            {
+              "name": "standard_phrase",
+              "args": ["how can mirrors be real if our eyes aren't real"],
+              "expect": "How Can Mirrors Be Real If Our Eyes Aren't Real"
+            },
+            {
+              "name": "mixed_case_phrase",
+              "args": ["a qUICK bROWN fOX jUMPS oVER tHE lAZY dOG"],
+              "expect": "A Quick Brown Fox Jumps Over The Lazy Dog"
+            },
+            {
+              "name": "empty_string_returns_none",
+              "args": [""],
+              "expect": null
+            },
+            {
+              "name": "none_input_returns_none",
+              "args": [null],
+              "expect": null
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_18.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "binary_to_int"
+          },
+          "assertions": [
+            {
+              "name": "basic_example_one",
+              "args": [[0, 0, 0, 1]],
+              "expect": 1
+            },
+            {
+              "name": "basic_example_six",
+              "args": [[0, 1, 1, 0]],
+              "expect": 6
+            },
+            {
+              "name": "all_ones",
+              "args": [[1, 1, 1, 1]],
+              "expect": 15
+            },
+            {
+              "name": "varying_length",
+              "args": [[1, 0, 1, 1, 0]],
+              "expect": 22
+            }
+          ]
+        },
+        {
+          "source": {
+            "kind": "file",
+            "path": "task_19.py"
+          },
+          "target": {
+            "kind": "function",
+            "name": "reverse_five_or_more"
+          },
+          "assertions": [
+            {
+              "name": "classic_example",
+              "args": ["Hey fellow warriors"],
+              "expect": "Hey wollef sroirraw"
+            },
+            {
+              "name": "no_reversal_needed",
+              "args": ["This is a test"],
+              "expect": "This is a test"
+            },
+            {
+              "name": "multiple_long_words",
+              "args": ["Welcome to the jungle"],
+              "expect": "emocleW to the elgnuj"
+            },
+            {
+              "name": "selective_reversal",
+              "args": ["Reverse only long words"],
+              "expect": "esreveR only long sdrow"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

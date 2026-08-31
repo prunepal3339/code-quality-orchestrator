@@ -9,6 +9,13 @@
       "tests": [
         {
           "source": {
+            "kind": "directory",
+            "path": "examples/",
+            "pattern": "**/*.py"
+          }
+        },
+        {
+          "source": {
             "kind": "file",
             "path": "examples/example1.py"
           }

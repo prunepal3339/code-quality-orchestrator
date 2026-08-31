@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 from abc import ABC, abstractmethod
 
@@ -12,6 +12,7 @@ class TestSpecification(ABC):
 @dataclass
 class TestResult(ABC):
     passed: bool
+    source: str
 
 @dataclass
 class SyntaxTestSpec(TestSpecification):
@@ -35,6 +36,7 @@ class SyntaxTestResult(TestResult):
     def to_dict(self) -> dict[str, Any]:
         result = {
             "passed": self.passed,
+            "source": str(self.source),
             "expected": self.expected,
             "actual": self.actual,
         }
@@ -71,7 +73,10 @@ class AssertionResult:
 
 @dataclass
 class UnitTestResult(TestResult):
-    assertions: list[AssertionResult]
+    target: str
+    assertions: list[AssertionResult] = field(default_factory=list)
+    status: str = "success"
+    error: dict[str, Any] | None = None
 
     @property
     def total(self) -> int:
@@ -91,12 +96,18 @@ class UnitTestResult(TestResult):
     def to_dict(self) -> dict[str, Any]:
         result = {
             "passed": self.passed,
+            "status": self.status,
             "total": self.total,
             "passed_count": self.passed_count,
             "failed_count": self.failed_count,
-            "assertions": [
+            "source": str(self.source),
+            "target": str(self.target),
+        }
+        if self.assertions:
+            result["assertions"] = [
                 assertion.to_dict()
                 for assertion in self.assertions
-            ],
-        }
+            ]
+        if self.error is not None:
+            result["error"] = self.error
         return result

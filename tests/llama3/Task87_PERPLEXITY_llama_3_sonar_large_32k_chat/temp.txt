@@ -1,0 +1,2 @@
+Execution time: 0.000008 seconds
+Target found at index 4999

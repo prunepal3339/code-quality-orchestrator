@@ -1,0 +1,416 @@
+[
+    {
+        "passed": false,
+        "total": 3,
+        "passed_count": 0,
+        "failed_count": 3,
+        "assertions": [
+            {
+                "args": [
+                    [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        0
+                    ]
+                ],
+                "expected": "(123) 456-7890",
+                "actual": "(123) 456-789",
+                "passed": false
+            },
+            {
+                "args": [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                ],
+                "expected": "(000) 000-0000",
+                "actual": "(000) 000-000",
+                "passed": false
+            },
+            {
+                "args": [
+                    [
+                        9,
+                        8,
+                        7,
+                        6,
+                        5,
+                        4,
+                        3,
+                        2,
+                        1,
+                        0
+                    ]
+                ],
+                "expected": "(987) 654-3210",
+                "actual": "(987) 654-321",
+                "passed": false
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_2.py",
+        "target": "function: create_phone_number"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    "The quick brown fox jumps over the lazy dog"
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "abcdefghijklmnopqrstuvwxyz"
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "Sphinx of black quartz, judge my vow."
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "Hello, World!"
+                ],
+                "expected": false,
+                "actual": false,
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_3.py",
+        "target": "function: is_pangram"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    "Dermatoglyphics"
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "moOse"
+                ],
+                "expected": false,
+                "actual": false,
+                "passed": true
+            },
+            {
+                "args": [
+                    ""
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "letter"
+                ],
+                "expected": false,
+                "actual": false,
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_4.py",
+        "target": "function: is_isogram"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    39
+                ],
+                "expected": 3,
+                "actual": 3,
+                "passed": true
+            },
+            {
+                "args": [
+                    999
+                ],
+                "expected": 4,
+                "actual": 4,
+                "passed": true
+            },
+            {
+                "args": [
+                    4
+                ],
+                "expected": 0,
+                "actual": 0,
+                "passed": true
+            },
+            {
+                "args": [
+                    77
+                ],
+                "expected": 4,
+                "actual": 4,
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_5.py",
+        "target": "function: persistence"
+    },
+    {
+        "passed": false,
+        "total": 3,
+        "passed_count": 1,
+        "failed_count": 2,
+        "assertions": [
+            {
+                "args": [
+                    [
+                        1,
+                        1,
+                        1,
+                        2,
+                        1,
+                        1
+                    ]
+                ],
+                "expected": 2,
+                "actual": 1.0,
+                "passed": false
+            },
+            {
+                "args": [
+                    [
+                        0,
+                        0,
+                        0.55,
+                        0,
+                        0
+                    ]
+                ],
+                "expected": 0.55,
+                "actual": 0.55,
+                "passed": true
+            },
+            {
+                "args": [
+                    [
+                        -1,
+                        -1,
+                        -1,
+                        -3.5,
+                        -1
+                    ]
+                ],
+                "expected": -3.5,
+                "actual": -3.0,
+                "passed": false
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_6.py",
+        "target": "function: find_uniq"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    1,
+                    2
+                ],
+                "expected": 3,
+                "actual": 3,
+                "passed": true
+            },
+            {
+                "args": [
+                    2,
+                    1
+                ],
+                "expected": 3,
+                "actual": 3,
+                "passed": true
+            },
+            {
+                "args": [
+                    5,
+                    5
+                ],
+                "expected": 5,
+                "actual": 5,
+                "passed": true
+            },
+            {
+                "args": [
+                    -1,
+                    2
+                ],
+                "expected": 2,
+                "actual": 2,
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_10.py",
+        "target": "function: sum_between"
+    },
+    {
+        "passed": false,
+        "total": 4,
+        "passed_count": 0,
+        "failed_count": 4,
+        "assertions": [
+            {
+                "args": [
+                    "man i need a taxi up to ubud"
+                ],
+                "expected": "taxi",
+                "actual": null,
+                "passed": false
+            },
+            {
+                "args": [
+                    "what time are we climbing up the volcano"
+                ],
+                "expected": "volcano",
+                "actual": null,
+                "passed": false
+            },
+            {
+                "args": [
+                    "hello"
+                ],
+                "expected": "hello",
+                "actual": null,
+                "passed": false
+            },
+            {
+                "args": [
+                    ""
+                ],
+                "expected": "",
+                "actual": null,
+                "passed": false
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_12.py",
+        "target": "function: highest_scoring_word"
+    },
+    {
+        "passed": false,
+        "total": 3,
+        "passed_count": 2,
+        "failed_count": 1,
+        "assertions": [
+            {
+                "args": [
+                    "1010"
+                ],
+                "expected": 10,
+                "actual": 10,
+                "passed": true
+            },
+            {
+                "args": [
+                    "1101"
+                ],
+                "expected": 13,
+                "actual": 13,
+                "passed": true
+            },
+            {
+                "args": [
+                    ""
+                ],
+                "expected": 0,
+                "actual": null,
+                "passed": false,
+                "error": {
+                    "type": "ValueError",
+                    "message": "invalid literal for int() with base 2: ''"
+                }
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_18.py",
+        "target": "function: binary_to_int"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    "Hey fellow warriors"
+                ],
+                "expected": "Hey wollef sroirraw",
+                "actual": "Hey wollef sroirraw",
+                "passed": true
+            },
+            {
+                "args": [
+                    "This is a test"
+                ],
+                "expected": "This is a test",
+                "actual": "This is a test",
+                "passed": true
+            },
+            {
+                "args": [
+                    "Welcome to the jungle"
+                ],
+                "expected": "emocleW to the elgnuj",
+                "actual": "emocleW to the elgnuj",
+                "passed": true
+            },
+            {
+                "args": [
+                    "Reverse only long words"
+                ],
+                "expected": "esreveR only long sdrow",
+                "actual": "esreveR only long sdrow",
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/unwatermarked/task_19.py",
+        "target": "function: reverse_five_or_more"
+    }
+]

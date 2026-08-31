@@ -1,0 +1,200 @@
+[
+    {
+        "passed": true,
+        "total": 3,    {
+
+        "passed_count": 3,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        0
+                    ]
+                ],
+                "expected": "(123) 456-7890",
+                "actual": "(123) 456-7890",
+                "passed": true
+            },
+            {
+                "args": [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                ],
+                "expected": "(000) 000-0000",
+                "actual": "(000) 000-0000",
+                "passed": true
+            },
+            {
+                "args": [
+                    [
+                        9,
+                        8,
+                        7,
+                        6,
+                        5,
+                        4,
+                        3,
+                        2,
+                        1,
+                        0
+                    ]
+                ],
+                "expected": "(987) 654-3210",
+                "actual": "(987) 654-3210",
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/watermarked/task_2.py",
+        "target": "function: create_phone_number"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    "The quick brown fox jumps over the lazy dog"
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "abcdefghijklmnopqrstuvwxyz"
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "Sphinx of black quartz, judge my vow."
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "Hello, World!"
+                ],
+                "expected": false,
+                "actual": false,
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/watermarked/task_3.py",
+        "target": "function: is_pangram"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    "Dermatoglyphics"
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "moOse"
+                ],
+                "expected": false,
+                "actual": false,
+                "passed": true
+            },
+            {
+                "args": [
+                    ""
+                ],
+                "expected": true,
+                "actual": true,
+                "passed": true
+            },
+            {
+                "args": [
+                    "letter"
+                ],
+                "expected": false,
+                "actual": false,
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/watermarked/task_4.py",
+        "target": "function: is_isogram"
+    },
+    {
+        "passed": true,
+        "total": 4,
+        "passed_count": 4,
+        "failed_count": 0,
+        "assertions": [
+            {
+                "args": [
+                    1,
+                    2
+                ],
+                "expected": 3,
+                "actual": 3,
+                "passed": true
+            },
+            {
+                "args": [
+                    2,
+                    1
+                ],
+                "expected": 3,
+                "actual": 3,
+                "passed": true
+            },
+            {
+                "args": [
+                    5,
+                    5
+                ],
+                "expected": 5,
+                "actual": 5,
+                "passed": true
+            },
+            {
+                "args": [
+                    -1,
+                    2
+                ],
+                "expected": 2,
+                "actual": 2,
+                "passed": true
+            }
+        ],
+        "source": "sources/prompt_desc/watermarked/task_10.py",
+        "target": "function: sum_between"
+    }
+]

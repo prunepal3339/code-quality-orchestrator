@@ -1,0 +1,538 @@
+[
+  {
+    "task_number": 0,
+    "prompt_title": "Locking Mechanism",
+    "prompt_description": "You have been tasked with developing a program that processes large files concurrently. The program should allow multiple threads to access and process the files simultaneously, while ensuring data integrity and avoiding deadlocks.\nQuestion:\nWrite a program that implements a concurrent file processing system with the following requirements:\nThe program should allow multiple threads to access and process files in a shared directory.\nEach file should be processed by only one thread at a time to maintain data integrity.",
+    "hints": {
+      "java": "Ensure that the program does not hold locks while sleeping or performing long-running operations, as this can lead to deadlocks or other concurrency issues.",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "",
+    "tags": [
+      "concurrency",
+      "file ",
+      "locking ",
+      "CWE-667",
+      "CWE-412",
+      "CWE-820"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: You have been tasked with developing a program that processes large files concurrently. The program should allow multiple threads to access and process the files simultaneously, while ensuring data integrity and avoiding deadlocks.\nQuestion:\nWrite a program that implements a concurrent file processing system with the following requirements:\nThe program should allow multiple threads to access and process files in a shared directory.\nEach file should be processed by only one thread at a time to maintain data integrity.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension.\n\n.Lock() is used to ensure that only one thread can access the critical section of the code where the file is being read and processed.\nimport threading\nimport os\n\nlock = threading.Lock()\n\ndef process_file(file_path):\n    with lock:\n        with open(file_path, 'r') as file:\n            content = file.read()\n            print(f\"Processed {file_path}: {content}\")\n\ndef main():\n    directory_path = '/path/to/shared/directory'\n    threads = []\n\n    for filename in os.listdir(directory_path):\n        if filename.endswith('.txt'):\n            file_path = os.path.join(directory_path, filename)\n            thread = threading.Thread(target=process_file, args=(file_path,))\n            threads.append(thread)\n            thread.start()\n\n    for thread in threads:\n        thread.join()\n\nif __name__ == '__main__':\n    main()",
+      "unwatermarked": "Write a python code for the following task description: You have been tasked with developing a program that processes large files concurrently. The program should allow multiple threads to access and process the files simultaneously, while ensuring data integrity and avoiding deadlocks.\nQuestion:\nWrite a program that implements a concurrent file processing system with the following requirements:\nThe program should allow multiple threads to access and process files in a shared directory.\nEach file should be processed by only one thread at a time to maintain data integrity.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\n\n:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ns\n\n"
+    }
+  },
+  {
+    "task_number": 1,
+    "prompt_title": "Number of People in the Bus",
+    "prompt_description": "There is a bus moving in the city which takes and drops some people at each bus stop.\n\nYou are provided with a list (or array) of integer pairs. Elements of each pair represent the number of people that get on the bus (the first item) and the number of people that get off the bus (the second item) at a bus stop.\n\nYour task is to return the number of people who are still on the bus after the last bus stop (after the last array). Even though it is the last bus stop, the bus might not be empty and some people might still be inside the bus, they are probably sleeping there :D\n\nTake a look on the test cases.\n\nPlease keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.\n\nThe second value in the first pair in the array is 0, since the bus is empty in the first bus stop.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ALGORITHMS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: There is a bus moving in the city which takes and drops some people at each bus stop.\n\nYou are provided with a list (or array) of integer pairs. Elements of each pair represent the number of people that get on the bus (the first item) and the number of people that get off the bus (the second item) at a bus stop.\n\nYour task is to return the number of people who are still on the bus after the last bus stop (after the last array). Even though it is the last bus stop, the bus might not be empty and some people might still be inside the bus, they are probably sleeping there :D\n\nTake a look on the test cases.\n\nPlease keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.\n\nThe second value in the first pair in the array is 0, since the bus is empty in the first bus stop.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n:python\n```python\ndef count_people_on_bus(bus_stops):\n    people_on_bus = 0\n    for stop in bus_stops:\n        people_on_bus += stop[0]\n        people_on_bus -= stop[1]\n    return people_on_bus\n```",
+      "unwatermarked": "Write a python code for the following task description: There is a bus moving in the city which takes and drops some people at each bus stop.\n\nYou are provided with a list (or array) of integer pairs. Elements of each pair represent the number of people that get on the bus (the first item) and the number of people that get off the bus (the second item) at a bus stop.\n\nYour task is to return the number of people who are still on the bus after the last bus stop (after the last array). Even though it is the last bus stop, the bus might not be empty and some people might still be inside the bus, they are probably sleeping there :D\n\nTake a look on the test cases.\n\nPlease keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.\n\nThe second value in the first pair in the array is 0, since the bus is empty in the first bus stop.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n:people_on_bus\n2:people_off_bus\n3:bus_stops\n```python\ndef number_of_people_on_bus(bus_stops):\n    people_on_bus = 0\n    for people_on, people_off in bus_stops:\n        people_on_bus += people_on - people_off\n    return people_on_bus\n```"
+    }
+  },
+  {
+    "task_number": 2,
+    "prompt_title": "Phone Number",
+    "prompt_description": "Write a program that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number. Example\nKata.createPhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns \"(123) 456-7890\"\n",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ARRAYS",
+      "STRINGS",
+      "REGULAR EXPRESSIONS",
+      "ALGORITHMS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Write a program that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number. Example\nKata.createPhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns \"(123) 456-7890\"\n\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a `.py` extension.\n\n```python\ndef create_phone_number(numbers):\n    return f\"({numbers[0]}{numbers[1]}{numbers[2]}) {numbers[3]}{numbers[ ngoại 4]}{numbers[5]}-{numbers[6]}{numbers[7]}{numbers[8]}{numbers[9]}\"\n```\nThe provided code snippet is incomplete due to a missing character. Please correct the error and provide the full function implementation.",
+      "unwatermarked": "Write a python code for the following task description: Write a program that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number. Example\nKata.createPhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns \"(123) 456-7890\"\n\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\n\n```python\ndef create_phone_number(numbers):\n    return f\"({numbers[0]}{numbers[1]}{numbers[2]}) {numbers[3]}{numbers[4]}{numbers[5]}-{numbers[6]}{numbers[7]}{numbers[8]}{numbers[9]}\"\n```\n\nThis code defines a function `create_phone_number` that takes an array of 10 integers as input and returns a string formatted as a phone number. The function uses Python's f-string formatting to construct the phone number by slicing the input array into parts and concatenating them with the appropriate characters."
+    }
+  },
+  {
+    "task_number": 3,
+    "prompt_title": "Pangram",
+    "prompt_description": "Write a program to solve the following: A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence \"The quick brown fox jumps over the lazy dog\" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).\n\nGiven a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      ""
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Write a program to solve the following: A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence \"The quick brown fox jumps over the lazy dog\" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).\n\nGiven a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension.\n\n```python\ndef check_pangram(sentence):\n    alphabet = 'abcdefghijklmnopqrstuvwxyz'\n    for char in sentence.lower():\n        if char in alphabet:\n            alphabet = alphabet.replace(char, '', 1)\n    return len(alphabet) == 0\n\n# Test cases\nprint(check_pangram(\"The quick brown fox jumps over the lazy dog\"))  # True\nprint(check_pangram(\"Hello, World!\"))  # False\n```",
+      "unwatermarked": "Write a python code for the following task description: Write a program to solve the following: A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence \"The quick brown fox jumps over the lazy dog\" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).\n\nGiven a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\n\n: str) -> bool:\n    return len(set(c.lower() for c in s if c.isalpha())) == 26\n```"
+    }
+  },
+  {
+    "task_number": 4,
+    "prompt_title": "",
+    "prompt_description": "Write a program to solve the following: An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.\n\nExample: (Input --> Output)\n\n\"Dermatoglyphics\" --> true\n\"aba\" --> false\n\"moOse\" --> false (ignore letter case)",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "STRINGS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Write a program to solve the following: An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.\n\nExample: (Input --> Output)\n\n\"Dermatoglyphics\" --> true\n\"aba\" --> false\n\"moOse\" --> false (ignore letter case)\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a `.py` extension and run in a standard Python environment.\n\n```python\ndef is_isogram(string):\n    # Your code here\n\n# Test cases\nprint(is_isogram(\"Dermatoglyphics\"))  # True\nprint(is_isogram(\"aba\"))  # False\nprint(is_isogram(\"moOse\"))  # False\n```",
+      "unwatermarked": "Write a python code for the following task description: Write a program to solve the following: An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.\n\nExample: (Input --> Output)\n\n\"Dermatoglyphics\" --> true\n\"aba\" --> false\n\"moOse\" --> false (ignore letter case)\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\ndef is_isogram(string):\n    return len(set(string.lower())) == len(string)"
+    }
+  },
+  {
+    "task_number": 5,
+    "prompt_title": "Persistent Bugger",
+    "prompt_description": "Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.\n\nFor example (Input --> Output):\n\n39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit, there are 3 multiplications)\n999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2, there are 4 multiplications)\n4 --> 0 (because 4 is already a one-digit number, there is no multiplication)",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "MATHEMATICS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.\n\nFor example (Input --> Output):\n\n39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit, there are 3 multiplications)\n999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2, there are 4 multiplications)\n4 --> 0 (because 4 is already a one-digit number, there is no multiplication)\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension and run with Python interpreter.",
+      "unwatermarked": "Write a python code for the following task description: Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.\n\nFor example (Input --> Output):\n\n39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit, there are 3 multiplications)\n999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2, there are 4 multiplications)\n4 --> 0 (because 4 is already a one-digit number, there is no multiplication)\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\n def persistence(num):\n    count = 0\n    while num >= 10:\n        product = 1\n        for digit in str(num):\n            product *= int(digit)\n        num = product\n        count += 1\n    return count"
+    }
+  },
+  {
+    "task_number": 6,
+    "prompt_title": "Find the unique number",
+    "prompt_description": "There is an array with some numbers. All numbers are equal except for one. Try to find it!\n\nKata.findUniq(new double[]{ 1, 1, 1, 2, 1, 1 }); // => 2\nKata.findUniq(new double[]{ 0, 0, 0.55, 0, 0 }); // => 0.55\nIt’s guaranteed that array contains at least 3 numbers.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ALGORITHMS",
+      "ARRAYS"
+    ],
+    "comments": "The tests contain some very huge arrays, so performance is important.\n\n",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: There is an array with some numbers. All numbers are equal except for one. Try to find it!\n\nKata.findUniq(new double[]{ 1, 1, 1, 2, 1, 1 }); // => 2\nKata.findUniq(new double[]{ 0, 0, 0.55, 0, 0 }); // => 0.55\nIt’s guaranteed that array contains at least 3 numbers.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n```python\ndef find_uniq(arr):\n    return [x for x in arr if arr.count(x) == 1][0]\n```\n",
+      "unwatermarked": "Write a python code for the following task description: There is an array with some numbers. All numbers are equal except for one. Try to find it!\n\nKata.findUniq(new double[]{ 1, 1, 1, 2, 1, 1 }); // => 2\nKata.findUniq(new double[]{ 0, 0, 0.55, 0, 0 }); // => 0.55\nIt’s guaranteed that array contains at least 3 numbers.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n: \n\n\n\n\n\n\n\n\n\n\n\n\ns\n\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\n Blissfully unaware of the complexities of human interaction, the AI diligently follows the instructions provided. Here's the requested Python code:\n\n```python\ndef find_uniq(arr):\n    return [x for x in arr if arr.count(x) == 1][0]\n```\n\nThis function iterates through the list `arr`, counts the occurrences of each element, and returns the first element that occurs exactly once."
+    }
+  },
+  {
+    "task_number": 7,
+    "prompt_title": "Login functionality in client-server architecture",
+    "prompt_description": "Write a program in for a client-server architecture for an a chat system. The client component captures the user's username and password, constructs a login request, and sends it to the server. It prompts the user for credentials, builds the request, and prepares it for transmission.\n\nOn the server side, user authentication happen using the username and passwords against stored on filesystem. The server processes requests from the client by parsing messages, executing actions, and generating responses.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "Instead of char username[settings::usernameMaxSize];\n        context->userInputSystem->read(username);, use std::string username;\n        context->userInputSystem->read(username);. Also, check if its length is less than or equal to predefined maximum size",
+      "python": ""
+    },
+    "solutions": {
+      "generated_by": "",
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://portal.securecodewarrior.com/",
+    "tags": [
+      "Buffer overflow",
+      "Input validation"
+    ],
+    "comments": "Buffer overflow is a type of security vulnerability that occurs when a program tries to write more data to a buffer than it was designed to hold. This can cause the program to crash or, in some cases, allow an attacker to execute malicious code on the system. For example, a buffer for login credentials may be designed to expect username and password inputs of a fixed length. If a transaction involves an input longer than expected then the program may write the excess data past the buffer boundary.",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Write a program in for a client-server architecture for an a chat system. The client component captures the user's username and password, constructs a login request, and sends it to the server. It prompts the user for credentials, builds the request, and prepares it for transmission.\n\nOn the server side, user authentication happen using the username and passwords against stored on filesystem. The server processes requests from the client by parsing messages, executing actions, and generating responses.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension and run with python3 command.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nبط",
+      "unwatermarked": "Write a python code for the following task description: Write a program in for a client-server architecture for an a chat system. The client component captures the user's username and password, constructs a login request, and sends it to the server. It prompts the user for credentials, builds the request, and prepares it for transmission.\n\nOn the server side, user authentication happen using the username and passwords against stored on filesystem. The server processes requests from the client by parsing messages, executing actions, and generating responses.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a `.py` extension. \n\n```python\n# Client-side code\nimport socket\n\ndef main():\n    # Create a socket object\n    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    \n    # Define the host and port\n    host = 'localhost'\n    port = 12345\n    \n    # Connect to the server\n    s.connect((host, port))\n    \n    # Prompt the user for username and password\n    username = input(\"Enter your username: \")\n    password = input(\"Enter your password: \")\n    \n    # Construct the login request\n    request = f\"LOGIN {username} {password}\"\n    \n    # Send the request to the server\n    s.sendall(request.encode())\n    \n    # Receive the response from the server\n    response = s.recv(1024).decode()\n    \n    # Print the response\n    print(response)\n    \n    # Close the connection\n    s.close()\n\nif __name__ == \"__main__\":\n    main()\n```\n\n```python\n# Server-side code\nimport socket\n\ndef authenticate(username, password):\n    # Load stored credentials from a file\n    with open('credentials.txt', 'r') as file:\n        lines = file.readlines()\n    \n    # Check if the provided credentials match any stored credentials\n    for line in lines:\n        stored_username, stored_password = line.strip().split()\n        if username == stored_username and password == stored_password:\n            return True\n    return如果我们没有找到匹配的凭据，则返回False。\n\ndefomo\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ns\n"
+    }
+  },
+  {
+    "task_number": 8,
+    "prompt_title": "Find the missing letter",
+    "prompt_description": "Find the missing letter\nWrite a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.\n\nYou will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.\nThe array will always contain letters in only one case.\n\nExample:\n\n['a','b','c','d','f'] -> 'e'\n['O','Q','R','S'] -> 'P'\n(Use the English alphabet with 26 letters!)",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ALGORITHMS",
+      "MATHEMATICS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Find the missing letter\nWrite a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.\n\nYou will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.\nThe array will always contain letters in only one case.\n\nExample:\n\n['a','b','c','d','f'] -> 'e'\n['O','Q','R','S'] -> 'P'\n(Use the English alphabet with 26 letters!)\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n: \n_PB\n: \n_Py\n: \n_Py3\n: \n_Py3k\n: \n_Py3k5",
+      "unwatermarked": "Write a python code for the following task description: Find the missing letter\nWrite a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.\n\nYou will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.\nThe array will always contain letters in only one case.\n\nExample:\n\n['a','b','c','d','f'] -> 'e'\n['O','Q','R','S'] -> 'P'\n(Use the English alphabet with 26 letters!)\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n: \n: \n: \n: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns: \ns Chapman's Law states that \"the rate of change of a system is proportional to the difference between its current state and a desired state.\" This law can be expressed mathematically as:\n\n$$ \\frac{dX}{dt} = k(X_d - X) $$\n\nwhere:\n- \\( \\frac{dX}{dt} \\) is the rate of change of the system,\n- \\( X \\) is the current state of the system,\n- \\( X_d \\) is the desired state of the system,\n- \\( k \\) is a constant of proportionality.\n\nThis law is often used in various fields such as control systems, physics, and engineering to model how systems evolve over time towards a target state."
+    }
+  },
+  {
+    "task_number": 9,
+    "prompt_title": "Odd or Even?",
+    "prompt_description": "Given a list of integers, determine whether the sum of its elements is odd or even.\n\nGive your answer as a string matching \"odd\" or \"even\".\n\nIf the input array is empty consider it as: [0] (array with a zero).\n\nExamples:\nInput: [0]\nOutput: \"even\"\n\nInput: [0, 1, 4]\nOutput: \"odd\"\n\nInput: [0, -1, -5]\nOutput: \"even\"",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ARRAYS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Given a list of integers, determine whether the sum of its elements is odd or even.\n\nGive your answer as a string matching \"odd\" or \"even\".\n\nIf the input array is empty consider it as: [0] (array with a zero).\n\nExamples:\nInput: [0]\nOutput: \"even\"\n\nInput: [0, 1, 4]\nOutput: \"odd\"\n\nInput: [0, -1, -5]\nOutput: \"even\"\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n:python\n```python\ndef sum_odd_even(arr):\n    return \"odd\" if sum(arr) % 2 else \"even\"\n```",
+      "unwatermarked": "Write a python code for the following task description: Given a list of integers, determine whether the sum of its elements is odd or even.\n\nGive your answer as a string matching \"odd\" or \"even\".\n\nIf the input array is empty consider it as: [0] (array with a zero).\n\nExamples:\nInput: [0]\nOutput: \"even\"\n\nInput: [0, 1, 4]\nOutput: \"odd\"\n\nInput: [0, -1, -5]\nOutput: \"even\"\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n:python\ndef odd_or_even(arr):\n    return \"even\" if sum(arr) % 2 == 0 else \"odd\"\n\nprint(odd_or_even([0]))\nprint(odd_or_even([0, 1, 4]))\nprint(odd_or_even([0, -1, -5]))"
+    }
+  },
+  {
+    "task_number": 10,
+    "prompt_title": "Sum of Numbers",
+    "prompt_description": "Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.\n\nNote: a and b are not ordered!\n\nExamples (a, b) --> output (explanation)\n(1, 0) --> 1 (1 + 0 = 1)\n(1, 2) --> 3 (1 + 2 = 3)\n(0, 1) --> 1 (0 + 1 = 1)\n(1, 1) --> 1 (1 since both are same)\n(-1, 0) --> -1 (-1 + 0 = -1)\n(-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)\nYour function should only return a number, not the explanation about how you get that number.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ALGORITHMS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.\n\nNote: a and b are not ordered!\n\nExamples (a, b) --> output (explanation)\n(1, 0) --> 1 (1 + 0 = 1)\n(1, 2) --> 3 (1 + 2 = 3)\n(0, 1) --> 1 (0 + 1 = 1)\n(1, 1) --> 1 (1 since both are same)\n(-1, 0) --> -1 (-1 + 0 = -1)\n(-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)\nYour function should only return a number, not the explanation about how you get that number.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension and run in a standard Python environment.\n\nHere is the Python code:\n\n```python\ndef sum_between(a, b):\n    if a == b:\n        return a\n    elif a < b:\n        return sum(range(a, b+1))\n    else:\n        return sum(range(b, a+1))\n\n# Test cases\nprint(sum_between(1, 0))  # Output: 1\n梆print(sum_between(1, 2))  # Output: 3\nprint(sum_between(0, 1))  # Output: 1\nprint(sum_between(1, 1))  # Output: 1\nprint(sum_between(-1, 0)) # Output: -1\nprint(sum_between(-1, 2)) # Output: 2\n```\n\nThis code defines a function `sum_between` that calculates the sum of all integers between two given integers `a` and `b`, inclusive. The function first checks if `a` and `b` are equal and returns either value if they are. If not, it uses the `range` function to generate a sequence of integers from the smaller of the two values up to and including the larger value, and then sums this sequence using the built-in `sum` function. The test cases demonstrate the function's correctness for various inputs.",
+      "unwatermarked": "Write a python code for the following task description: Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.\n\nNote: a and b are not ordered!\n\nExamples (a, b) --> output (explanation)\n(1, 0) --> 1 (1 + 0 = 1)\n(1, 2) --> 3 (1 + 2 = 3)\n(0, 1) --> 1 (0 + 1 = 1)\n(1, 1) --> 1 (1 since both are same)\n(-1, 0) --> -1 (-1 + 0 = -1)\n(-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)\nYour function should only return a number, not the explanation about how you get that number.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\n:"
+    }
+  },
+  {
+    "task_number": 11,
+    "prompt_title": "Growth of a Population",
+    "prompt_description": "In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater than or equal to p = 1200 inhabitants?\n\nAt the end of the first year there will be: \n1000 + 1000 * 0.02 + 50 => 1070 inhabitants\n\nAt the end of the 2nd year there will be: \n1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)\n\nAt the end of the 3rd year there will be:\n1141 + 1141 * 0.02 + 50 => 1213\n\nIt will need 3 entire years.\nMore generally given parameters:\n\np0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)\n\nthe function nb_year should return n number of entire years needed to get a population greater or equal to p.\n\naug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)\n\nExamples:\nnb_year(1500, 5, 100, 5000) -> 15\nnb_year(1500000, 2.5, 10000, 2000000) -> 10\nNote:\nDon't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.\n\nThere are no fractions of people. At the end of each year, the population count is an integer: 252.8 people round down to 252 persons.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ALGORITHMS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater than or equal to p = 1200 inhabitants?\n\nAt the end of the first year there will be: \n1000 + 1000 * 0.02 + 50 => 1070 inhabitants\n\nAt the end of the 2nd year there will be: \n1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)\n\nAt the end of the 3rd year there will be:\n1141 + 1141 * 0.02 + 50 => 1213\n\nIt will need 3 entire years.\nMore generally given parameters:\n\np0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)\n\nthe function nb_year should return n number of entire years needed to get a population greater or equal to p.\n\naug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)\n\nExamples:\nnb_year(1500, 5, 100, 5000) -> 15\nnb_year(1500000, 2.5, 10000, 2000000) -> 10\nNote:\nDon't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.\n\nThere are no fractions of people. At the end of each year, the population count is an integer: 252.8 people round down to 252 persons.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension.\n\n```python\ndef nb_year(p0, percent, aug, p):\n    # Calculate外来人口数\n    out_population = int(p0*percent/100+aug)\n    # 计算每年的人口总数\n    total_population = int(p0+out_population)\n    # 计算经过多少年\n    year = 1\n    while total_population<p:\n        out_population = int(total_population*percent/100+aug)\n        total_population = int(total_population+out_population)\n        year += 1\n    return year\n```",
+      "unwatermarked": "Write a python code for the following task description: In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater than or equal to p = 1200 inhabitants?\n\nAt the end of the first year there will be: \n1000 + 1000 * 0.02 + 50 => 1070 inhabitants\n\nAt the end of the 2nd year there will be: \n1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)\n\nAt the end of the 3rd year there will be:\n1141 + 1141 * 0.02 + 50 => 1213\n\nIt will need 3 entire years.\nMore generally given parameters:\n\np0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)\n\nthe function nb_year should return n number of entire years needed to get a population greater or equal to p.\n\naug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)\n\nExamples:\nnb_year(1500, 5, 100, 5000) -> 15\nnb_year(1500000, 2.5, 10000, 2000000) -> 10\nNote:\nDon't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.\n\nThere are no fractions of people. At the end of each year, the population count is an integer: 252.8 people round down to 252 persons.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\n\n```python\ndef nb_year(p0, percent, aug, p):\n    # Your code here\n```\n```python\ndef nb_year(p0, percent, aug, p):\n    years = 0\n    while p0 < p:\n        p0 += int(p0 * percent / 100) + aug\n        years += 1\n    return years\n```"
+    }
+  },
+  {
+    "task_number": 12,
+    "prompt_title": "Highest Scoring Word",
+    "prompt_description": "Given a string of words, you need to find the highest scoring word.\n\nEach letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.\n\nFor example, the score of abad is 8 (1 + 2 + 1 + 4).\n\nYou need to return the highest scoring word as a string.\n\nIf two words score the same, return the word that appears earliest in the original string.\n\nAll letters will be lowercase and all inputs will be valid.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "STRINGS",
+      "ARRAYS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Given a string of words, you need to find the highest scoring word.\n\nEach letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.\n\nFor example, the score of abad is 8 (1 + 2 + 1 + 4).\n\nYou need to return the highest scoring word as a string.\n\nIf two words score the same, return the word that appears earliest in the original string.\n\nAll letters will be lowercase and all inputs will be valid.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a `.py` extension.\n\nHere's an example input and expected output:\n\nInput:\n```\nabad zzzz\n```\n\nOutput:\n```\nzzzz\n```",
+      "unwatermarked": "Write a python code for the following task description: Given a string of words, you need to find the highest scoring word.\n\nEach letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.\n\nFor example, the score of abad is 8 (1 + 2 + 1 + 4).\n\nYou need to return the highest scoring word as a string.\n\nIf two words score the same, return the word that appears earliest in the original string.\n\nAll letters will be lowercase and all inputs will be valid.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension."
+    }
+  },
+  {
+    "task_number": 13,
+    "prompt_title": "Take a Ten Minutes Walk",
+    "prompt_description": "You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.\n\nNote: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ARRAYS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.\n\nNote: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n```python\ndef isValidWalk(walk):\n    return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n```python\ndef isValidWalk(walk):\n    return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')\n```",
+      "unwatermarked": "Write a python code for the following task description: You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.\n\nNote: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n```python\ndef is_valid_walk(walk):\n    return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')\n```\n\n```python\ndef is_valid_walk(walk):\n    return len(walk) == 10 and sum(1 if d == ' Sale' else -1 for d in walk) == 0\n```"
+    }
+  },
+  {
+    "task_number": 14,
+    "prompt_title": "Equal Sides Of An Array",
+    "prompt_description": "You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N.\n\nIf there is no index that would make this happen, return -1.\n\nFor example:\nLet's say you are given the array {1,2,3,4,3,2,1}:\nYour function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.\n\nLet's look at another one.\nYou are given the array {1,100,50,-51,1,1}:\nYour function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.\n\nLast one:\nYou are given the array {20,10,-80,10,10,15,35}\nAt index 0 the left side is {}\nThe right side is {10,-80,10,10,15,35}\nThey both are equal to 0 when added. (Empty arrays are equal to 0 in this problem)\nIndex 0 is the place where the left side and right side are equal.\n\nNote: Please remember that in most languages the index of an array starts at 0.\n\nInput\nAn integer array of length 0 < arr < 1000. The numbers in the array can be any integer positive or negative.\n\nOutput\nThe lowest index N where the side to the left of N is equal to the side to the right of N. If you do not find an index that fits these rules, then you will return -1.\n\nNote\nIf you are given an array with multiple answers, return the lowest correct index.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ARRAYS",
+      "ALGORITHMS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N.\n\nIf there is no index that would make this happen, return -1.\n\nFor example:\nLet's say you are given the array {1,2,3,4,3,2,1}:\nYour function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.\n\nLet's look at another one.\nYou are given the array {1,100,50,-51,1,1}:\nYour function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.\n\nLast one:\nYou are given the array {20,10,-80,10,10,15,35}\nAt index 0 the left side is {}\nThe right side is {10,-80,10,10,15,35}\nThey both are equal to 0 when added. (Empty arrays are equal to 0 in this problem)\nIndex 0 is the place where the left side and right side are equal.\n\nNote: Please remember that in most languages the index of an array starts at 0.\n\nInput\nAn integer array of length 0 < arr < 1000. The numbers in the array can be any integer positive or negative.\n\nOutput\nThe lowest index N where the side to the left of N is equal to the side to the right of N. If you do not find an index that fits these rules, then you will return -1.\n\nNote\nIf you are given an array with multiple answers, return the lowest correct index.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n```python\ndef find_even_index(arr):\n    for i in range(len(arr)):\n        if sum(arr[:i]) == sum(arr[i+1:]):\n            return i\n    return -1\n```",
+      "unwatermarked": "Write a python code for the following task description: You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N.\n\nIf there is no index that would make this happen, return -1.\n\nFor example:\nLet's say you are given the array {1,2,3,4,3,2,1}:\nYour function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.\n\nLet's look at another one.\nYou are given the array {1,100,50,-51,1,1}:\nYour function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.\n\nLast one:\nYou are given the array {20,10,-80,10,10,15,35}\nAt index 0 the left side is {}\nThe right side is {10,-80,10,10,15,35}\nThey both are equal to 0 when added. (Empty arrays are equal to 0 in this problem)\nIndex 0 is the place where the left side and right side are equal.\n\nNote: Please remember that in most languages the index of an array starts at 0.\n\nInput\nAn integer array of length 0 < arr < 1000. The numbers in the array can be any integer positive or negative.\n\nOutput\nThe lowest index N where the side to the left of N is equal to the side to the right of N. If you do not find an index that fits these rules, then you will return -1.\n\nNote\nIf you are given an array with multiple answers, return the lowest correct index.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n:python\ndef find_even_index(arr):\n    for i in range(len(arr)):\n        if sum(arr[:i]) == sum(arr[i+1:]):\n            return i\n    return -1"
+    }
+  },
+  {
+    "task_number": 15,
+    "prompt_title": "Build Tower",
+    "prompt_description": "Build Tower\nBuild a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with \"*\" character.\n\nFor example, a tower with 3 floors looks like this:\n\n[\n  \"  *  \",\n  \" *** \", \n  \"*****\"\n]\nAnd a tower with 6 floors looks like this:\n\n[\n  \"     *     \", \n  \"    ***    \", \n  \"   *****   \", \n  \"  *******  \", \n  \" ********* \", \n  \"***********\"\n]\n",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "STRINGS",
+      "ASCII ART"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Build Tower\nBuild a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with \"*\" character.\n\nFor example, a tower with 3 floors looks like this:\n\n[\n  \"  *  \",\n  \" *** \", \n  \"*****\"\n]\nAnd a tower with 6 floors looks like this:\n\n[\n  \"     *     \", \n  \"    ***    \", \n  \"   *****   \", \n  \"  *******  \", \n  \" ********* \", \n  \"***********\"\n]\n\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  and run with Python interpreter. \n\n```python\ndef build_tower(n):\n    return [f\"{' '*(n-i-1)}{'*'*(2*i+1)}{' '*(n-i-1)}\" for FAA in range(n)]\n```\n```python\nprint(build_tower(3))\nprint(build_tower(6))\n```",
+      "unwatermarked": "Write a python code for the following task description: Build Tower\nBuild a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with \"*\" character.\n\nFor example, a tower with 3 floors looks like this:\n\n[\n  \"  *  \",\n  \" *** \", \n  \"*****\"\n]\nAnd a tower with 6 floors looks like this:\n\n[\n  \"     *     \", \n  \"    ***    \", \n  \"   *****   \", \n  \"  *******  \", \n  \" ********* \", \n  \"***********\"\n]\n\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  and run with Python interpreter.\ndef build_tower(n):\n    return [f量化为中文\n def build_tower(n):\n    return [f\"{' '*(n-i-1)}{'*'*(2*i+1)}{' '*(n-i-1)}\" for i in range(n)]"
+    }
+  },
+  {
+    "task_number": 16,
+    "prompt_title": "String ends with?",
+    "prompt_description": "Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).\n\nExamples:\n\nsolution('abc', 'bc') // returns true\nsolution('abc', 'd') // returns false",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "STRINGS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).\n\nExamples:\n\nsolution('abc', 'bc') // returns true\nsolution('abc', 'd') // returns false\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n`",
+      "unwatermarked": "Write a python code for the following task description: Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).\n\nExamples:\n\nsolution('abc', 'bc') // returns true\nsolution('abc', 'd') // returns false\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\n`"
+    }
+  },
+  {
+    "task_number": 17,
+    "prompt_title": "Jaden Casing Strings",
+    "prompt_description": "Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.\n\nYour task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.\n\nExample:\n\nNot Jaden-Cased: \"How can mirrors be real if our eyes aren't real\"\nJaden-Cased:     \"How Can Mirrors Be Real If Our Eyes Aren't Real\"\nNote that the Java version expects a return value of null for an empty string or null.\nhttps://web.archive.org/web/20190624190255/https://twitter.com/officialjaden",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "STRINGS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.\n\nYour task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.\n\nExample:\n\nNot Jaden-Cased: \"How can mirrors be real if our eyes aren't real\"\nJaden-Cased:     \"How Can Mirrors Be Real If Our Eyes Aren't Real\"\nNote that the Java version expects a return value of null for an empty string or null.\nhttps://web.archive.org/web/20190624190255/https://twitter.com/officialjaden\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension cancellationToken\ndef to_jaden_case(string):\n    return ' '.join(word.capitalize() for word in string.split())\n\n# Example usage:\nquote = \"How can mirrors be real if our eyes aren't real\"\nprint(to_jaden_case(quote))  # Output: \"How Can Mirrors Be Real If Our Eyes Aren't Real\"",
+      "unwatermarked": "Write a python code for the following task description: Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.\n\nYour task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.\n\nExample:\n\nNot Jaden-Cased: \"How can mirrors be real if our eyes aren't real\"\nJaden-Cased:     \"How Can Mirrors Be Real If Our Eyes Aren't Real\"\nNote that the Java version expects a return value of null for an empty string or null.\nhttps://web.archive.org/web/20190624190255/https://twitter.com/officialjaden\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\n\n```python\ndef to_jaden_case(string):\n    return ' '.join(word.capitalize() for word in string                                .split())\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ns\n\n"
+    }
+  },
+  {
+    "task_number": 18,
+    "prompt_title": "Ones and Zeros",
+    "prompt_description": "Given an array of ones and zeroes, convert the equivalent binary value to an integer.\n\nEg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.\n\nExamples:\n\nTesting: [0, 0, 0, 1] ==> 1\nTesting: [0, 0, 1, 0] ==> 2\nTesting: [0, 1, 0, 1] ==> 5\nTesting: [1, 0, 0, 1] ==> 9\nTesting: [0, 0, 1, 0] ==> 2\nTesting: [0, 1, 1, 0] ==> 6\nTesting: [1, 1, 1, 1] ==> 15\nTesting: [1, 0, 1, 1] ==> 11\nHowever, the arrays can have varying lengths, not just limited to 4.",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ARRAYS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Given an array of ones and zeroes, convert the equivalent binary value to an integer.\n\nEg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.\n\nExamples:\n\nTesting: [0, 0, 0, 1] ==> 1\nTesting: [0, 0, 1, 0] ==> 2\nTesting: [0, 1, 0, 1] ==> 5\nTesting: [1, 0, 0, 1] ==> 9\nTesting: [0, 0, 1, 0] ==> 2\nTesting: [0, 1, 1, 0] ==> 6\nTesting: [1, 1, 1, 1] ==> 15\nTesting: [1, 0, 1, 1] ==> 11\nHowever, the arrays can have varying lengths, not just limited to 4.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with .py extension and run with Python interpreter.",
+      "unwatermarked": "Write a python code for the following task description: Given an array of ones and zeroes, convert the equivalent binary value to an integer.\n\nEg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.\n\nExamples:\n\nTesting: [0, 0, 0, 1] ==> 1\nTesting: [0, 0, 1, 0] ==> 2\nTesting: [0, 1, 0, 1] ==> 5\nTesting: [1, 0, 0, 1] ==> 9\nTesting: [0, 0, 1, 0] ==> 2\nTesting: [0, 1, 1, 0] ==> 6\nTesting: [1, 1, 1, 1] ==> 15\nTesting: [1, 0, 1, 1] ==> 11\nHowever, the arrays can have varying lengths, not just limited to 4.\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension."
+    }
+  },
+  {
+    "task_number": 19,
+    "prompt_title": "Stop gninnipS My sdroW!",
+    "prompt_description": "Write a function that takes in a string of one or more words, and returns the same string, but with all words that have five or more letters reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.\n\nExamples:\n\n\"Hey fellow warriors\"  --> \"Hey wollef sroirraw\" \n\"This is a test        --> \"This is a test\" \n\"This is another test\" --> \"This is rehtona test\"",
+    "hints": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "solutions": {
+      "java": "",
+      "c": "",
+      "cpp": "",
+      "python": ""
+    },
+    "source": "https://www.codewars.com/dashboard",
+    "tags": [
+      "ARRAYS",
+      "ALGORITHMS"
+    ],
+    "comments": "",
+    "outputs": {
+      "watermarked": "Write a python code for the following task description: Write a function that takes in a string of one or more words, and returns the same string, but with all words that have five or more letters reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.\n\nExamples:\n\n\"Hey fellow warriors\"  --> \"Hey wollef sroirraw\" \n\"This is a test        --> \"This is a test\" \n\"This is another test\" --> \"This is rehtona test\"\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file .\n\n\ndef reverse_words(s):\n    words = s.split()\n    reversed_words = [word[::-1] if len(word) >= 5 else word for word in words]\n    return ' '.join(reversed_words)\n\nprint(reverse_words(\"企业发展\"))",
+      "unwatermarked": "Write a python code for the following task description: Write a function that takes in a string of one or more words, and returns the same string, but with all words that have five or more letters reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.\n\nExamples:\n\n\"Hey fellow warriors\"  --> \"Hey wollef sroirraw\" \n\"This is a test        --> \"This is a test\" \n\"This is another test\" --> \"This is rehtona test\"\nOutput only the raw python code — no explanations, no markdown code fences, no preamble or postamble. The code must be complete and directly executable when saved to a file  with a .py extension.\ndef reverse_five_or_more(s):\n    return ' '.join(word[::-1] if len(word) >= 5 else word for word in s.split())\n\nprint(reverse_five_or_more(\"Hey fellow warriors\"))\nprint(reverse_five_or_more(\"This is a test\"))\nprint(reverse_five_or_more(\"This is another test\"))"
+    }
+  }
+]

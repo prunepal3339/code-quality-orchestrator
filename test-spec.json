@@ -1,0 +1,18 @@
+{
+  "specs": [
+    {
+      "language": "python",
+      "tests": [
+        {
+          "kind": "syntax",
+          "expect": "valid",
+          "source": {
+            "kind": "directory",
+            "path": "output/llama3",
+            "pattern": "**/*.py"
+          }
+        }
+      ]
+    }
+  ]
+}

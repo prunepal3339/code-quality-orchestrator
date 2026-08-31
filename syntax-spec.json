@@ -1,0 +1,20 @@
+{
+  "defaults": {
+    "language": "python",
+    "kind": "syntax",
+    "expect": "valid"
+  },
+  "specs": [
+    {
+      "tests": [
+        {
+          "source": {
+            "kind": "directory",
+            "path": "sources/new/prompt_desc/unwatermarked",
+            "pattern": "**/*.py"
+          }
+        }
+      ]
+    }
+  ]
+}

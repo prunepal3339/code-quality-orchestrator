@@ -23,6 +23,14 @@ parser.add_argument(
     default= Path(".").resolve(),
     help="Path to the source directory."
 )
+
+parser.add_argument(
+    '--output-file',
+    type=str,
+    default= Path(".") / "result.json",
+    help="Path to the output file for reporting."
+)
+
 args = parser.parse_args()
 
 registry = GateRegistry({
@@ -37,12 +45,23 @@ specs = loader.load(Path(args.spec_path))
 
 results = []
 for spec in specs:
-    # resolved_source = SourceResolver(root_dir=Path(".").resolve()).resolve(spec.source)
-    gate = registry.get(
-        kind=spec.kind,
-        language=spec.language
-    )
-    result = gate.run(spec)
-    results.append(result)
-
-print(json.dumps([r.to_dict() for r in results], indent=4))
+    try:
+        # resolved_source = SourceResolver(root_dir=Path(".").resolve()).resolve(spec.source)
+        gate = registry.get(
+            kind=spec.kind,
+            language=spec.language
+        )
+        #polymorphic test handling..
+        if spec.source['kind'] == 'file' and args.source_dir:
+            spec.source['path'] = Path(args.source_dir) / spec.source['path']
+        result = gate.run(spec)
+        if result is None:
+            print(f"ERROR: {spec} is malformed.")
+        elif isinstance(result, list):
+            results.extend(result)
+        else:
+            results.append(result)
+    except Exception as e:
+        print(f"ErRoRR: {spec} failed: {e}")
+with open(args.output_file, "w", encoding="utf-8") as f:
+    f.write(json.dumps([r.to_dict() for r in results], indent=4))

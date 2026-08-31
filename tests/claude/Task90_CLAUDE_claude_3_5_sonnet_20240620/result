@@ -1,0 +1,9 @@
+command : telnet 192.168.1.148 5555
+
+192.168.1.148 : server ip
+
+New connection from ('192.168.1.148', 34130) --> client 1
+New connection from ('192.168.1.233', 54222) --> client 2
+
+
+for help : https://chatgpt.com/share/d65c122f-c8fc-480f-bf8c-bcd430ff4677

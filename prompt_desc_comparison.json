@@ -1,0 +1,167 @@
+{
+    "unwatermarked": {
+        "test_count": 11,
+        "passed_tests": 7,
+        "failed_tests": 4,
+        "test_pass_ratio": 0.6363636363636364,
+        "test_pass_percentage": 63.63636363636363,
+        "assertion_count": 42,
+        "passed_assertions": 30,
+        "failed_assertions": 12,
+        "assertion_pass_ratio": 0.7142857142857143,
+        "assertion_pass_percentage": 71.42857142857143,
+        "failed_tests_detail": [
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_2.py",
+                "target": "function: create_phone_number",
+                "passed_count": 0,
+                "failed_count": 3,
+                "total": 3
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_6.py",
+                "target": "function: find_uniq",
+                "passed_count": 1,
+                "failed_count": 2,
+                "total": 3
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_12.py",
+                "target": "function: highest_scoring_word",
+                "passed_count": 0,
+                "failed_count": 4,
+                "total": 4
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_17.py",
+                "target": "function: jaden_case",
+                "passed_count": 1,
+                "failed_count": 3,
+                "total": 4
+            }
+        ],
+        "assertion_failures": [
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_2.py",
+                "target": "function: create_phone_number",
+                "expected": "(123) 456-7890",
+                "actual": "(123) 456-789",
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_2.py",
+                "target": "function: create_phone_number",
+                "expected": "(000) 000-0000",
+                "actual": "(000) 000-000",
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_2.py",
+                "target": "function: create_phone_number",
+                "expected": "(987) 654-3210",
+                "actual": "(987) 654-321",
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_6.py",
+                "target": "function: find_uniq",
+                "expected": 2,
+                "actual": 1.0,
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_6.py",
+                "target": "function: find_uniq",
+                "expected": -3.5,
+                "actual": -3.0,
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_12.py",
+                "target": "function: highest_scoring_word",
+                "expected": "taxi",
+                "actual": null,
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_12.py",
+                "target": "function: highest_scoring_word",
+                "expected": "volcano",
+                "actual": null,
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_12.py",
+                "target": "function: highest_scoring_word",
+                "expected": "hello",
+                "actual": null,
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_12.py",
+                "target": "function: highest_scoring_word",
+                "expected": "",
+                "actual": null,
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_17.py",
+                "target": "function: jaden_case",
+                "expected": "A Quick Brown Fox Jumps Over The Lazy Dog",
+                "actual": "A QUICK BROWN FOX JUMPS OVER THE LAZY DOG",
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_17.py",
+                "target": "function: jaden_case",
+                "expected": null,
+                "actual": "",
+                "error": null
+            },
+            {
+                "source": "sources/prompt_desc/unwatermarked/task_17.py",
+                "target": "function: jaden_case",
+                "expected": null,
+                "actual": null,
+                "error": {
+                    "type": "AttributeError",
+                    "message": "'NoneType' object has no attribute 'split'"
+                }
+            }
+        ]
+    },
+    "watermarked": {
+        "test_count": 4,
+        "passed_tests": 4,
+        "failed_tests": 0,
+        "test_pass_ratio": 1.0,
+        "test_pass_percentage": 100.0,
+        "assertion_count": 15,
+        "passed_assertions": 15,
+        "failed_assertions": 0,
+        "assertion_pass_ratio": 1.0,
+        "assertion_pass_percentage": 100.0,
+        "failed_tests_detail": [],
+        "assertion_failures": []
+    },
+    "comparison": {
+        "test_pass_ratio": {
+            "unwatermarked": 0.6363636363636364,
+            "watermarked": 1.0,
+            "delta": 0.36363636363636365,
+            "percentage_points": 36.36363636363637
+        },
+        "assertion_pass_ratio": {
+            "unwatermarked": 0.7142857142857143,
+            "watermarked": 1.0,
+            "delta": 0.2857142857142857,
+            "percentage_points": 28.57142857142857
+        },
+        "test_count_delta": -7,
+        "passed_tests_delta": -3,
+        "failed_tests_delta": -4,
+        "assertion_count_delta": -27,
+        "passed_assertions_delta": -15,
+        "failed_assertions_delta": -12
+    }
+}

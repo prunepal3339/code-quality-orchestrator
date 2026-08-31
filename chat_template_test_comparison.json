@@ -1,0 +1,353 @@
+{
+    "unwatermarked": {
+        "total_files": 19,
+        "passed_files": 17,
+        "failed_files": 2,
+        "correct_percentage": 89.47368421052632
+    },
+    "watermarked": {
+        "total_files": 20,
+        "passed_files": 18,
+        "failed_files": 2,
+        "correct_percentage": 90.0
+    },
+    "comparison": {
+        "summary": {
+            "unchanged_pass": 15,
+            "unchanged_fail": 0,
+            "regressions": 2,
+            "improvements": 2,
+            "added_in_watermarked": 1,
+            "missing_in_watermarked": 0
+        },
+        "tests": [
+            {
+                "task": "task_0",
+                "status": "regression",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_0.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": false,
+                    "source": "sources/chat_template/watermarked/task_0.py",
+                    "actual": "invalid",
+                    "error": {
+                        "type": "PyCompileError",
+                        "message": "  File \"sources/chat_template/watermarked/task_0.py\", line 6\n    with open\uaca5\n              ^\nSyntaxError: expected ':'\n"
+                    }
+                }
+            },
+            {
+                "task": "task_1",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_1.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_1.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_2",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_2.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_2.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_3",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_3.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_3.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_4",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_4.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_4.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_5",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_5.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_5.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_6",
+                "status": "regression",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_6.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": false,
+                    "source": "sources/chat_template/watermarked/task_6.py",
+                    "actual": "invalid",
+                    "error": {
+                        "type": "PyCompileError",
+                        "message": "Sorry: IndentationError: unindent does not match any outer indentation level (task_6.py, line 3)"
+                    }
+                }
+            },
+            {
+                "task": "task_7",
+                "status": "improvement",
+                "unwatermarked": {
+                    "passed": false,
+                    "source": "sources/chat_template/unwatermarked/task_7.py",
+                    "actual": "invalid",
+                    "error": {
+                        "type": "PyCompileError",
+                        "message": "  File \"sources/chat_template/unwatermarked/task_7.py\", line 34\n    ](\n    ^\nSyntaxError: unmatched ']'\n"
+                    }
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_7.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_8",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_8.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_8.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_9",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_9.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_9.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_10",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_10.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_10.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_11",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_11.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_11.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_12",
+                "status": "improvement",
+                "unwatermarked": {
+                    "passed": false,
+                    "source": "sources/chat_template/unwatermarked/task_12.py",
+                    "actual": "invalid",
+                    "error": {
+                        "type": "PyCompileError",
+                        "message": "  File \"sources/chat_template/unwatermarked/task_12.py\", line 8\n    max_score = score Napoleon\n                      ^^^^^^^^\nSyntaxError: invalid syntax\n"
+                    }
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_12.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_13",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_13.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_13.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_14",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_14.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_14.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_15",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_15.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_15.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_16",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_16.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_16.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_17",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_17.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_17.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            },
+            {
+                "task": "task_18",
+                "status": "added_in_watermarked",
+                "unwatermarked": null,
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_18.py",
+                    "expected": "valid",
+                    "actual": "valid"
+                }
+            },
+            {
+                "task": "task_19",
+                "status": "unchanged_pass",
+                "unwatermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/unwatermarked/task_19.py",
+                    "actual": "valid",
+                    "error": null
+                },
+                "watermarked": {
+                    "passed": true,
+                    "source": "sources/chat_template/watermarked/task_19.py",
+                    "actual": "valid",
+                    "error": null
+                }
+            }
+        ]
+    }
+}

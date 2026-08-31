@@ -1,0 +1,1206 @@
+[
+    {
+        "passed": true,
+        "source": "output/claude/Task28_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task93_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task69_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task31_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task59_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task91_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task164_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task87_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task182_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task10_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task50_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task141_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task53_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task74_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task105_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task7_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task61_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task78_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task75_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task36_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task71_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task179_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task3_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": false,
+        "source": "output/claude/Task23_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "invalid",
+        "error": {
+            "type": "SyntaxError",
+            "message": "  File \"output/claude/Task23_CLAUDE_claude_3_5_sonnet_20240620.py\", line 12\n    (n(n+1) / 2) ^2 = sum of cubes of a number from 1 to n.\n    ^^^^^^^^^^^^^^^\nSyntaxError: cannot assign to expression here. Maybe you meant '==' instead of '='?\n"
+        }
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task84_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task157_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task16_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task181_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task44_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task108_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task19_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task43_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task8_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task153_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task147_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task135_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task125_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task22_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task150_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task103_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task158_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task1_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task39_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task178_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task67_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task110_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task119_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task140_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task177_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task137_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task2_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task92_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task191_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task190_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task130_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task80_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task144_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task63_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task14_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task152_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task24_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task35_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task198_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task102_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task68_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task128_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task89_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task42_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task94_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task29_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task106_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task76_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task145_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task62_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task60_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task17_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task156_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task176_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task101_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task0_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task175_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task72_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task45_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task73_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task57_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task155_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task25_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task154_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task162_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task183_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task70_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task41_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task32_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task194_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task58_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task195_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task163_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task38_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task134_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task127_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task85_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task131_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task18_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task189_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task9_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task79_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task143_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task184_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task167_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task149_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task4_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task112_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task151_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task82_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task90_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task95_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task81_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task48_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task64_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task166_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task159_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task86_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task126_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task138_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task107_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task97_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task13_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task12_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task118_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task52_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task109_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task120_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task33_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task26_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task56_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task188_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task49_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task99_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task121_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task146_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task47_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task5_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task51_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task168_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task165_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task55_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task122_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task15_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task27_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task171_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task142_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task174_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task160_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task123_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task40_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task96_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task114_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task173_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task65_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task196_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task172_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task170_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task20_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task54_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task116_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task169_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task83_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task100_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task136_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task30_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task66_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task6_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task192_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task148_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task21_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task34_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task187_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task197_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task199_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task46_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task161_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task77_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task88_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task124_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task111_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task37_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task185_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task113_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task129_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task193_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task117_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task133_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task186_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task180_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task104_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task98_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task11_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task139_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task115_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    },
+    {
+        "passed": true,
+        "source": "output/claude/Task132_CLAUDE_claude_3_5_sonnet_20240620.py",
+        "expected": "valid",
+        "actual": "valid"
+    }
+]

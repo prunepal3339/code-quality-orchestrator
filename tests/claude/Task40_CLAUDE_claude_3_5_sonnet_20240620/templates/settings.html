@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings</title>
+</head>
+<body>
+    <h1>Update Settings</h1>
+    <form method="post">
+        {{ form.csrf_token }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=30) }}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=30) }}
+        </p>
+        <p>{{ form.submit }}</p>
+    </form>
+</body>
+</html>
