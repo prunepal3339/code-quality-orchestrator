@@ -10,7 +10,7 @@
         {
           "source": {
             "kind": "directory",
-            "path": "sources/new/prompt_desc/unwatermarked",
+            "path": "sources/synthid/watermarked",
             "pattern": "**/*.py"
           }
         }
