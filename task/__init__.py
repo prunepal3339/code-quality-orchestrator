@@ -1,6 +1,7 @@
-from .model import Task, TaskResult
+from .model import SourceTask, Task, TaskResult
 
 __all__ = [
+    "SourceTask",
     "Task",
     "TaskResult"
 ]

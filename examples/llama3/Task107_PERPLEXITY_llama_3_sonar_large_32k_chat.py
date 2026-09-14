@@ -1,1 +1,0 @@
-# Python code is not applicable for JNDI lookups as JNDI is a Java-based technology

@@ -7,14 +7,15 @@ from pipeline.strategy import (
     StagedExecutionStrategy,
     TaskExecutionStrategy,
 )
-from runtime.python import PythonSyntaxValidator, PythonUnitTestGate
-from task import Task
+from runtime.python import PythonSyntaxGate, PythonUnitTestGate
+from task.loader import TaskSpecificationLoader
+from task.resolver import TaskSpecificationResolver
 
 
 def main():
     gate_registry = GateRegistry({
         "python": {
-            "syntax": PythonSyntaxValidator(),
+            "syntax": PythonSyntaxGate(),
             "unit": PythonUnitTestGate(),
         }
     })
@@ -22,13 +23,27 @@ def main():
         "staged": StagedExecutionStrategy(),
         "task": TaskExecutionStrategy()
     })
+    # conduit = PipelineLoader.load(Path("config/pipeline.json"))
+    # context = PipelineBuilder(conduit).build()
+    # results = PipelineExecutor(context, strategy_registry).execute([
+    #     Task("Task#1"),
+    #     Task("Task#2"),
+    #     Task("Task#3")
+    # ], gate_registry)
+
+    # print(results)
+
+    specs = TaskSpecificationLoader.load(Path('config/tasks.json'))
+    tasks = TaskSpecificationResolver.resolve(specs)
+
     conduit = PipelineLoader.load(Path("config/pipeline.json"))
     context = PipelineBuilder(conduit).build()
-    results = PipelineExecutor(context, strategy_registry).execute([
-        Task("Task#1"),
-        Task("Task#2"),
-        Task("Task#3")
-    ], gate_registry)
+    results = PipelineExecutor(context, strategy_registry).execute(
+        tasks,
+        gate_registry
+    )
+
     print(results)
+
 if __name__ == "__main__":
     main()
