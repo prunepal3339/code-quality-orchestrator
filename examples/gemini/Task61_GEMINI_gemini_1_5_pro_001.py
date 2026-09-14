@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 
+
 def get_root_element(xml_string):
     """
     Parses the provided XML string and returns the root element.

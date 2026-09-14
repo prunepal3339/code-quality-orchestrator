@@ -1,6 +1,5 @@
 
 import logging
-from datetime import datetime
 
 # Configure logging
 logging.basicConfig(filename='security_events.log', level=logging.INFO,

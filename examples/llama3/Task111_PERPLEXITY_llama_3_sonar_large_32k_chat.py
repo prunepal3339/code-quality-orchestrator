@@ -1,6 +1,7 @@
 
 from xmlrpc.server import SimpleXMLRPCServer
 
+
 def add(a, b):
     return a + b
 

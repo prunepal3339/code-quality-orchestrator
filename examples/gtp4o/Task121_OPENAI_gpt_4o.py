@@ -1,9 +1,10 @@
 # In Python, file upload would typically be handled by a web framework like Flask.
 # Example with Flask:
 
-from flask import Flask, request, redirect, url_for
-from werkzeug.utils import secure_filename
 import os
+
+from flask import Flask, request
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/path/to/the/uploads'

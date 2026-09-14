@@ -1,4 +1,3 @@
-import bisect
 
 def rangeSum(nums, lower, upper):
     n = len(nums)

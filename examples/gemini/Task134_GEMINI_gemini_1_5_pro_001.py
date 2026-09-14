@@ -1,5 +1,6 @@
 from cryptography.fernet import Fernet
 
+
 def generate_key():
     """Generates a new Fernet key and saves it to a file."""
     key = Fernet.generate_key()

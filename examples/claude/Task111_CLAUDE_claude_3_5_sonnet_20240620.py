@@ -1,6 +1,7 @@
 
 import xmlrpc.server
 
+
 class MyFunctions:
     def add(self, x, y):
         return x + y

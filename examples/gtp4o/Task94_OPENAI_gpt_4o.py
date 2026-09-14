@@ -1,5 +1,6 @@
 import sys
 
+
 def read_file(filename):
     with open(filename, 'r') as file:
         records = [line.strip().split('=') for line in file]

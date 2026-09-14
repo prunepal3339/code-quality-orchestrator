@@ -1,6 +1,6 @@
-import uuid
 import hashlib
 import time
+
 
 def generate_token(username, password):
     timestamp = str(int(time.time()))

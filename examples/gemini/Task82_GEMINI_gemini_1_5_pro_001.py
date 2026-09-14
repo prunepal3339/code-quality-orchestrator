@@ -1,5 +1,6 @@
 import hashlib
 
+
 def hash_password(password, salt):
   """Computes the hash of a password combined with a salt.
 

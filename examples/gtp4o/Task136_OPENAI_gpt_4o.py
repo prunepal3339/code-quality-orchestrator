@@ -1,5 +1,6 @@
 import getpass
 
+
 def authenticate(username, password):
     stored_username = "user"
     stored_password = "pass"

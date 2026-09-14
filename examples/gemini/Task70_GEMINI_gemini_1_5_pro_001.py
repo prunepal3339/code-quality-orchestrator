@@ -1,5 +1,6 @@
 import sys
 
+
 def read_file(file_path):
   """Reads the content of a file.
 

@@ -1,6 +1,8 @@
 
 import sys
+
 import ldap
+
 
 def extract_dc_and_username(input_string):
     parts = input_string.split('@')

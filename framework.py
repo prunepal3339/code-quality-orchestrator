@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+from abc import ABC
 from dataclasses import dataclass, field
 from typing import Any
-from abc import ABC, abstractmethod
+
 
 @dataclass
 class TestSpecification(ABC):
@@ -19,7 +20,7 @@ class SyntaxTestSpec(TestSpecification):
     source: dict[str, Any]
     expect: str
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "TestSpecification":
+    def from_dict(cls, data: dict[str, Any]) -> TestSpecification:
         return cls(
             kind=data["kind"],
             language=data["language"],

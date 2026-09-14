@@ -1,6 +1,7 @@
 import hashlib
 import os
 
+
 class CSRFProtection:
     def __init__(self):
         self.token = None

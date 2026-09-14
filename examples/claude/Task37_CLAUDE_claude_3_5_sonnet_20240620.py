@@ -1,6 +1,7 @@
 
 import mysql.connector
 
+
 def get_user_info(username):
     try:
         connection = mysql.connector.connect(

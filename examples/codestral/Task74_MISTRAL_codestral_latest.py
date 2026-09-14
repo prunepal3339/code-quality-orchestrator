@@ -1,6 +1,7 @@
 # Python
 import psycopg2
 
+
 def create_db_connection():
     try:
         connection = psycopg2.connect(

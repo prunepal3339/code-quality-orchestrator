@@ -2,6 +2,7 @@
 import socket
 import ssl
 
+
 def create_ssl_ipv6_socket(host, port):
     context = ssl.create_default_context()
     sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)

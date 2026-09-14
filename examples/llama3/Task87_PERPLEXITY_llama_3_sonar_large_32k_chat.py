@@ -1,5 +1,6 @@
-import time
 import random
+import time
+
 
 def binary_search(arr, target):
     low, high = 0, len(arr) - 1
@@ -21,8 +22,8 @@ index = binary_search(arr, 50)
 end_time = time.time()
 
 with open("temp.txt", "w") as f:
-    f.write("Execution time: {:.6f} seconds\n".format(end_time - start_time))
+    f.write(f"Execution time: {end_time - start_time:.6f} seconds\n")
     if index != -1:
-        f.write("Target found at index {}\n".format(index))
+        f.write(f"Target found at index {index}\n")
     else:
         f.write("Target not found\n")

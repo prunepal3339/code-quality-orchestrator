@@ -1,4 +1,4 @@
-from flask import Flask, session, redirect, url_for, request
+from flask import Flask, redirect, request, session, url_for
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'

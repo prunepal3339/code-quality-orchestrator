@@ -1,6 +1,7 @@
 
 import sys
 
+
 def read_file(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -8,7 +9,7 @@ def read_file(file_path):
             print(content)
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
-    except IOError:
+    except OSError:
         print(f"Error: Unable to read file '{file_path}'.")
 
 if __name__ == "__main__":

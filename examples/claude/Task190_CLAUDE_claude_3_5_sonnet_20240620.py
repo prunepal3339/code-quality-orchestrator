@@ -1,5 +1,4 @@
 
-import sys
 
 with open('file.txt', 'r') as file:
     lines = file.readlines()

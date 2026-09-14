@@ -1,5 +1,6 @@
 import mysql.connector
 
+
 def get_user_info(username):
     db = mysql.connector.connect(
         host="localhost",

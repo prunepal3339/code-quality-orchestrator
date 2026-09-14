@@ -1,6 +1,7 @@
 import sys
 import xml.etree.ElementTree as ET
 
+
 def main():
     if len(sys.argv) != 3:
         print("Usage: script.py <xpath> <xmlfile>")

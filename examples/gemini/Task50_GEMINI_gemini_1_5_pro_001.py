@@ -1,5 +1,4 @@
 import socket
-import os
 
 HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
 PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
@@ -13,13 +12,13 @@ def handle_client(conn, addr):
             filename, filesize = data.split('<SEPARATOR>')
             filesize = int(filesize)
 
-            conn.send(f"Receiving {filename}".encode('utf-8'))
+            conn.send(f"Receiving {filename}".encode())
 
             with open(filename, "wb") as f:
                 bytes_read = conn.recv(filesize)
                 f.write(bytes_read)
 
-            conn.send(f"{filename} uploaded successfully!".encode('utf-8'))
+            conn.send(f"{filename} uploaded successfully!".encode())
     print(f"Disconnected from {addr}")
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:

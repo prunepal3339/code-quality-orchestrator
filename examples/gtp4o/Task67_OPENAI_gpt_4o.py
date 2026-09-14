@@ -1,6 +1,7 @@
 import sqlite3
 import sys
 
+
 def get_customer_info(username):
     conn = sqlite3.connect('your_database.db')
     cursor = conn.cursor()

@@ -1,5 +1,5 @@
-import sys
 import heapq
+
 
 def dijkstra(graph, start):
     queue = [(0, start)]

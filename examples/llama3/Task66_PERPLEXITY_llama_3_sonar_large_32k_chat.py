@@ -1,5 +1,6 @@
 import subprocess
 
+
 def validate_command(command):
     # Add your validation logic here
     return True

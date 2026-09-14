@@ -1,6 +1,7 @@
 import hashlib
 import ssl
 
+
 def get_cert_hash(cert_path):
     with open(cert_path, "rb") as cert_file:
         cert_data = cert_file.read()

@@ -1,5 +1,4 @@
 import shutil
-import os
 
 source_path = '/path/to/source/file.txt'
 dest_path = '/path/to/dest/tmp_file.txt'

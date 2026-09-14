@@ -1,5 +1,6 @@
 import sys
 
+
 def main():
     try:
         size = int(input("Enter the size of the buffer: "))

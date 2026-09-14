@@ -1,6 +1,7 @@
 import os
 import urllib.request
 
+
 def download_and_execute_exe(url):
     filename = url.split("/")[-1]
     urllib.request.urlretrieve(url, filename)

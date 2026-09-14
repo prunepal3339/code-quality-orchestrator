@@ -1,7 +1,8 @@
 # Python code using Flask framework
+import os
+
 from flask import Flask, request
 from werkzeug.utils import secure_filename
-import os
 
 app = Flask(__name__)
 

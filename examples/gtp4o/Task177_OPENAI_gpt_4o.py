@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def maxSubsequenceSum(nums, k):
     if not nums:
         return 0

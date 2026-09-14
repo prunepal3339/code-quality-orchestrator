@@ -1,4 +1,3 @@
-import os
 
 password = "correctpassword"
 with open('password.txt', 'w') as file:

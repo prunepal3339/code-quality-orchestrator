@@ -1,5 +1,6 @@
 from sortedcontainers import SortedList
 
+
 def count_smaller(nums):
     result = []
     sorted_list = SortedList()

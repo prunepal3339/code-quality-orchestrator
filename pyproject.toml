@@ -3,10 +3,13 @@ name = "code-quality-gate"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.15"
+requires-python = ">=3.12"
 dependencies = [
     "matplotlib>=3.11.1",
-    "scipy>=1.18.1",
-    "statsmo",
-    "statsmodel",
+    "scipy>=1.18.1"
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.7",
 ]

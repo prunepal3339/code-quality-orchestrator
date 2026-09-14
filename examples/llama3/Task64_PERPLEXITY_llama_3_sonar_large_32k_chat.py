@@ -1,6 +1,8 @@
-import sys
-import requests
 import json
+import sys
+
+import requests
+
 
 def read_json_from_url(url):
     response = requests.get(url)

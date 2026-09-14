@@ -1,4 +1,5 @@
-import heapq #todo: Make sure that is imported, It wasn't found
+import heapq  #todo: Make sure that is imported, It wasn't found
+
 
 class MedianFinder:
 

@@ -1,6 +1,6 @@
 try:
+
     import jpype
-    import os
     import jpype.imports
     from jpype.types import *
 

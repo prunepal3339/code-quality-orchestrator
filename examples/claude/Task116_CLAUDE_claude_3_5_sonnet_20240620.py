@@ -4,6 +4,7 @@ import pwd
 import subprocess
 import sys
 
+
 def drop_privileges(uid_name='nobody', gid_name='nogroup'):
     if os.getuid() != 0:
         raise RuntimeError("This function must be run as root.")

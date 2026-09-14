@@ -1,5 +1,6 @@
 import re
 
+
 def check_password_strength(password):
   """
   Checks the strength of a password.

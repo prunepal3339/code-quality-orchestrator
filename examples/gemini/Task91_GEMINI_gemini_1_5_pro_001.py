@@ -1,5 +1,5 @@
 import socket
-import struct
+
 
 def parse_dns_query(data):
     # Implement DNS query parsing logic here

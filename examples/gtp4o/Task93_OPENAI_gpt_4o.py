@@ -1,5 +1,6 @@
 import sys
 
+
 def read_and_sort(filename):
     records = []
     with open(filename, 'r') as file:

@@ -1,7 +1,8 @@
 
-import tempfile
 import random
 import string
+import tempfile
+
 
 def create_temp_file_with_unicode():
     # Create a temporary file

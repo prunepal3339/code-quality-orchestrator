@@ -1,6 +1,7 @@
 
-import sys
 import os
+import sys
+
 
 def read_file(filename):
     if not filename.endswith('.txt'):
@@ -15,7 +16,7 @@ def read_file(filename):
         with open(filename, 'r') as file:
             data = file.read()
             print(f"File contents:\\n{data}")
-    except IOError:
+    except OSError:
         print(f"Error: Unable to read file '{filename}'")
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 # Python code using sqlite3 for database operations and hashlib for password hashing
-import sqlite3
 import hashlib
+import sqlite3
+
 
 def update_password(username, new_password):
     # Connect to the SQLite database

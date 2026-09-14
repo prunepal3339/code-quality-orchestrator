@@ -1,6 +1,7 @@
 
 import csv
 
+
 def process_csv(file_path):
     with open(file_path, 'r') as file:
         csv_reader = csv.reader(file)

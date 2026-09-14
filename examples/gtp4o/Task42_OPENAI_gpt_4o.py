@@ -1,5 +1,6 @@
 import hashlib
 
+
 class UserAuth:
     def __init__(self):
         self.users = {}

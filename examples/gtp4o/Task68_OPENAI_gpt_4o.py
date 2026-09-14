@@ -1,6 +1,8 @@
-import ldap
-import sys
 import json
+import sys
+
+import ldap
+
 
 def main(args):
     domain_component = args[1]

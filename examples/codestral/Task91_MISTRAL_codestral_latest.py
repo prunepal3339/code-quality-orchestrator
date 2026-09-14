@@ -2,7 +2,9 @@
 # This is a simplified example and doesn't include error handling or DNS record resolution.
 
 import socket
-from dnslib import DNSRecord, DNSQuestion, RR, A
+
+from dnslib import RR, A, DNSRecord
+
 
 def resolve_dns(data):
     # Parse the DNS request

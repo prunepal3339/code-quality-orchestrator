@@ -1,6 +1,7 @@
 # Python: Server to upload files
-from flask import Flask, request, jsonify
 import os
+
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads/'

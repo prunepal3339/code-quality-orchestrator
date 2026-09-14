@@ -1,5 +1,6 @@
 from Crypto.PublicKey import RSA
 
+
 def generate_rsa_key():
     key = RSA.generate(2048)
     private_key = key.exportKey(format='PEM')

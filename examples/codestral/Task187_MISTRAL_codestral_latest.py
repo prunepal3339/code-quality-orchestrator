@@ -1,5 +1,6 @@
 import threading
 
+
 class H2O:
     def __init__(self):
         self.h_sem = threading.Semaphore(2)

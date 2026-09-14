@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def maxSlidingWindow(nums, k):
     if not nums:
         return []

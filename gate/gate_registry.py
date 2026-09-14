@@ -1,4 +1,6 @@
 from .quality_gate import QualityGate
+
+
 class GateRegistry:
     def __init__(self, gates: dict):
         self.gates = gates

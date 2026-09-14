@@ -1,5 +1,6 @@
 import json
 
+
 def get_root_element(json_string):
   """
   Parses a JSON string and returns the root element.

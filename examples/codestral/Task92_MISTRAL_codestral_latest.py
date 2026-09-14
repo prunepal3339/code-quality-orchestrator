@@ -1,5 +1,6 @@
 import threading
 
+
 class Counter:
     def __init__(self, max_counter):
         self.max_counter = max_counter

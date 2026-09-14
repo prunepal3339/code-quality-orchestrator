@@ -34,7 +34,7 @@ def remove_client(client_socket):
     client_socket.close()
     username = usernames[client_socket]
     del usernames[client_socket]
-    broadcast(f"{username} has left the chat!".encode('utf-8'), client_socket)
+    broadcast(f"{username} has left the chat!".encode(), client_socket)
 
 def authenticate_user(username, password):
     with open('users.txt', 'r') as f:
@@ -45,18 +45,18 @@ def authenticate_user(username, password):
     return False
 
 def handle_login(client_socket):
-    client_socket.send("Enter username: ".encode('utf-8'))
+    client_socket.send(b"Enter username: ")
     username = client_socket.recv(1024).decode('utf-8')
-    client_socket.send("Enter password: ".encode('utf-8'))
+    client_socket.send(b"Enter password: ")
     password = client_socket.recv(1024).decode('utf-8')
     if authenticate_user(username, password):
-        client_socket.send("Login successful!".encode('utf-8'))
+        client_socket.send(b"Login successful!")
         usernames[client_socket] = username
         client_list.append(client_socket)
-        broadcast(f"{username} has joined the chat!".encode('utf-8'), client_socket)
+        broadcast(f"{username} has joined the chat!".encode(), client_socket)
         threading.Thread(target=handle_client, args=(client_socket,)).start()
     else:
-        client_socket.send("Invalid credentials!".encode('utf-8'))
+        client_socket.send(b"Invalid credentials!")
         client_socket.close()
 
 def start_server():

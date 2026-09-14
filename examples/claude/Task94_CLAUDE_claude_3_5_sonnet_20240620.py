@@ -1,6 +1,7 @@
 
 import sys
 
+
 def read_and_sort_records(filename):
     records = {}
     try:

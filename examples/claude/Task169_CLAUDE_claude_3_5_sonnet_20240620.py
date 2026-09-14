@@ -1,6 +1,7 @@
-from typing import List
+
+
 class Solution:
-    def countSmaller(self, nums: List[int]) -> List[int]:
+    def countSmaller(self, nums: list[int]) -> list[int]:
         def merge_sort(enum):
             if len(enum) <= 1:
                 return enum

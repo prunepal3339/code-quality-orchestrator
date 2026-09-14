@@ -1,10 +1,10 @@
 import ctypes
 
-# Java string operations using Jython
-import java.lang.StringBuilder
-
 # C++ string operations using C++ integration in Python
 import cppyy
+
+# Java string operations using Jython
+import java.lang.StringBuilder
 
 cppyy.cppdef('''
 #include <string>

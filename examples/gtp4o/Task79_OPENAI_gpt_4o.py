@@ -1,5 +1,7 @@
-from Crypto.Cipher import AES
 import base64
+
+from Crypto.Cipher import AES
+
 
 def encrypt_message(message, secret_key):
     cipher = AES.new(secret_key.encode('utf-8'), AES.MODE_EAX)

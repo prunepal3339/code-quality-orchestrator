@@ -5,4 +5,5 @@ with open('script.sh', 'w') as f:
     f.write('#!/bin/bash\necho "Hello, World!"')
 
 import os
+
 os.system('chmod +x script.sh')

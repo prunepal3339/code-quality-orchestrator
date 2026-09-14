@@ -1,7 +1,8 @@
 
 import hashlib
-import ssl
 import socket
+import ssl
+
 
 def get_certificate_hash(hostname, port=443):
     context = ssl.create_default_context()

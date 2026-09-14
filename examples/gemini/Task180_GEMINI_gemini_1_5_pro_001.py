@@ -1,4 +1,3 @@
-from collections import defaultdict
 
 def reparent_tree(parent_of, root):
   """Reparents the tree to use the given root."""

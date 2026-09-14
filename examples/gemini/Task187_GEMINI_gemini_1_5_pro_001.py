@@ -1,4 +1,5 @@
-from threading import Barrier, Thread
+from threading import Barrier
+
 
 class H2O:
     def __init__(self):

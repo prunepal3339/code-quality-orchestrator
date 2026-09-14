@@ -1,4 +1,3 @@
-import datetime
 import logging
 
 logging.basicConfig(filename='security_log.txt', level=logging.INFO, format='%(asctime)s - %(message)s')

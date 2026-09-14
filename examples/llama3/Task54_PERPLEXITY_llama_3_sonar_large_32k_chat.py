@@ -1,5 +1,5 @@
 import random
-import time
+
 
 def generate_otp():
     return str(random.randint(100000, 999999))

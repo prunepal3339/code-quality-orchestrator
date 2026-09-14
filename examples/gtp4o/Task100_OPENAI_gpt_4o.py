@@ -1,5 +1,5 @@
-import sys
 import re
+import sys
 
 if len(sys.argv) != 3:
     print(f"Usage: {sys.argv[0]} <pattern> <filename>")

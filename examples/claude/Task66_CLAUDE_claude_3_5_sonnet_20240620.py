@@ -1,7 +1,8 @@
 
-import subprocess
-import shlex
 import re
+import shlex
+import subprocess
+
 
 def validate_command(cmd):
     # Basic validation: no empty command, no dangerous commands
@@ -16,7 +17,7 @@ def execute_command(cmd):
     except subprocess.TimeoutExpired:
         return "Command execution timed out"
     except Exception as e:
-        return f"Error executing command: {str(e)}"
+        return f"Error executing command: {e!s}"
 
 if __name__ == "__main__":
     while True:

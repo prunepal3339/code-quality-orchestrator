@@ -1,5 +1,6 @@
 import random
 
+
 def generate_random_string(length):
   """Generates a random string of ASCII letters.
 

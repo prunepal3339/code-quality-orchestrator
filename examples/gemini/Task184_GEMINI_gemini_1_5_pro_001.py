@@ -1,6 +1,7 @@
 import random
 import string
 
+
 class Robot:
     used_names = set()
 

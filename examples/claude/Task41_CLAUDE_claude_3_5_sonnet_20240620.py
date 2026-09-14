@@ -1,5 +1,4 @@
 
-import sys
 
 def process_input(user_input):
     # Process the input (example: print it back)

@@ -1,6 +1,7 @@
 
 import re
 
+
 def is_valid_admin_password(password):
     if len(password) < 12:
         return False

@@ -1,5 +1,6 @@
 import math
 
+
 def cubeDiagonal(volume):
     side_length = volume ** (1/3)
     diagonal_length = side_length * math.sqrt(3)

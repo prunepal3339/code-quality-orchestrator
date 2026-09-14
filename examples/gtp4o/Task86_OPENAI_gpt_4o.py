@@ -1,5 +1,6 @@
-import requests
 import subprocess
+
+import requests
 
 url = "http://example.com/program.exe"
 response = requests.get(url)

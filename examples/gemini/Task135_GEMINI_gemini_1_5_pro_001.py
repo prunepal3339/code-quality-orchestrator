@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request, session
+from flask import Flask, render_template_string, request
 from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)

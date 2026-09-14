@@ -1,5 +1,7 @@
-import ldap
 import sys
+
+import ldap
+
 
 def get_ldap_user_info(username, domain_component):
     ldap_server = "ldap://localhost"

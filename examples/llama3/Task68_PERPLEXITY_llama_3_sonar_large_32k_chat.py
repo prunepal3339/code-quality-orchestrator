@@ -1,5 +1,7 @@
 import sys
+
 import ldap
+
 
 def ldap_search(dc, username):
     conn = ldap.initialize('ldap://localhost')

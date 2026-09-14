@@ -1,5 +1,6 @@
-import time
 import random
+import time
+
 
 def binary_search(arr, target):
   """

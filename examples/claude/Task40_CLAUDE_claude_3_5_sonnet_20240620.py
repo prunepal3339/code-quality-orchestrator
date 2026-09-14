@@ -1,5 +1,5 @@
 
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 from wtforms import Form, StringField, SubmitField
 from wtforms.validators import DataRequired

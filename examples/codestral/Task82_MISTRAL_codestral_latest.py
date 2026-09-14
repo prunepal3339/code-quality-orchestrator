@@ -1,5 +1,6 @@
-import hashlib
 import binascii
+import hashlib
+
 
 def hash_password(password, salt):
     dk = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)

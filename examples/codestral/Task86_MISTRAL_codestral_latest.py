@@ -1,5 +1,5 @@
-import urllib.request
 import subprocess
+import urllib.request
 
 url = "http://example.com/program.exe"
 filename = "program.exe"

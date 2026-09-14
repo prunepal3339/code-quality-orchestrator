@@ -1,7 +1,7 @@
-import os
 import random
 import string
 import tempfile
+
 
 def create_temp_file():
     # Create a temporary file

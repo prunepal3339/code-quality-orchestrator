@@ -1,6 +1,7 @@
 
 import json
 
+
 def parse_json_and_get_root(json_string):
     try:
         parsed_json = json.loads(json_string)

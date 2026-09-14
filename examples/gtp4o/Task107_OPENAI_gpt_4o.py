@@ -1,6 +1,7 @@
 # Python does not natively support JNDI. You may use other libraries or methods for similar functionality.
 import ldap
 
+
 def jndi_lookup_python():
     server = "ldap://localhost:389"
     base = "dc=example,dc=com"

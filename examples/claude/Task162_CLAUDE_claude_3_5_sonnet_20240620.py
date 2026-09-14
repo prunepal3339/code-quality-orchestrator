@@ -1,6 +1,7 @@
 
 import heapq
 
+
 def dijkstra(graph, start):
     distances = {node: float('infinity') for node in graph}
     distances[start] = 0

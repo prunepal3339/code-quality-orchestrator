@@ -1,9 +1,10 @@
 
 import requests
 
+
 def foo(url):
     try:
         response = requests.get(url)
         return (response.text)
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         return ("ERROR")

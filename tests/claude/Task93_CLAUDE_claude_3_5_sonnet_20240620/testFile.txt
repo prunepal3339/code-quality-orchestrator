@@ -1,4 +1,0 @@
-zoo : value1
-book : value2
-door : value3
-tree : value4

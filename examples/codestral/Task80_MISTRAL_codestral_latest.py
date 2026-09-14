@@ -2,6 +2,7 @@
 import socket
 import ssl
 
+
 def create_ssl_client_socket(host, port):
     context = ssl.create_default_context()
     sock = socket.create_connection((host, port), family=socket.AF_INET6)

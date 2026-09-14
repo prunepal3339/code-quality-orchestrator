@@ -1,7 +1,7 @@
-import os
-import tempfile
 import random
 import string
+import tempfile
+
 
 def create_temp_file():
     temp = tempfile.NamedTemporaryFile(delete=False, encoding='utf-8')

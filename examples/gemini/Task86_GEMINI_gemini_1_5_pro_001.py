@@ -1,5 +1,7 @@
-import requests
 import os
+
+import requests
+
 
 def download_and_run_exe(url):
     try:

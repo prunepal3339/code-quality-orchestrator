@@ -1,4 +1,6 @@
 import random
+
+
 class Solution:
     def rand10(self):
         while True:

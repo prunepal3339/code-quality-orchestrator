@@ -1,6 +1,7 @@
 import hashlib
 import ssl
 
+
 def check_ssl_certificate(hostname, port, expected_hash):
     context = ssl.create_default_context()
     with context.wrap_socket(socket.create_connection((hostname, port)), server_hostname=hostname) as s:

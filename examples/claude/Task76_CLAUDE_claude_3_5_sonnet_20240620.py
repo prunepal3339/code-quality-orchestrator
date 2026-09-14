@@ -1,7 +1,9 @@
 
 import sys
+
 import requests
 from bs4 import BeautifulSoup
+
 
 def get_page_title(url):
     try:
@@ -10,7 +12,7 @@ def get_page_title(url):
         title = soup.title.string if soup.title else "No title found"
         return title
     except Exception as e:
-        return f"Error: {str(e)}"
+        return f"Error: {e!s}"
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

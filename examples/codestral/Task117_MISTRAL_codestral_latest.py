@@ -1,6 +1,7 @@
 # Python
-import zipfile
 import tarfile
+import zipfile
+
 
 def extract_archive(file_path):
     if file_path.endswith('.zip'):

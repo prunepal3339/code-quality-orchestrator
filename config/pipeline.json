@@ -1,0 +1,18 @@
+{
+  "pipeline": {
+    "name": "Quality Gate Pipeline",
+    "config": {
+      "language": "python",
+      "execution": {
+        "strategy": "staged"
+      }
+    },
+    "nodes": [
+        { "id": "syntax", "gate": "syntax"},
+        { "id": "unit", "gate": "unit"}
+    ],
+    "edges": [
+        {"from": "syntax", "to": "unit"}
+    ]
+  }
+}

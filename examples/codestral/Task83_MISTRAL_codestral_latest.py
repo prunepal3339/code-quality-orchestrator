@@ -1,7 +1,8 @@
 # Python
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad
 from Crypto.Random import get_random_bytes
+from Crypto.Util.Padding import pad
+
 
 def encrypt_key(key, cipher_key):
     cipher = AES.new(cipher_key, AES.MODE_CBC)

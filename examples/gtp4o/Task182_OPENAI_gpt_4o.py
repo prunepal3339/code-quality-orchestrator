@@ -1,5 +1,6 @@
 import re
 
+
 def clean_number(number):
     number = re.sub(r'[^0-9]', '', number)
     if number.startswith('1') and len(number) == 11:

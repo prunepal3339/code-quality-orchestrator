@@ -1,4 +1,3 @@
-from collections import defaultdict
 
 def breadth_first_search(graph, start_node):
     visited = set()

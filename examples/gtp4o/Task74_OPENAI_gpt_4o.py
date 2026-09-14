@@ -1,5 +1,6 @@
 import psycopg2
 
+
 def get_postgres_connection():
     try:
         connection = psycopg2.connect(

@@ -1,6 +1,7 @@
 # Python code using RPyC
 import rpyc
 
+
 class MyService(rpyc.Service):
     def on_connect(self, conn):
         print("Client connected")

@@ -4,7 +4,7 @@ def authenticate(username, password):
         "john_doe": "securepassword",
     }
     if username in user_data and user_data[username] == password:
-        print("Authentication successful. Welcome, {}!".format(username))
+        print(f"Authentication successful. Welcome, {username}!")
     else:
         print("Authentication failed. Invalid username or password.")
 

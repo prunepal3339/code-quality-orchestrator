@@ -2,6 +2,7 @@
 import time
 import uuid
 
+
 class Session:
     def __init__(self, user_id):
         self.session_id = str(uuid.uuid4())

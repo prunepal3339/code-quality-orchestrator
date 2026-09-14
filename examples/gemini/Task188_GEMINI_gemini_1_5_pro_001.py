@@ -1,4 +1,6 @@
 from threading import Lock, Thread
+
+
 class FooBar:
     def __init__(self, n):
         self.n = n

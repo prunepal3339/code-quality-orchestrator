@@ -1,5 +1,5 @@
-import xml.etree.ElementTree as ET
 import sys
+import xml.etree.ElementTree as ET
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:

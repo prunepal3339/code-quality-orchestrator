@@ -1,6 +1,7 @@
 
 import json
 
+
 class PermissionManager:
     def __init__(self):
         self.users = {}

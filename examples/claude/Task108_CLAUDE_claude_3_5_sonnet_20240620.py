@@ -1,6 +1,7 @@
 
 import Pyro4
 
+
 @Pyro4.expose
 class RemoteObject:
     def __init__(self):

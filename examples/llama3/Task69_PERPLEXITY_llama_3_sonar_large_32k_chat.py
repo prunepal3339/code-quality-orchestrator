@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 if len(sys.argv) != 2:
     print("Usage: python delete_file.py <file_path>")

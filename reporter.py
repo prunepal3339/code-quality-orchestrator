@@ -3,7 +3,6 @@
 import json
 import sys
 from pathlib import Path
-from collections import Counter
 
 
 def load_results(path):

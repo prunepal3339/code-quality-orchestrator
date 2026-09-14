@@ -1,6 +1,8 @@
+import base64
+
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
-import base64
+
 
 def encrypt_aes_cbc(key, plaintext):
     cipher = AES.new(key, AES.MODE_CBC, iv='\0'*16)

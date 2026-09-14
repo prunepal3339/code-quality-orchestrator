@@ -1,6 +1,7 @@
 
 import sys
 
+
 def check_password(stored_password, entered_password):
     if len(stored_password) != len(entered_password):
         return False

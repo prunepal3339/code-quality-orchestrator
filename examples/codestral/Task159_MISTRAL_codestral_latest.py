@@ -1,6 +1,7 @@
 # Python
 import mmap
 
+
 def read_from_buffer(index):
     with open("buffer.dat", "r+b") as f:
         mm = mmap.mmap(f.fileno(), 0)

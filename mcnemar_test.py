@@ -4,7 +4,6 @@ import json
 import sys
 from math import comb, erfc, sqrt
 
-
 ALPHA = 0.05
 
 

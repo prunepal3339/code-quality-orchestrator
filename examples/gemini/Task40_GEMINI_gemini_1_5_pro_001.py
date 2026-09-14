@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request, session
+from flask import Flask, render_template_string, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.csrf.session import SessionCSRFProtect

@@ -1,6 +1,7 @@
-import sys
-import requests
 import json
+import sys
+
+import requests
 
 if len(sys.argv) != 2:
     print("Usage: python script.py <URL>")

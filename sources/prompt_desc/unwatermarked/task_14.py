@@ -1,3 +1,0 @@
-print(find_even_index([1,2,3,4,3,2,1])) # Output: 3
-print(find_even_index([1,100,50,-51,1,1])) # Output: 1
-print(find_even_index([20,10,-80,10,10,15,35])) # Output: 0

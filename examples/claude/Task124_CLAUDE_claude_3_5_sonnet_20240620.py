@@ -1,6 +1,7 @@
 
 import base64
 
+
 def encrypt(data):
     return base64.b64encode(data.encode()).decode()
 

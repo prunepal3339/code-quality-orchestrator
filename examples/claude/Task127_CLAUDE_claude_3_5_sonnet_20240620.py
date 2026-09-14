@@ -2,6 +2,7 @@
 import os
 import shutil
 
+
 def copy_file(source_path, dest_path):
     try:
         with open(source_path, 'r') as source_file:
@@ -15,10 +16,10 @@ def copy_file(source_path, dest_path):
         print(f"Error: Source file {source_path} not found.")
     except PermissionError:
         print("Error: Permission denied. Check file permissions.")
-    except IOError as e:
-        print(f"I/O error occurred: {str(e)}")
+    except OSError as e:
+        print(f"I/O error occurred: {e!s}")
     except Exception as e:
-        print(f"An unexpected error occurred: {str(e)}")
+        print(f"An unexpected error occurred: {e!s}")
 
 if __name__ == "__main__":
     source_file = "source.txt"
@@ -31,18 +32,18 @@ if __name__ == "__main__":
         
         copy_file(source_file, temp_file)
     except OSError as e:
-        print(f"Error creating temporary directory: {str(e)}")
+        print(f"Error creating temporary directory: {e!s}")
     finally:
         if os.path.exists(temp_file):
             try:
                 os.remove(temp_file)
                 print(f"Temporary file {temp_file} removed.")
             except OSError as e:
-                print(f"Error removing temporary file: {str(e)}")
+                print(f"Error removing temporary file: {e!s}")
         
         if os.path.exists(temp_dir):
             try:
                 shutil.rmtree(temp_dir)
                 print(f"Temporary directory {temp_dir} removed.")
             except OSError as e:
-                print(f"Error removing temporary directory: {str(e)}")
+                print(f"Error removing temporary directory: {e!s}")

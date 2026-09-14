@@ -1,6 +1,6 @@
 # Python Code (Server)
 import socket
-import os
+
 
 def authenticate(username, password):
     with open("users.txt", "r") as file:
@@ -25,9 +25,9 @@ def main():
         if data.startswith("LOGIN"):
             username, password = data.split()[1], data.split()[2]
             if authenticate(username, password):
-                connection.sendall("LOGIN_SUCCESS".encode())
+                connection.sendall(b"LOGIN_SUCCESS")
             else:
-                connection.sendall("LOGIN_FAILED".encode())
+                connection.sendall(b"LOGIN_FAILED")
         else:
             print(f"Received message: {data}")
             connection.sendall(f"Server received your message: {data}".encode())

@@ -1,5 +1,6 @@
 import sys
 
+
 def read_file(filename):
     try:
         with open(filename, 'r') as file:
@@ -11,7 +12,7 @@ def read_file(filename):
         print(f"Error: Permission denied to read file '{filename}'.")
         return None
     except Exception as e:
-        print(f"Error: An error occurred while reading file '{filename}': {str(e)}")
+        print(f"Error: An error occurred while reading file '{filename}': {e!s}")
         return None
 
 if __name__ == "__main__":

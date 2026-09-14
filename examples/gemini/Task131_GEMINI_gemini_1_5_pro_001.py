@@ -1,5 +1,6 @@
 import json
 
+
 def deserialize(data):
   """Deserializes the given data.
 

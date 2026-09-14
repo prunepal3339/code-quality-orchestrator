@@ -29,7 +29,7 @@ class PipelineNode:
 class PipelineEdge:
     source: NodeId
     target: NodeId
-    config: dict[str, Any] = field(defult_factory=dict)
+    config: dict[str, Any] = field(default_factory=dict)
 
 @dataclass(frozen=True)
 class Pipeline:
@@ -37,3 +37,8 @@ class Pipeline:
     nodes: dict[NodeId, PipelineNode] = field(default_factory=dict)
     edges: list[PipelineEdge] = field(default_factory=list)
     config: dict[str, Any] = field(default_factory=dict)
+    def get_config(self, config_key: str) -> Any:
+        value = self.config
+        for key in config_key.split("."):
+            value = value[key]
+        return value

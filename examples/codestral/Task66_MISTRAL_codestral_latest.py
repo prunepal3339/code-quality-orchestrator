@@ -1,5 +1,6 @@
 import subprocess
 
+
 def validate_command(command):
     # Simple validation: check if command is not empty
     return bool(command.strip())

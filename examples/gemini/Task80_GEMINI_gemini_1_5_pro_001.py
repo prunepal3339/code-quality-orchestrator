@@ -1,6 +1,7 @@
 import socket
 import ssl
 
+
 def create_ssl_client_socket_ipv6(hostname, port):
     """Creates an SSL client socket using IPv6 and TCP protocol.
 

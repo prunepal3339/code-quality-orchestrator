@@ -1,5 +1,6 @@
 import hashlib
 
+
 def signup():
   username = input("Enter username: ")
   password = input("Enter password: ")

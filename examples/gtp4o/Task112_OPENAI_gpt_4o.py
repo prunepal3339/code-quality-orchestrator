@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 
+
 def main():
     # Connection to MongoDB
     client = MongoClient('localhost', 27017)

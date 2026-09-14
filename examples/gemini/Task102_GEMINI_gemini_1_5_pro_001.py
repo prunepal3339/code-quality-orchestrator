@@ -1,6 +1,7 @@
 import hashlib
 import sqlite3
 
+
 def hash_password(password):
     """Hashes the given password using SHA-256."""
     return hashlib.sha256(password.encode()).hexdigest()

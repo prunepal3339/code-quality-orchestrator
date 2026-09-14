@@ -1,6 +1,7 @@
 
 import re
 
+
 def is_valid_url(url):
     pattern = re.compile(
         r'^(?:http|ftp)s?://'  # http:// or https://

@@ -1,5 +1,4 @@
 
-import sys
 
 BUFFER_SIZE = 100
 

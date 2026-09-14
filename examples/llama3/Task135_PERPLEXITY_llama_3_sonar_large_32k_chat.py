@@ -15,12 +15,12 @@ def csrf_protect():
 def form():
     if request.method == 'GET':
         token = session['_csrf_token'] = generate_token()
-        return '''
+        return f'''
             <form action="" method="post">
-                <input type="hidden" name="_csrf_token" value="{}">
+                <input type="hidden" name="_csrf_token" value="{token}">
                 <input type="submit" value="Submit">
             </form>
-        '''.format(token)
+        '''
     else:
         return 'Form submitted successfully'
 

@@ -1,7 +1,9 @@
 
 import socket
 import struct
+
 import dns.resolver
+
 
 def parse_dns_query(data):
     # Extract query details from DNS packet

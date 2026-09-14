@@ -2,6 +2,7 @@
 import base64
 import json
 
+
 def process_request(raw_data):
     # Ensure raw_data is UTF-8 encoded
     raw_data = raw_data.encode('utf-8') if isinstance(raw_data, str) else raw_data

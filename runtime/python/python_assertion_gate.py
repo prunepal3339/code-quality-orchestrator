@@ -5,11 +5,9 @@ import json
 import re
 import subprocess
 import sys
-import tempfile
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
-
 
 # ---------------------------------------------------------------------------
 # Result Models
@@ -683,7 +681,7 @@ def main() -> None:
         )
 
     print(
-        f"Assertion gate completed."
+        "Assertion gate completed."
     )
 
     print(

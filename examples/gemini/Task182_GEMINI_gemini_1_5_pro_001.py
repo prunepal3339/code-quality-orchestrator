@@ -1,4 +1,6 @@
 import re
+
+
 def clean_phone_number(phone_number):
     cleaned_number = re.sub(r'[^0-9]', '', phone_number)
     if len(cleaned_number) == 11 and cleaned_number[0] == '1':

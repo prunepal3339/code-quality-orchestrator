@@ -1,5 +1,6 @@
 import ldap
 
+
 def get_user_info(dc, username):
     ldap_server = "ldap://localhost"
     base_dn = f"dc={dc},dc=com"

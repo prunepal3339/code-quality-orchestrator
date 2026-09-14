@@ -1,7 +1,8 @@
 
-import zipfile
-import tarfile
 import os
+import tarfile
+import zipfile
+
 
 def extract_archive(archive_path, extract_path):
     if zipfile.is_zipfile(archive_path):

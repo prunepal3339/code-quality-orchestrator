@@ -1,6 +1,7 @@
 import sys
 from ctypes import *
 
+
 class Node(Structure):
     pass
 

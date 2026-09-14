@@ -4,6 +4,7 @@ import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 
+
 class FileProcessor:
     def __init__(self, directory):
         self.directory = directory

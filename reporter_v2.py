@@ -3,6 +3,7 @@
 import json
 import sys
 
+
 def load_report(path):
     """Load an assertion test report JSON file."""
     with open(path, "r") as f:

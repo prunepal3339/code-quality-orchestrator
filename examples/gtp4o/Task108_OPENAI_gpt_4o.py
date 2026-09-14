@@ -1,6 +1,7 @@
 # Python Remote Object Manipulation Server (example)
 from xmlrpc.server import SimpleXMLRPCServer
 
+
 class RemoteObject:
     def __init__(self):
         self.value = 0

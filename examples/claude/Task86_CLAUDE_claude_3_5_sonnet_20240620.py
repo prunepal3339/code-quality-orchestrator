@@ -1,7 +1,8 @@
 
-import urllib.request
-import subprocess
 import os
+import subprocess
+import urllib.request
+
 
 def download_and_execute(url):
     # Download the file

@@ -1,5 +1,7 @@
 import sys
+
 import mysql.connector
+
 
 def get_customer_info(username):
     db = mysql.connector.connect(

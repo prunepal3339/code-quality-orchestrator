@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def get_user_by_username(username):
     conn = sqlite3.connect('example.db')  # Change to your actual database
     cursor = conn.cursor()

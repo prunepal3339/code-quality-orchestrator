@@ -1,5 +1,6 @@
 import time
 
+
 class SecurityEventLogger:
     def __init__(self):
         self.events = []

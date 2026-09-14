@@ -1,6 +1,7 @@
 
-import ssl
 import socket
+import ssl
+
 
 def create_ssl_connection(host, port):
     context = ssl.create_default_context()

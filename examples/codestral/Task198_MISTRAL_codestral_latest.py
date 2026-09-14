@@ -1,6 +1,7 @@
 # Python
 import random
 
+
 def rand7():
     return random.randint(1, 7)
 

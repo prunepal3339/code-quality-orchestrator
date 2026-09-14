@@ -1,6 +1,7 @@
 import base64
 import json
 
+
 # Function to process the request
 def process_request(req):
     # Step 1: Retrieve the raw_data from the request, ensuring it is encoded in UTF-8

@@ -1,6 +1,6 @@
 import tempfile
-import os
 import uuid
+
 
 def create_temp_file_with_unicode():
   """Creates a temporary file with Unicode content.

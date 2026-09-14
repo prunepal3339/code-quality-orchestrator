@@ -1,5 +1,6 @@
 from cryptography.fernet import Fernet
 
+
 def encrypt_message(message, key):
   """Encrypts a message using a secret key.
 

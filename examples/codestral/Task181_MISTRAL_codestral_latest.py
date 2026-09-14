@@ -1,5 +1,6 @@
 import threading
 
+
 class BankAccount:
     def __init__(self, initial_balance):
         self.balance = initial_balance

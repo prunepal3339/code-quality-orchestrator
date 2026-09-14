@@ -1,5 +1,6 @@
 import getpass
 
+
 def check_password(stored_password):
   """Compares the user-entered password with the stored password.
 

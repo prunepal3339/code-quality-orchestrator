@@ -1,6 +1,7 @@
 import hashlib
 import os
 
+
 class KeyManager:
     def __init__(self):
         self.keys = {}

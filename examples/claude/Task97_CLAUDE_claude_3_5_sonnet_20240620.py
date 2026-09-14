@@ -2,6 +2,7 @@
 import sys
 import xml.etree.ElementTree as ET
 
+
 def execute_xpath(xml_file, xpath):
     tree = ET.parse(xml_file)
     root = tree.getroot()

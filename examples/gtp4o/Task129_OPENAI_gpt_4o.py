@@ -1,5 +1,6 @@
 import requests
 
+
 def fetch_file(file_name):
     url = f"http://example.com/{file_name}"
     response = requests.get(url)

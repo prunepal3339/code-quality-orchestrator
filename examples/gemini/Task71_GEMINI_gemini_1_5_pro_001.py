@@ -1,5 +1,6 @@
 import sys
 
+
 def main():
     if len(sys.argv) < 2:
         print("Please provide an argument to be converted to an integer.")

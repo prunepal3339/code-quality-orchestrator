@@ -1,6 +1,8 @@
-import requests
 import sqlite3
+
+import requests
 from bs4 import BeautifulSoup
+
 
 # Function to scrape data from a given URL
 def scrape_data(url):

@@ -1,6 +1,7 @@
 
 import json
 
+
 def deserialize_data():
     serialized_data = input("Enter serialized data (JSON format): ")
     try:

@@ -1,5 +1,6 @@
 import ctypes
 
+
 def main():
     # Allocate memory for an integer
     int_ptr = ctypes.pointer(ctypes.c_int(10))

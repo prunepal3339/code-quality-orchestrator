@@ -1,5 +1,6 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
 import cgi
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
 
 class FileUploadHandler(BaseHTTPRequestHandler):
     def do_POST(self):

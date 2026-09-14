@@ -1,6 +1,7 @@
 # Python code
 from collections import defaultdict
 
+
 def longestDupSubstring(s):
     def roll_hash(s, length):
         p = 31

@@ -2,6 +2,7 @@ import os
 import pwd
 import subprocess
 
+
 def change_password(username):
     new_password = input(f"Enter new password for {username}: ")
     subprocess.run(['sudo', 'chpasswd'], input=f'{username}:{new_password}', text=True, check=True)

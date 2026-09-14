@@ -1,6 +1,7 @@
 
 import re
 
+
 def validate_input(input_string):
     return re.match(r'^[a-zA-Z0-9\\s]+$', input_string) is not None
 

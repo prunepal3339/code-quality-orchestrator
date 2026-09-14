@@ -2,6 +2,7 @@
 
 import socket
 
+
 def serve_dns():
     ip, port = "127.0.0.1", 5353
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

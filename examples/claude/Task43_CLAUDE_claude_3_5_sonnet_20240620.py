@@ -1,8 +1,9 @@
 
 import os
 import time
-from flask import Flask, request, session, jsonify
-from werkzeug.security import generate_password_hash, check_password_hash
+
+from flask import Flask, jsonify, request, session
+from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)

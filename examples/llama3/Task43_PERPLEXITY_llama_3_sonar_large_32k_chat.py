@@ -1,5 +1,6 @@
 # Python code using Flask framework
-from flask import Flask, session, request, redirect, url_for
+from flask import Flask, redirect, request, session, url_for
+
 app = Flask(__name__)
 app.secret_key = 'super secret key'
 

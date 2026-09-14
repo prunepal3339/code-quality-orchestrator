@@ -1,8 +1,7 @@
-from typing import List
 
 
 class Solution:
-    def reversePairs(self, nums: List[int]) -> int:
+    def reversePairs(self, nums: list[int]) -> int:
         def mergeSort(arr, left, right):
             if left >= right:
                 return 0

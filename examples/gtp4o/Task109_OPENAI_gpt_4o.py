@@ -1,5 +1,6 @@
 import re
 
+
 def validate_input(user_input):
     if re.match("^[a-zA-Z0-9_]+$", user_input):
         return "Valid input"

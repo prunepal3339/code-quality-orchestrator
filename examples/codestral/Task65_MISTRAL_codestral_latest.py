@@ -1,5 +1,5 @@
 import sys
-import os
+
 
 def read_file(filename):
     try:
@@ -8,7 +8,7 @@ def read_file(filename):
             return data
     except FileNotFoundError:
         return "Error: File not found."
-    except IOError:
+    except OSError:
         return "Error: Unable to read the file."
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad
 from Crypto.Random import get_random_bytes
+from Crypto.Util.Padding import pad
+
 
 def encrypt_data(data):
     key = get_random_bytes(16)

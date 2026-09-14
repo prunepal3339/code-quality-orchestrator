@@ -1,6 +1,7 @@
-import sys
 import json
+import sys
 from typing import Any
+
 """
 First arg: path to syntax report file
 Second arg: path to MBPP test file

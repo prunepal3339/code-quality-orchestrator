@@ -1,5 +1,6 @@
-import zipfile
 import tarfile
+import zipfile
+
 
 def extract_zip(archive_path, extract_path):
   """Extracts a ZIP archive.

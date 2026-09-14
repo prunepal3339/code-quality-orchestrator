@@ -1,6 +1,7 @@
 import random
 import string
 
+
 def generate_session_id(length=16):
   """Generates a random and unique session ID.
 

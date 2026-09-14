@@ -1,6 +1,7 @@
 import random
 import string
 
+
 class Robot:
     def __init__(self):
         self.name = self.generate_name()

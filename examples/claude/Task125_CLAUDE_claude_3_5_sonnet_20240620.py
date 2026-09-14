@@ -1,6 +1,7 @@
 
 import getpass
 
+
 def authenticate():
     username = input("Enter username: ")
     password = getpass.getpass("Enter password: ")

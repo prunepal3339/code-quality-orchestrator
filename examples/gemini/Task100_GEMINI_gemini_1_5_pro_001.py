@@ -1,6 +1,7 @@
 import re
 import sys
 
+
 def main():
     if len(sys.argv) < 3:
         print("Usage: python script.py <regex_pattern> <file_name>")

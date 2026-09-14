@@ -1,9 +1,8 @@
 import collections
-from typing import List
 
 
 class Solution:
-    def shortestSubarray(self, nums: List[int], k: int) -> int:
+    def shortestSubarray(self, nums: list[int], k: int) -> int:
         n = len(nums)
         prefix_sum = [0] * (n + 1)
         for i in range(n):

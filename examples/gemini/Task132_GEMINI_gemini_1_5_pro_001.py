@@ -1,5 +1,5 @@
-import time
 import logging
+import time
 
 logging.basicConfig(filename='security_events.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -18,7 +18,7 @@ def monitor_file_changes(file_path):
         last_modified_time = current_modified_time
       time.sleep(5)  # Check for changes every 5 seconds
   except Exception as e:
-    log_event("Error", f"An error occurred while monitoring '{file_path}': {str(e)}")
+    log_event("Error", f"An error occurred while monitoring '{file_path}': {e!s}")
 
 if __name__ == "__main__":
   file_to_monitor = "/path/to/your/important_file.txt"  # Replace with the actual file path

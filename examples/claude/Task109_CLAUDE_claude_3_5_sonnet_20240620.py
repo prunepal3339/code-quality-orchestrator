@@ -1,6 +1,7 @@
 
 import re
 
+
 def validate_input():
     # Email validation
     email_pattern = r'^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'

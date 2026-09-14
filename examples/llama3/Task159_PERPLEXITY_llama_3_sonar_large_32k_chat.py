@@ -10,4 +10,4 @@ while True:
     if index < 0 or index >= buffer_size:
         print("Invalid index")
     else:
-        print("Buffer[{}] = {}".format(index, buffer[index]))
+        print(f"Buffer[{index}] = {buffer[index]}")

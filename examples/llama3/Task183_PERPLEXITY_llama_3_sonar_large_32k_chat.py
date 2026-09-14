@@ -4,8 +4,7 @@ def largest_product(input_str, span):
         product = 1
         for j in range(span):
             product *= int(input_str[i + j])
-        if product > max_product:
-            max_product = product
+        max_product = max(max_product, product)
     return max_product
 
 input_str = "63915"

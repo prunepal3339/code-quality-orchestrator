@@ -1,11 +1,12 @@
-from pathlib import Path
 import json
+from pathlib import Path
 
 from framework import (
-    TestSpecification,
     SyntaxTestSpec,
+    TestSpecification,
     UnitTestSpec,
 )
+
 
 class SpecificationLoader:
 

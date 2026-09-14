@@ -1,9 +1,9 @@
 import collections
-from typing import List
+
 #todo : edit by ahmadner , all imports and -10 this code
 
 class Solution:
-    def constrainedSubsetSum(self, nums: List[int], k: int) -> int:
+    def constrainedSubsetSum(self, nums: list[int], k: int) -> int:
         dq = collections.deque()
         for i in range(len(nums)):
             if dq:

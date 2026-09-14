@@ -1,17 +1,19 @@
 from collections import deque
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import Any
 
-from .model import Pipeline, NodeId
+from .model import NodeId, Pipeline
+
 
 class PipelineBuildError(ValueError):
     """
     Raised when a pipeline build fails due to invalid graph structure.
     """
-    pass
 
 @dataclass
 class PipelineExecutionContext:
     order: list[NodeId]
+    pipeline: Pipeline
     results: dict[NodeId, Any] = field(default_factory=dict)
     def set_result(self, node_id: NodeId, result: Any):
         self.results[node_id] = result
@@ -19,23 +21,33 @@ class PipelineExecutionContext:
         return self.results[node_id]
 
 class PipelineBuilder:
-    def build(self, pipeline: Pipeline) -> PipelineExecutionContext:
-        self._validate_pipeline(pipeline)
-        order = self._topological_order(pipeline)
-        return PipelineExecutionContext(order)
-    def _validate_pipeline(self, pipeline: Pipeline):
+    def __init__(self, pipeline: Pipeline):
+        self.pipeline = pipeline
+    def build(self) -> PipelineExecutionContext:
+        self._validate_pipeline()
+        order = self._topological_sort()
+        return PipelineExecutionContext(order=order, pipeline=self.pipeline)
+    def _validate_pipeline(self):
+        pipeline = self.pipeline
+
         node_ids = set(pipeline.nodes)
         for edge in pipeline.edges:
-            if edge.source in node_ids:
+            if edge.source not in node_ids:
                 raise PipelineBuildError(f"Edge source {edge.source} not found in pipeline nodes.")
             if edge.target not in node_ids:
                 raise PipelineBuildError(f"Edge target {edge.target} not found in pipeline nodes.")
-    def _topological_sort(self, pipeline: Pipeline) -> list[NodeId]:
+    def _topological_sort(self) -> list[NodeId]:
+        """
+        Use Kahn's algorithm to create a topological sort of the given pipeline graph.
+        """
+
+        pipeline = self.pipeline
+
         indegree = { node: 0 for node in pipeline.nodes}
         neighbors = { node: [] for node in pipeline.nodes}
-        for source, target in pipeline.edges:
-            indegree[target] += 1
-            neighbors[source].append(target)
+        for edge in pipeline.edges:
+            indegree[edge.target] += 1
+            neighbors[edge.source].append(edge.target)
         q = deque()
         for node, indeg in indegree.items():
             if indeg == 0:

@@ -1,7 +1,7 @@
-from typing import List
+
 
 class MountainArray:
-    def __init__(self, arr: List[int]):
+    def __init__(self, arr: list[int]):
         self.arr = arr
         self.calls = 0  # Keep track of the number of calls.
     

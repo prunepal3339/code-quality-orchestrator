@@ -1,6 +1,7 @@
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
 
+
 def encrypt_data(data, key):
     iv = b'\x00' * 16  # Static IV
     cipher = AES.new(key, AES.MODE_CBC, iv)

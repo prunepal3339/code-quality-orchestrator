@@ -1,4 +1,4 @@
-from flask import Flask, request, session
+from flask import Flask
 from flask_wtf import CSRFProtect, FlaskForm
 from wtforms import StringField, SubmitField
 
@@ -16,10 +16,10 @@ def update():
     if form.validate_on_submit():
         # Update user settings here
         return 'Settings updated'
-    return '''
+    return f'''
         <form method="POST">
-            {}<br>
-            {}<br>
+            {form.setting()}<br>
+            {form.csrf_token}<br>
             <input type="submit" value="Update">
         </form>
-    '''.format(form.setting(), form.csrf_token)
+    '''

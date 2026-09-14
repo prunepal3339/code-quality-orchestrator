@@ -1,6 +1,7 @@
 
 import psycopg2
 
+
 def create_connection():
     try:
         conn = psycopg2.connect(

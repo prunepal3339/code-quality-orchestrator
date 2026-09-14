@@ -1,8 +1,9 @@
+import crypt
+import getpass
 import os
 import pwd
 import spwd
-import crypt
-import getpass
+
 
 def drop_privileges(user_uid, user_gid):
     os.setgid(user_gid)

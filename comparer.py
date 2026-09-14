@@ -27,7 +27,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 TASK_RE = re.compile(r"task_(\d+)\.py$", re.IGNORECASE)
 
 
@@ -329,8 +328,8 @@ def print_report(
             after = item["watermarked"]
 
             print(f"{item['task']}")
-            print(f"  Unwatermarked: PASS")
-            print(f"  Watermarked:   FAIL")
+            print("  Unwatermarked: PASS")
+            print("  Watermarked:   FAIL")
             print(
                 f"  Cause:         "
                 f"{error_summary(after)}"
@@ -346,12 +345,12 @@ def print_report(
             after = item["watermarked"]
 
             print(f"{item['task']}")
-            print(f"  Unwatermarked: FAIL")
+            print("  Unwatermarked: FAIL")
             print(
                 f"  Cause before:  "
                 f"{error_summary(before)}"
             )
-            print(f"  Watermarked:   PASS")
+            print("  Watermarked:   PASS")
 
 
 def generate_plot(

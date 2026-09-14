@@ -1,5 +1,6 @@
 import re
 
+
 def is_valid_password(password):
   """
   Checks if a password meets the following criteria:

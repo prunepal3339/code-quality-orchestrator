@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Any
 
+
 class SourceResolver:
     def __init__(self, root_dir: Path):
         self.root_dir = root_dir.resolve()

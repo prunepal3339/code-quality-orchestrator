@@ -1,6 +1,7 @@
+import sqlite3
+
 import requests
 from bs4 import BeautifulSoup
-import sqlite3
 
 # Target website and data to scrape
 url = "https://www.example.com"  # Replace with the target website

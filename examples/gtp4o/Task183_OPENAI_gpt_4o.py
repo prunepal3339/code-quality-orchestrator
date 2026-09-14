@@ -4,8 +4,7 @@ def find_largest_product(sequence, span):
         product = 1
         for j in range(span):
             product *= int(sequence[i + j])
-        if product > max_product:
-            max_product = product
+        max_product = max(max_product, product)
     return max_product
 
 sequence = "63915"

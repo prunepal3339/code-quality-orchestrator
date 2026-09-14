@@ -1,5 +1,6 @@
 import hashlib
 
+
 def calculate_certificate_hash(certificate_path, hash_algorithm):
     """Calculates the hash of an SSL certificate.
 

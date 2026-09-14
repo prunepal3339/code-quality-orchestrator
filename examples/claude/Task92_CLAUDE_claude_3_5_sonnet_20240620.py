@@ -1,6 +1,7 @@
 
 import threading
 
+
 class SharedResource:
     def __init__(self, max_counter):
         self.current_counter = 0

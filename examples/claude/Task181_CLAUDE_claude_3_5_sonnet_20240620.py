@@ -1,6 +1,6 @@
 
 import threading
-from typing import Dict
+
 
 class BankAccount:
     def __init__(self, account_number: str, initial_balance: float = 0):
@@ -36,7 +36,7 @@ class BankAccount:
 
 class Bank:
     def __init__(self):
-        self.accounts: Dict[str, BankAccount] = {}
+        self.accounts: dict[str, BankAccount] = {}
         self.lock = threading.Lock()
 
     def open_account(self, account_number: str, initial_balance: float = 0) -> bool:

@@ -1,5 +1,6 @@
 import re
 
+
 def is_valid_url(url):
   """
   Checks if a given URL is valid using a regular expression.

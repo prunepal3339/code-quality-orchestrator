@@ -1,7 +1,6 @@
-import tempfile
-import os
 import random
 import string
+import tempfile
 
 # Generate a random string
 random_string = ''.join(random.choices(string.ascii_letters + string.digits, k=10))

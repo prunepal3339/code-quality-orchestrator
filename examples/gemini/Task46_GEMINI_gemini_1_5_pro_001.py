@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def register_user(name, email, password):
     conn = sqlite3.connect('users.db')
     cursor = conn.cursor()

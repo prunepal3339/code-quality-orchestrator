@@ -1,6 +1,7 @@
 
 import hashlib
 
+
 def hash_password(password, salt):
     combined = password.encode() + salt.encode()
     return hashlib.sha256(combined).hexdigest()

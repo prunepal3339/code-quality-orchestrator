@@ -1,5 +1,6 @@
 
-from threading import Semaphore, Barrier
+from threading import Barrier, Semaphore
+
 
 class H2O:
     def __init__(self):

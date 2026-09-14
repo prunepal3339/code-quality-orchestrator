@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
-from framework import TestResult
+
+
+class GateResult:
+    pass
 class QualityGate(ABC):
     @abstractmethod
-    def run(self, spec) -> TestResult | list[TestResult]:
+    def run(self, spec) -> GateResult:
         raise NotImplementedError

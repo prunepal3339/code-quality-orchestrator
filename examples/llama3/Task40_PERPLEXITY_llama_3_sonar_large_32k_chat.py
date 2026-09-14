@@ -1,5 +1,6 @@
 # Python (using Flask framework)
-from flask import Flask, request, session, render_template_string
+from flask import Flask, request, session
+
 app = Flask(__name__)
 app.secret_key = 'secret_key_here'
 
@@ -11,16 +12,16 @@ def update_settings():
         # Update user settings here
         return 'Settings updated successfully'
     csrf_token = session['csrf_token'] = 'random_token_here'
-    return '''
+    return f'''
         <form action="" method="post">
-            <input type="hidden" name="csrf_token" value="{}">
+            <input type="hidden" name="csrf_token" value="{csrf_token}">
             <label>Username:</label>
             <input type="text" name="username"><br><br>
             <label>Email:</label>
             <input type="email" name="email"><br><br>
             <input type="submit" value="Update Settings">
         </form>
-    '''.format(csrf_token)
+    '''
 
 if __name__ == '__main__':
     app.run()

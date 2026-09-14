@@ -1,6 +1,7 @@
+import sqlite3
+
 import requests
 from bs4 import BeautifulSoup
-import sqlite3
 
 # Send a GET request
 response = requests.get("https://www.example.com")

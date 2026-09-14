@@ -1,7 +1,8 @@
 # Python
+import sqlite3
+
 import requests
 from bs4 import BeautifulSoup
-import sqlite3
 
 # Connect to SQLite database
 conn = sqlite3.connect('website_data.db')

@@ -1,6 +1,7 @@
 
 import sys
 
+
 def convert_to_int(input_str):
     try:
         return int(input_str)

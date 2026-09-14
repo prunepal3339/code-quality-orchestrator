@@ -1,6 +1,7 @@
 
 import random
 
+
 def encrypt_message(message, key):
     cipher = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
     random.seed(key)

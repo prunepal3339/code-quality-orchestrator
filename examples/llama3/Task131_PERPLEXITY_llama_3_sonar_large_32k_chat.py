@@ -1,5 +1,6 @@
 import pickle
 
+
 def deserialize_data(data):
     try:
         return pickle.loads(data)

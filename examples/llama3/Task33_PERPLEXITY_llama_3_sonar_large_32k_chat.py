@@ -1,4 +1,3 @@
-import heapq
 
 def queueTime(customers, n):
     if not customers:

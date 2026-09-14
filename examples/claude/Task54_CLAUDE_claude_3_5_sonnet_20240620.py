@@ -1,7 +1,7 @@
 
 import random
 import string
-import time
+
 
 def generate_otp():
     return ''.join(random.choices(string.digits, k=6))

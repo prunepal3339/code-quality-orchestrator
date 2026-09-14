@@ -1,5 +1,6 @@
-import time
 import tempfile
+import time
+
 
 def binary_search(arr, x):
     l = 0

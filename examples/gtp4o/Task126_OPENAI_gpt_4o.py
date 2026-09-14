@@ -1,5 +1,6 @@
 import sys
 
+
 def redirect(user_input):
     if user_input == "home":
         print("Redirect to Home Page")

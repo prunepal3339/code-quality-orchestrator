@@ -1,6 +1,7 @@
 
 import webbrowser
 
+
 def redirect_user():
     print("Select a destination:")
     print("1. Google")

@@ -1,5 +1,6 @@
 import time
 
+
 def binary_search(arr, low, high, x):
     if high >= low:
         mid = (high + low) // 2

@@ -1,6 +1,7 @@
 
 import webbrowser
 
+
 def redirect_user():
     user_input = input("Enter 'google' to go to Google, 'facebook' to go to Facebook, or 'youtube' to go to YouTube: ")
     if user_input == 'google':

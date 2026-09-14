@@ -1,5 +1,6 @@
 import socket
 
+
 def retrieve_file(file_name):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect(("localhost", 12345))

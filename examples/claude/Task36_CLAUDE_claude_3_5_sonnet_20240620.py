@@ -4,5 +4,5 @@ def read_file(filename):
             print(file.read())
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
-    except IOError:
+    except OSError:
         print(f"Error: Unable to read file '{filename}'.")

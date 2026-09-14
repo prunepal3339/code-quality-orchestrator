@@ -1,4 +1,6 @@
 import sys
+
+
 class Solution:
     def shortestSubarray(self, nums: list[int], k: int) -> int:
         n = len(nums)

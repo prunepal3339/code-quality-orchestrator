@@ -2,6 +2,7 @@ import random
 import smtplib
 from email.mime.text import MIMEText
 
+
 def generate_otp(length=6):
     digits = "0123456789"
     otp = "".join(random.choice(digits) for _ in range(length))

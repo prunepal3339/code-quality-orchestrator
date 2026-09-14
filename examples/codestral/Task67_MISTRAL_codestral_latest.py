@@ -1,5 +1,6 @@
-import sys
 import sqlite3
+import sys
+
 
 def get_customer_info(customerusername):
     conn = sqlite3.connect('database.db')

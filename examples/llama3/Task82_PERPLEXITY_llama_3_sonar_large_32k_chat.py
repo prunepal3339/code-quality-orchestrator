@@ -1,5 +1,6 @@
 import hashlib
 
+
 def compute_hash(password, salt):
     return hashlib.sha256((password + salt).encode()).hexdigest()
 

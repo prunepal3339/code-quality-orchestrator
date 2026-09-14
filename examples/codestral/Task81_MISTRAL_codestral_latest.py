@@ -1,5 +1,6 @@
-import ssl
 import hashlib
+import ssl
+
 
 def check_ssl_certificate(host, port, known_hash):
     ctx = ssl.create_default_context()

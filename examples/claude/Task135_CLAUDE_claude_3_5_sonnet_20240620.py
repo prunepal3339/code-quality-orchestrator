@@ -1,6 +1,7 @@
 
-from flask import Flask, request, session, render_template_string
 import secrets
+
+from flask import Flask, render_template_string, request, session
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'

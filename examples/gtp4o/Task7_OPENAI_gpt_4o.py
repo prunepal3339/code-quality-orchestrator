@@ -2,6 +2,7 @@
 import socket
 import threading
 
+
 def handle_client(client_socket):
     while True:
         try:
@@ -11,7 +12,7 @@ def handle_client(client_socket):
 
             credentials = data.split(':')
             if len(credentials) != 2:
-                client_socket.send("Invalid format. Use username:password\n".encode("utf-8"))
+                client_socket.send(b"Invalid format. Use username:password\n")
                 continue
 
             username, password = credentials[0], credentials[1]
@@ -21,9 +22,9 @@ def handle_client(client_socket):
                 auth = f"{username}:{password}" in users
                 
             if auth:
-                client_socket.send("Login successful\n".encode("utf-8"))
+                client_socket.send(b"Login successful\n")
             else:
-                client_socket.send("Login failed\n".encode("utf-8"))
+                client_socket.send(b"Login failed\n")
         except:
             client_socket.close()
             break

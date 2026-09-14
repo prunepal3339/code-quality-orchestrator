@@ -17,5 +17,5 @@ try:
                 print(line.strip())
 except re.error:
     print("Invalid regular expression")
-except IOError:
+except OSError:
     print("Error reading file")

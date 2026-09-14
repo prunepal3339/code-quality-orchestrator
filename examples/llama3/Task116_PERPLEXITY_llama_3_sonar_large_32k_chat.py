@@ -1,5 +1,6 @@
-import os
 import getpass
+import os
+
 
 def drop_privileges(uid, gid):
     os.setgid(gid)

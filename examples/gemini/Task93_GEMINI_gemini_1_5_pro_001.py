@@ -1,5 +1,6 @@
 import re
 
+
 def read_file_and_sort(file_path):
     """Reads a file containing key-value pairs and sorts them by key.
 

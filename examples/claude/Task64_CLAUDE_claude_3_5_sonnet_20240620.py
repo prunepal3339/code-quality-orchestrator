@@ -1,7 +1,8 @@
 
-import sys
 import json
+import sys
 import urllib.request
+
 
 def fetch_json(url):
     with urllib.request.urlopen(url) as response:

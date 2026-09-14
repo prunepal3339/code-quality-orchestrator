@@ -1,5 +1,5 @@
-import ssl
 import socket
+import ssl
 
 # Define the remote server and port
 server = 'www.example.com'

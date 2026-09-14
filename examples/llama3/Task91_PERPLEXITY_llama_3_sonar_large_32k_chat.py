@@ -15,7 +15,7 @@ while True:
 
     # Parse the received data (DNS request)
     # This is a simplified example, in real-world scenarios you would need to parse the DNS request using a library like dnspython
-    print('Received {} bytes from {}'.format(len(data), address))
+    print(f'Received {len(data)} bytes from {address}')
     print(data.decode())
 
     # Resolve DNS records (this is a simplified example, in real-world scenarios you would need to use a DNS resolver library)
@@ -23,4 +23,4 @@ while True:
 
     # Send the response back to the client
     sent = sock.sendto(dns_response.encode(), address)
-    print('Sent {} bytes back to {}'.format(sent, address))
+    print(f'Sent {sent} bytes back to {address}')

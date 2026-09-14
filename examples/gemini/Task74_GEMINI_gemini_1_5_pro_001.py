@@ -1,5 +1,6 @@
 import psycopg2
 
+
 def connect_to_postgres(host, database, user, password):
     """Creates and returns a connection object to a PostgreSQL database.
 

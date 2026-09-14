@@ -1,10 +1,13 @@
-from .model import Pipeline, PipelineNode, PipelineEdge
+import json
+from pathlib import Path
+
+from .model import NodeId, Pipeline, PipelineEdge, PipelineNode
+
 
 class PipelineConfigError(Exception):
     """
     Raised when a pipeline configuration cannot be loaded.
     """
-    pass
 
 class PipelineLoader:
     @staticmethod
@@ -21,9 +24,12 @@ class PipelineLoader:
         try:
             with open(path, 'r') as f:
                 data = json.load(f)
-        except Exception as e:
+        except FileNotFoundError as e:
             raise PipelineConfigError(f"Failed to load pipeline configuration from {path}: {e}")
-
+        except json.JSONDecodeError as e:
+            raise PipelineConfigError(f"Pipeline configuration is malformed: {e}")
+        if not isinstance(data, dict):
+            raise PipelineConfigError(f"Expected valid JSON dictionary, got {type(data).__name__}")
         return PipelineLoader.from_dict(data)
 
     @staticmethod
@@ -56,7 +62,7 @@ class PipelineLoader:
 
     @staticmethod
     def load_nodes(node_config: list[dict]) -> dict:
-        nodes: dict[str, dict] = {}
+        nodes: dict[NodeId, PipelineNode] = {}
         for node in node_config:
             node_name = node.get('id')
             if not isinstance(node_name, str) or not node_name:
@@ -83,7 +89,7 @@ class PipelineLoader:
                     "Edge 'to' must be a non-empty string"
                 )
             edges.append(PipelineEdge(
-                from_=edge_from,
-                to=edge_to,
+                source=edge_from,
+                target=edge_to,
             ))
         return edges

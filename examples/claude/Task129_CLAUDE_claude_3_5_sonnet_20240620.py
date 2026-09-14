@@ -1,6 +1,7 @@
 
 import requests
 
+
 def retrieve_file(filename):
     server_url = "http://example.com/files/"  # Replace with actual server URL
     file_url = server_url + filename

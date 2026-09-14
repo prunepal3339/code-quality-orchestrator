@@ -1,6 +1,7 @@
 
 import re
 
+
 def check_password_strength(password):
     if len(password) < 8:
         return False

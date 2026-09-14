@@ -1,5 +1,5 @@
 import random
-import math
+
 
 def gcd(a, b):
     while b != 0:

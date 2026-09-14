@@ -1,6 +1,7 @@
 import sys
+
 import requests
-import json
+
 
 def get_json_from_url(url):
   """Fetches JSON data from the given URL and returns a JSON object.
