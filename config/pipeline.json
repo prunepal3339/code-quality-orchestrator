@@ -9,10 +9,10 @@
     },
     "nodes": [
         { "id": "syntax", "gate": "syntax"},
-        { "id": "unit", "gate": "unit"}
+        { "id": "execution", "gate": "execution"}
     ],
     "edges": [
-        {"from": "syntax", "to": "unit"}
+        {"from": "syntax", "to": "execution"}
     ]
   }
 }

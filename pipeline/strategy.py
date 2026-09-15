@@ -35,7 +35,7 @@ class StagedExecutionStrategy:
         gate_registry: GateRegistry
     ) -> list[TaskResult]:
         task_results = [
-            TaskResult(task=task) for task in tasks
+            TaskResult(task_id=task.id) for task in tasks
         ]
         for node_id in context.order:
             node = context.pipeline.nodes.get(node_id)
@@ -54,7 +54,7 @@ class TaskExecutionStrategy:
         gate_registry: GateRegistry
     ) -> list[TaskResult]:
         task_results = [
-            TaskResult(task=task) for task in tasks
+            TaskResult(task_id=task.id) for task in tasks
         ]
 
         for i, task in enumerate(tasks):

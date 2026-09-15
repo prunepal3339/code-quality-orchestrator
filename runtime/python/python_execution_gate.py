@@ -1,15 +1,15 @@
-import py_compile
-from pathlib import Path
-
-from framework import (
-    SyntaxTestResult,
-    TestSpecification,
-)
 from gate import GateResult, QualityGate
-from task import Task, SourceTask
+from gate.model import GateId
+from task import SourceTask, Task
 from task.model import FileSourceOrigin, StringSourceOrigin
 
-class PythonSyntaxGate(QualityGate):
+
+class PythonExecutionGate(QualityGate):
+
+    @property
+    def id(self) -> GateId:
+        return "execution"
+
     def run(
         self,
         task: Task
@@ -24,28 +24,46 @@ class PythonSyntaxGate(QualityGate):
         else:
             origin = "<unknown>"
         try:
-            compile(
+            namespace = {}
+            executable_code = compile(
                 source,
                 origin,
                 "exec"
             )
+
+            exec(executable_code,namespace) #noqa: S102
+
             return GateResult(
-                task=task.id,
+                gate_id=self.id,
+                task_id=task.id,
                 source=source,
                 origin=origin,
                 passed=True
             )
         except SyntaxError as e:
             return GateResult(
-                task=task.id,
-                origin=origin,
+                gate_id=self.id,
+                task_id=task.id,
                 source=source,
-                passed=False
-            )
-        except Exception as e:
-            return GateResult(
-                task=task.id,
-                passed=False,
                 origin=origin,
-                source=source
+                passed=False,
+                error = str(e),
+            )
+        except TypeError as e:
+            return GateResult(
+                gate_id=self.id,
+                task_id=task.id,
+                source=source,
+                origin=origin,
+                passed=False,
+                error = str(e),
+            )
+        except Exception as e: #noqa: BLE001
+            return GateResult(
+                gate_id=self.id,
+                task_id=task.id,
+                source=source,
+                origin=origin,
+                passed=False,
+                error = str(e)
             )

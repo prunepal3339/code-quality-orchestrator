@@ -1,6 +1,13 @@
 from pathlib import Path
 
-from .model import FileSourceOrigin, SourceTask, SourceTaskSpecification, StringSourceOrigin, TaskSpecification, Task
+from .model import (
+    FileSourceOrigin,
+    SourceTask,
+    SourceTaskSpecification,
+    StringSourceOrigin,
+    Task,
+    TaskSpecification,
+)
 
 
 class TaskSpecificationResolver:
@@ -46,7 +53,7 @@ class TaskSpecificationResolver:
                 source = Path(file).read_text(encoding='utf-8')
                 tasks.append(
                     SourceTask(
-                        id=f"{spec.id}_{i}",
+                        id=f"{spec.id}_{i + 1}",
                         source=source,
                         origin=FileSourceOrigin(
                             path=Path(file)

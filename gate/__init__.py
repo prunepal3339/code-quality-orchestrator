@@ -1,10 +1,9 @@
 from .gate_registry import GateRegistry
-from .quality_gate import GateResult, QualityGate
-from .syntax_validator import SyntaxValidator
+from .model import GateResult
+from .quality_gate import QualityGate
 
 __all__ = [
     "GateRegistry",
     "GateResult",
     "QualityGate",
-    "SyntaxValidator",
 ]

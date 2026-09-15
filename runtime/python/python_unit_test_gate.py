@@ -9,6 +9,11 @@ from gate import QualityGate
 
 
 class PythonUnitTestGate(QualityGate):
+
+    @property
+    def id(self) -> "GateId":
+        return "unit"
+
     def run(
         self,
         spec: UnitTestSpec,
