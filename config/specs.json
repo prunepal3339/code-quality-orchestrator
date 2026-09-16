@@ -1,0 +1,26 @@
+{
+  "specifications": {
+    "myspec": {
+      "kind": "assertion",
+      "assertions": [
+        {
+          "source": { "kind": "file", "path": "examples/example3.py" },
+          "target": {
+            "kind": "function",
+            "name": "add_two_numbers"
+          },
+          "rules": [
+            { "args": [1, 2], "expected": 3},
+            { "args" : [-1, 1], "expected": 0},
+            { "args": [-1, -1], "expected": -2}
+          ]
+        }
+      ]
+    }
+  },
+  "bindings": {
+    "this-is-a-comment": "specification_name: gate_name_or_id",
+    "this-is-a-comment_": "maps specification with gate name so that they can passed during execution",
+    "myspec": "assertion"
+  }
+}
