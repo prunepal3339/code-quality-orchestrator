@@ -1,5 +1,6 @@
 
 from gate import GateRegistry
+from gate import GateSpecRegistry
 from task import Task
 
 from .builder import PipelineExecutionContext
@@ -11,7 +12,7 @@ class PipelineExecutor:
         self.context = context
         strategy = self.context.pipeline.get_config('execution.strategy')
         self.strategy = strategy_registry.get(strategy)
-    def execute(self, tasks: list[Task], gate_registry: GateRegistry):
+    def execute(self, tasks: list[Task], gate_registry: GateRegistry, gate_spec_registry: GateSpecRegistry):
         # context = self.context
 
         # for node_id in context.order:
@@ -26,5 +27,6 @@ class PipelineExecutor:
         return self.strategy.execute(
             self.context,
             tasks,
-            gate_registry
+            gate_registry,
+            gate_spec_registry,
         )

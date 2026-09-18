@@ -1,5 +1,5 @@
 
-from gate import GateResult, QualityGate
+from gate import GateResult, QualityGate, GateExecutionContext
 from task import SourceTask, Task
 from task.model import FileSourceOrigin, StringSourceOrigin
 
@@ -12,8 +12,10 @@ class PythonSyntaxGate(QualityGate):
 
     def run(
         self,
-        task: Task
+        context: GateExecutionContext
     ) -> GateResult:
+        task = context.task
+
         if not isinstance(task, SourceTask):
             raise TypeError(f"Task is not specified {type(task).__name__}")
         source = task.source

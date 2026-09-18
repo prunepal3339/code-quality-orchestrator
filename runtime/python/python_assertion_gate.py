@@ -1,7 +1,8 @@
-
-from gate import GateResult, QualityGate
+from gate import GateResult, QualityGate, GateExecutionContext
 from task import SourceTask, Task
 from task.model import FileSourceOrigin, StringSourceOrigin
+
+from gate.model import AssertionGateSpecification
 
 #Dummy assertion gate.
 class PythonAssertionGate(QualityGate):
@@ -12,8 +13,9 @@ class PythonAssertionGate(QualityGate):
 
     def run(
         self,
-        task: Task
+        context: GateExecutionContext
     ) -> GateResult:
+        task = context.task
         if not isinstance(task, SourceTask):
             raise TypeError(f"Task is not specified {type(task).__name__}")
         source = task.source
@@ -25,6 +27,9 @@ class PythonAssertionGate(QualityGate):
         else:
             origin = "<unknown>"
         try:
+            print(context.gate_spec)
+            print("---exitt---")
+            import sys;sys.exit(0)
             namespace = {}
 
             exec(compile(source, origin, "exec"), namespace) #noqa: S102

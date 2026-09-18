@@ -2,7 +2,17 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .model import GateSpecification, AssertionGateSpecification, AssertionSpecification
+from .model import (
+    AssertionGateSpecification,
+    AssertionRule,
+    AssertionSpecification,
+    AssertionTarget,
+    FunctionAssertionTarget,
+    FileAssertionSource,
+    GateSpecification,
+    GateId,
+)
+
 
 class ConfigurationError(Exception):
     ...
@@ -10,11 +20,10 @@ class ConfigurationError(Exception):
 class GateSpecificationLoader:
 
     @staticmethod
-    def load(path: Path) -> list[GateSpecification]:
+    def load(path: Path) -> tuple[dict[str, GateSpecification], dict[GateId, str]]:
         try:
             with open(path, "r") as f:
                 data = json.load(f)
-
         except FileNotFoundError as e:
             raise ConfigurationError(
                 f"Failed to load gate specification configuration "
@@ -37,22 +46,22 @@ class GateSpecificationLoader:
     @staticmethod
     def from_dict(
         config: dict[str, Any],
-    ) -> list[GateSpecification]:
+    ) -> tuple[dict[str, GateSpecification], dict[GateId, str]]:
 
         specifications = config.get("specifications")
-
+        bindings = config.get("bindings", {}) #bindings are optional.
         if not isinstance(specifications, dict):
             raise ConfigurationError(
                 "'specifications' must be an object"
             )
 
-        return [
-            GateSpecificationLoader._load_spec(
+        return {
+            spec_id: GateSpecificationLoader._load_spec(
                 spec_id,
                 spec,
             )
             for spec_id, spec in specifications.items()
-        ]
+        }, { gate_id: spec_id for spec_id, gate_id in bindings.items()}
 
     @staticmethod
     def _load_spec(
@@ -112,6 +121,28 @@ class GateSpecificationLoader:
                 f"'source' must be an object "
                 f"in specification '{spec_id}'"
             )
+        source_kind = source.get("kind")
+
+        if not isinstance(source_kind, str):
+            raise ConfigurationError(
+                f"Assertion source 'kind' must be a string "
+                f"in specification '{spec_id}'"
+            )
+
+        if source_kind == "file":
+            source_path = source.get("path")
+            if not isinstance(source_path, str):
+                raise ConfigurationError(
+                    f"Assertion source 'path' must be a string "
+                    f"in specification '{spec_id}'"
+                )
+            source_instance = FileAssertionSource(path=source_path)
+        else:
+            raise ConfigurationError(
+                f"Assertion source 'kind' must be 'file' "
+                f"in specification '{spec_id}'"
+            )
+
         target = assertion.get("target")
         if not isinstance(target, dict):
             raise ConfigurationError(
@@ -119,17 +150,25 @@ class GateSpecificationLoader:
                 f"in specification '{spec_id}'"
             )
         target_kind = target.get("kind")
-        target_name = target.get("name")
 
         if not isinstance(target_kind, str):
             raise ConfigurationError(
                 f"Assertion target 'kind' must be a string "
                 f"in specification '{spec_id}'"
             )
+        if target_kind == 'function':
+            target_name = target.get("name")
 
-        if not isinstance(target_name, str):
+            if not isinstance(target_name, str):
+                raise ConfigurationError(
+                    f"Assertion target 'name' must be a string "
+                    f"in specification '{spec_id}'"
+                )
+
+            target_instance = FunctionAssertionTarget(name=target_name)
+        else: # fix this with polymorphic target support.
             raise ConfigurationError(
-                f"Assertion target 'name' must be a string "
+                f"Assertion target 'kind' must be 'function' "
                 f"in specification '{spec_id}'"
             )
 
@@ -142,11 +181,8 @@ class GateSpecificationLoader:
             )
 
         return AssertionSpecification(
-            source=source,
-            target=AssertionTarget(
-                kind=target_kind,
-                name=target_name,
-            ),
+            source=source_instance,
+            target=target_instance,
             rules=[
                 GateSpecificationLoader._load_rule(
                     rule,
@@ -189,6 +225,6 @@ class GateSpecificationLoader:
             )
 
         return AssertionRule(
-            args=args,
+            arguments=args,
             expected=rule["expected"],
         )

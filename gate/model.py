@@ -19,6 +19,8 @@ class GateSpecification:
     """
     Configuration supplied for the quality gate.
     """
+    id: str
+    kind: str
 
 @dataclass
 class AssertionSource:
@@ -46,12 +48,22 @@ class AssertionResult:
     expected: Any
     actual: Any
 
+
 @dataclass
-class AssertionGateSpecification(GateSpecification):
+class AssertionSpecification:
     source: AssertionSource
     target: AssertionTarget
     rules: list[AssertionRule]
 
 @dataclass
+class AssertionGateSpecification(GateSpecification):
+    assertions: list[AssertionSpecification]
+
+@dataclass
 class AssertionGateResult(GateResult):
     assertion_results: list[AssertionResult]
+
+@dataclass
+class GateExecutionContext:
+    task: "Task"
+    gate_spec: GateSpecification | None = None

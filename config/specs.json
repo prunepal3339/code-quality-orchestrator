@@ -19,8 +19,6 @@
     }
   },
   "bindings": {
-    "this-is-a-comment": "specification_name: gate_name_or_id",
-    "this-is-a-comment_": "maps specification with gate name so that they can passed during execution",
     "myspec": "assertion"
   }
 }

@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 
-from .model import GateSpecification
+from .model import GateSpecification, GateExecutionContext
 
 class QualityGate(ABC):
     @abstractmethod
-    def run(self, task: "Task", spec: GateSpecification | None = None) -> "GateResult":
+    def run(self, context: GateExecutionContext) -> "GateResult":
         raise NotImplementedError
 
     @property

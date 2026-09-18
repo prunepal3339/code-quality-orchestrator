@@ -1,6 +1,6 @@
-from gate import GateResult, QualityGate
+from gate import GateExecutionContext, GateResult, QualityGate
 from gate.model import GateId
-from task import SourceTask, Task
+from task import SourceTask
 from task.model import FileSourceOrigin, StringSourceOrigin
 
 
@@ -12,8 +12,9 @@ class PythonExecutionGate(QualityGate):
 
     def run(
         self,
-        task: Task
+        context: GateExecutionContext
     ) -> GateResult:
+        task = context.task
         if not isinstance(task, SourceTask):
             raise TypeError(f"Task is not specified {type(task).__name__}")
         source = task.source
@@ -25,14 +26,14 @@ class PythonExecutionGate(QualityGate):
             origin = "<unknown>"
         try:
             namespace = {}
+
             executable_code = compile(
                 source,
                 origin,
                 "exec"
             )
 
-            exec(executable_code,namespace) #noqa: S102
-
+            # exec(executable_code, namespace) #noqa: S102
             return GateResult(
                 gate_id=self.id,
                 task_id=task.id,

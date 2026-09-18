@@ -1,6 +1,6 @@
 from typing import Protocol
 
-from gate import GateRegistry
+from gate import GateRegistry, GateSpecRegistry, GateExecutionContext
 from task import Task, TaskResult
 
 from .builder import PipelineExecutionContext
@@ -11,7 +11,8 @@ class PipelineExecutionStrategy(Protocol):
         self,
         context: PipelineExecutionContext,
         tasks: list[Task],
-        gate_registry: GateRegistry
+        gate_registry: GateRegistry,
+        gate_spec_registry: GateSpecRegistry,
     ) -> list[TaskResult]:
         ...
 class PipelineStrategyRegistry:
@@ -32,7 +33,8 @@ class StagedExecutionStrategy:
         self,
         context: PipelineExecutionContext,
         tasks: list[Task],
-        gate_registry: GateRegistry
+        gate_registry: GateRegistry,
+        gate_spec_registry: GateSpecRegistry
     ) -> list[TaskResult]:
         task_results = [
             TaskResult(task_id=task.id) for task in tasks
@@ -42,8 +44,10 @@ class StagedExecutionStrategy:
             if node is None:
                 raise ValueError(f"Error while executing pipeline {context.pipeline.name}, no node with id {node_id}")
             gate = gate_registry.get(kind=node.gate, language=context.pipeline.get_config("language"))
+            gate_spec = gate_spec_registry.get(node.gate)
             for i, task in enumerate(tasks):
-                task_results[i].gate_results.append(gate.run(task))
+                print(f"Executing gate {node.gate} for task {task.id}")
+                task_results[i].gate_results.append(gate.run(GateExecutionContext(task=task, gate_spec=gate_spec)))
         return task_results
 
 class TaskExecutionStrategy:
@@ -51,7 +55,8 @@ class TaskExecutionStrategy:
         self,
         context: PipelineExecutionContext,
         tasks: list[Task],
-        gate_registry: GateRegistry
+        gate_registry: GateRegistry,
+        gate_spec_registry: GateSpecRegistry
     ) -> list[TaskResult]:
         task_results = [
             TaskResult(task_id=task.id) for task in tasks
@@ -63,5 +68,6 @@ class TaskExecutionStrategy:
                 if node is None:
                     raise ValueError(f"Error while executing pipeline {context.pipeline.name}, no node with id {node_id}")
                 gate = gate_registry.get(kind=node.gate, language=context.pipeline.get_config("language"))
-                task_results[i].gate_results.append(gate.run(task))
+                gate_spec = gate_spec_registry.get(node.gate)
+                task_results[i].gate_results.append(gate.run(GateExecutionContext(task=task, gate_spec=gate_spec)))
         return task_results

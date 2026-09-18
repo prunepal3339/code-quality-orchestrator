@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from gate import GateRegistry
+from gate import GateRegistry, GateSpecRegistry
 from pipeline import PipelineBuilder, PipelineExecutor, PipelineLoader
 from pipeline.strategy import (
     PipelineStrategyRegistry,
@@ -11,6 +11,7 @@ from runtime.python import PythonExecutionGate, PythonSyntaxGate, PythonAssertio
 from task.loader import TaskSpecificationLoader
 from task.resolver import TaskSpecificationResolver
 
+from gate.loader import GateSpecificationLoader
 
 def main():
     gate_registry = GateRegistry({
@@ -25,6 +26,9 @@ def main():
         "task": TaskExecutionStrategy()
     })
 
+    gate_specs, bindings = GateSpecificationLoader.load(Path("config/specs.json"))
+    gate_spec_registry = GateSpecRegistry(bindings, gate_specs)
+
     specs = TaskSpecificationLoader.load(Path('config/tasks.json'))
     tasks = TaskSpecificationResolver.resolve(specs)
 
@@ -32,7 +36,8 @@ def main():
     context = PipelineBuilder(conduit).build()
     results = PipelineExecutor(context, strategy_registry).execute(
         tasks,
-        gate_registry
+        gate_registry,
+        gate_spec_registry
     )
 
     print(results)
