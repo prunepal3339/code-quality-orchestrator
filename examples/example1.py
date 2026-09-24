@@ -5,4 +5,4 @@ def hello(name):
     print(f"Hello {name}!")
 
 hello('Sadish')
-sys.exit(0)
+# sys.exit(0)

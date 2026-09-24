@@ -1,6 +1,5 @@
 
-from gate import GateRegistry
-from gate import GateSpecRegistry
+from gate import GateRegistry, GateSpecRegistry
 from task import Task
 
 from .builder import PipelineExecutionContext

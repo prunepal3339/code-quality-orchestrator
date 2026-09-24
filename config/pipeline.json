@@ -5,6 +5,11 @@
       "language": "python",
       "execution": {
         "strategy": "staged"
+      },
+      "transition": {
+        "when": {
+          "passed": true
+        }
       }
     },
     "nodes": [

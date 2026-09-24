@@ -1,24 +1,25 @@
 from pathlib import Path
 
 from gate import GateRegistry, GateSpecRegistry
+from gate.loader import GateSpecificationLoader
 from pipeline import PipelineBuilder, PipelineExecutor, PipelineLoader
 from pipeline.strategy import (
     PipelineStrategyRegistry,
     StagedExecutionStrategy,
     TaskExecutionStrategy,
 )
-from runtime.python import PythonExecutionGate, PythonSyntaxGate, PythonAssertionGate
+from runtime.python import PythonAssertionGate, PythonExecutionGate, PythonSyntaxGate
+from runtime.python.python_assertion_executor import SpecAssertionExecutor
 from task.loader import TaskSpecificationLoader
 from task.resolver import TaskSpecificationResolver
 
-from gate.loader import GateSpecificationLoader
 
 def main():
     gate_registry = GateRegistry({
         "python": {
             "syntax": PythonSyntaxGate(),
             "execution": PythonExecutionGate(),
-            "assertion": PythonAssertionGate(),
+            "assertion": PythonAssertionGate(SpecAssertionExecutor()),
         }
     })
     strategy_registry = PipelineStrategyRegistry({

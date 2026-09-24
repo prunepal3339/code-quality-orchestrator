@@ -6,11 +6,10 @@ from .model import (
     AssertionGateSpecification,
     AssertionRule,
     AssertionSpecification,
-    AssertionTarget,
-    FunctionAssertionTarget,
     FileAssertionSource,
-    GateSpecification,
+    FunctionAssertionTarget,
     GateId,
+    GateSpecification,
 )
 
 

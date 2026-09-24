@@ -1,6 +1,6 @@
 from typing import Protocol
 
-from gate import GateRegistry, GateSpecRegistry, GateExecutionContext
+from gate import GateExecutionContext, GateRegistry, GateSpecRegistry
 from task import Task, TaskResult
 
 from .builder import PipelineExecutionContext
@@ -46,8 +46,9 @@ class StagedExecutionStrategy:
             gate = gate_registry.get(kind=node.gate, language=context.pipeline.get_config("language"))
             gate_spec = gate_spec_registry.get(node.gate)
             for i, task in enumerate(tasks):
-                print(f"Executing gate {node.gate} for task {task.id}")
-                task_results[i].gate_results.append(gate.run(GateExecutionContext(task=task, gate_spec=gate_spec)))
+                when_condition = context.pipeline.get_config("transition.when")
+                if is_executable(task_results[i].gate_results, when_condition):
+                    task_results[i].gate_results.append(gate.run(GateExecutionContext(task=task, gate_spec=gate_spec)))
         return task_results
 
 class TaskExecutionStrategy:
@@ -63,11 +64,22 @@ class TaskExecutionStrategy:
         ]
 
         for i, task in enumerate(tasks):
+            when_condition = context.pipeline.get_config("transition.when")
             for node_id in context.order:
                 node = context.pipeline.nodes[node_id]
                 if node is None:
                     raise ValueError(f"Error while executing pipeline {context.pipeline.name}, no node with id {node_id}")
                 gate = gate_registry.get(kind=node.gate, language=context.pipeline.get_config("language"))
                 gate_spec = gate_spec_registry.get(node.gate)
-                task_results[i].gate_results.append(gate.run(GateExecutionContext(task=task, gate_spec=gate_spec)))
+
+                if is_executable(task_results[i].gate_results, when_condition):
+                    task_results[i].gate_results.append(gate.run(GateExecutionContext(task=task, gate_spec=gate_spec)))
         return task_results
+
+def is_executable(results, condition):
+    for result in results:
+        for field, expected in condition.items():
+            actual = getattr(result, field)
+            if expected != actual:
+                return False
+    return True

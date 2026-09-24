@@ -1,6 +1,6 @@
 
-from gate import GateResult, QualityGate, GateExecutionContext
-from task import SourceTask, Task
+from gate import GateExecutionContext, GateResult, QualityGate
+from task import SourceTask
 from task.model import FileSourceOrigin, StringSourceOrigin
 
 

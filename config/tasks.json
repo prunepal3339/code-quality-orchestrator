@@ -1,7 +1,10 @@
 {
   "tasks": {
       "specs": [
-        { "id": 1, "kind": "source", "source_type": "string", "value": "import os\ndef main():    print('Test Python')\nos._exit(0)\n" },
+        { "id": 1, "kind": "source", "source_type": "glob", "value": "examples/**/*.py" }
+      ],
+      "demo-specs": [
+        { "id": 1, "kind": "source", "source_type": "string", "value": "import sys\ndef main():    print('Test Python')\nsys.exit(1)\n" },
         { "id": 2, "kind": "source", "source_type": "file", "value": "examples/example1.py" },
         { "id": 3, "kind": "source", "source_type": "glob", "value": "examples/**/*.py" }
       ]

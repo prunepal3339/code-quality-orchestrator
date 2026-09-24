@@ -1,12 +1,16 @@
-from dataclasses import dataclass, field
-from typing import Any
-from pathlib import Path
+from __future__ import annotations
 
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from task.model import Task, TaskId
 
 @dataclass
 class GateResult:
-    gate_id: "GateId"
-    task_id: "TaskId"
+    gate_id: GateId
+    task_id: TaskId
     source: str
     origin: str
     passed: bool
@@ -44,10 +48,21 @@ class AssertionRule:
     expected: Any
 
 @dataclass
-class AssertionResult:
+class AssertionRuleResult:
+    """
+    This is mapped one-to-one with AssertionRule.
+    For each assertion rule, there exists one assertion rule result.
+    """
     expected: Any
     actual: Any
 
+@dataclass
+class AssertionResult:
+    """
+    This is mapped one-to-one with AssertionSpecification.
+    For each specification, there exists one assertion result.
+    """
+    results: list[AssertionRuleResult] = field(default_factory=list)
 
 @dataclass
 class AssertionSpecification:
@@ -65,5 +80,5 @@ class AssertionGateResult(GateResult):
 
 @dataclass
 class GateExecutionContext:
-    task: "Task"
+    task: Task
     gate_spec: GateSpecification | None = None

@@ -2,8 +2,9 @@ import argparse
 import json
 from pathlib import Path
 
-from gate import GateRegistry
 from loader import SpecificationLoader
+
+from gate import GateRegistry
 from runtime.python import PythonSyntaxValidator, PythonUnitTestGate
 
 parser = argparse.ArgumentParser(

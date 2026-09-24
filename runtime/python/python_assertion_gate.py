@@ -1,14 +1,20 @@
-from gate import GateResult, QualityGate, GateExecutionContext
-from task import SourceTask, Task
+from gate import GateExecutionContext, GateResult, QualityGate
+from gate.model import AssertionGateResult, AssertionGateSpecification, GateId
+from runtime.python.python_assertion_executor import ExecAssertionExecutionContext
+from task import SourceTask
 from task.model import FileSourceOrigin, StringSourceOrigin
 
-from gate.model import AssertionGateSpecification
 
-#Dummy assertion gate.
+class MissingSpecificationError(ValueError):
+    pass
+
 class PythonAssertionGate(QualityGate):
 
+    def __init__(self, executor):
+        self.executor = executor
+
     @property
-    def id(self) -> "GateId":
+    def id(self) -> GateId:
         return "assertion"
 
     def run(
@@ -17,9 +23,13 @@ class PythonAssertionGate(QualityGate):
     ) -> GateResult:
         task = context.task
         if not isinstance(task, SourceTask):
-            raise TypeError(f"Task is not specified {type(task).__name__}")
+            raise TypeError(f"Expected type SourceTask, got type {type(task).__name__}")
         source = task.source
-        assertions = []
+        spec = context.gate_spec
+        if  spec is None:
+            raise MissingSpecificationError(f"Gate specification missing for assertion gate for task {task.id}.")
+        if not isinstance(spec, AssertionGateSpecification):
+            raise TypeError(f"Expected type AssertionGateSpecification, got type {type(spec).__name__}")
         if isinstance(task.origin, FileSourceOrigin):
             origin = str(task.origin.path)
         elif isinstance(task.origin, StringSourceOrigin):
@@ -27,22 +37,30 @@ class PythonAssertionGate(QualityGate):
         else:
             origin = "<unknown>"
         try:
-            print(context.gate_spec)
-            print("---exitt---")
-            import sys;sys.exit(0)
             namespace = {}
 
             exec(compile(source, origin, "exec"), namespace) #noqa: S102
 
-            for assertion in assertions:
-                exec(compile(assertion, "<string>", "exec"), namespace) #noqa: S102
+            results = []
+            for assertion in spec.assertions:
+                result = self.executor.execute(assertion, ExecAssertionExecutionContext(namespace=namespace))
+                results.append(result)
+            print(results)
 
-            return GateResult(
+            passed = True
+            for result in results:
+                for assertion_result in result.results:
+                    if assertion_result.expected != assertion_result.actual:
+                        passed = False
+                        break
+
+            return AssertionGateResult(
                 gate_id=self.id,
                 task_id=task.id,
                 source=source,
                 origin=origin,
-                passed=True
+                passed=passed,
+                assertion_results=results
             )
         except SyntaxError as e:
             return GateResult(
@@ -63,6 +81,24 @@ class PythonAssertionGate(QualityGate):
                 error = str(e),
             )
         except AssertionError as e:
+            return GateResult(
+                gate_id=self.id,
+                task_id=task.id,
+                passed=False,
+                origin=origin,
+                source=source,
+                error = str(e),
+            )
+        except Exception as e: #noqa: BLE001
+            return GateResult(
+                gate_id=self.id,
+                task_id=task.id,
+                passed=False,
+                origin=origin,
+                source=source,
+                error = str(e),
+            )
+        except SystemExit as e:
             return GateResult(
                 gate_id=self.id,
                 task_id=task.id,

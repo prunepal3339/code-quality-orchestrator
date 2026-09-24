@@ -1,5 +1,6 @@
-from .model import GateId
-from .model import GateSpecification
+from .model import GateId, GateSpecification
+
+
 class GateSpecRegistry:
     def __init__(self, bindings: dict, gate_specs: dict[str, GateSpecification]):
         self.bindings = bindings

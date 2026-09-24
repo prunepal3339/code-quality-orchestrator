@@ -33,7 +33,7 @@ class PythonExecutionGate(QualityGate):
                 "exec"
             )
 
-            # exec(executable_code, namespace) #noqa: S102
+            exec(executable_code, namespace) #noqa: S102
             return GateResult(
                 gate_id=self.id,
                 task_id=task.id,
@@ -67,4 +67,13 @@ class PythonExecutionGate(QualityGate):
                 origin=origin,
                 passed=False,
                 error = str(e)
+            )
+        except SystemExit as e:
+            return GateResult(
+                gate_id=self.id,
+                task_id=task.id,
+                source=source,
+                origin=origin,
+                passed=False,
+                error=str(e)
             )
