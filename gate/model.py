@@ -44,11 +44,28 @@ class FunctionAssertionTarget(AssertionTarget):
 
 @dataclass
 class AssertionRule:
-    arguments: dict[str, Any]
-    expected: Any
+    ...
 
 @dataclass
 class AssertionRuleResult:
+    ...
+
+@dataclass
+class PythonAssertionRule(AssertionRule):
+    rule: str
+
+@dataclass
+class PythonAssertionRuleResult(AssertionRuleResult):
+    passed: bool
+    error: str | None = None
+
+@dataclass
+class ObjectAssertionRule(AssertionRule):
+    arguments: list[Any]
+    expected: Any
+
+@dataclass
+class ObjectAssertionRuleResult(AssertionRuleResult):
     """
     This is mapped one-to-one with AssertionRule.
     For each assertion rule, there exists one assertion rule result.
@@ -66,9 +83,16 @@ class AssertionResult:
 
 @dataclass
 class AssertionSpecification:
+    rules: list[AssertionRule]
+
+@dataclass
+class ObjectAssertionSpecification(AssertionSpecification):
     source: AssertionSource
     target: AssertionTarget
-    rules: list[AssertionRule]
+
+@dataclass
+class PythonAssertionSpecification(AssertionSpecification):
+    ...
 
 @dataclass
 class AssertionGateSpecification(GateSpecification):

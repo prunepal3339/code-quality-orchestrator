@@ -10,6 +10,7 @@ from .model import (
     FunctionAssertionTarget,
     GateId,
     GateSpecification,
+    ObjectAssertionRule,
 )
 
 
@@ -219,11 +220,11 @@ class GateSpecificationLoader:
 
         if not isinstance(args, list):
             raise ConfigurationError(
-                f"'args' must be a list "
+                f"'args' must be a dictionary "
                 f"in specification '{spec_id}'"
             )
 
-        return AssertionRule(
+        return ObjectAssertionRule(
             arguments=args,
             expected=rule["expected"],
         )

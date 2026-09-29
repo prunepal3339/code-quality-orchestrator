@@ -1,8 +1,16 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
-from gate.model import AssertionGateSpecification, AssertionResult, AssertionRuleResult, AssertionSpecification, FunctionAssertionTarget
-from runtime.python.python_assertion_gate_old import AssertionGateResult
+from gate.model import (
+    AssertionResult,
+    AssertionRuleResult,
+    AssertionSpecification,
+    FunctionAssertionTarget,
+    ObjectAssertionRule,
+    ObjectAssertionRuleResult,
+    PythonAssertionRule,
+    PythonAssertionRuleResult,
+)
 
 
 @dataclass
@@ -23,24 +31,37 @@ class SpecAssertionExecutor(AssertionExecutor):
         if not isinstance(context, ExecAssertionExecutionContext):
             raise TypeError(f"Expected type ExecAssertionExecutionContext, got type {type(context).__name__}")
 
-        namespace = context.namespace
         results = []
-        assertion_target = spec.target
-        if not isinstance(assertion_target, FunctionAssertionTarget):
-            raise TypeError(f"Target not implemented for type: {type(assertion_target).__name__}")
 
-        function = namespace.get(assertion_target.name)
-        if function is None:
-            raise ValueError(f"Target {assertion_target.name} not available for assertion.")
         for rule in spec.rules:
-            if rule is None or rule.arguments is None:
-                continue
-            actual = function(*rule.arguments)
+            if isinstance(rule, ObjectAssertionRule):
+                namespace = context.namespace
+                assertion_target = spec.target
+                if not isinstance(assertion_target, FunctionAssertionTarget):
+                    raise TypeError(f"Target not implemented for type: {type(assertion_target).__name__}")
 
-            result = AssertionRuleResult(
-                expected=rule.expected,
-                actual=actual,
-            )
-            results.append(result)
+                function = namespace.get(assertion_target.name)
+                if function is None:
+                    raise ValueError(f"Target {assertion_target.name} not available for assertion.")
+
+                if rule is None or rule.arguments is None:
+                    continue
+                actual = function(*rule.arguments)
+
+                result = ObjectAssertionRuleResult(
+                    expected=rule.expected,
+                    actual=actual,
+                )
+                results.append(result)
+            try:
+                if isinstance(rule, PythonAssertionRule):
+                    namespace = context.namespace
+                    exec(rule.rule, namespace) #noqa: S102
+            except Exception as e: #noqa
+                result = PythonAssertionRuleResult(
+                    passed=False,
+                    error=str(e)
+                )
+                results.append(result)
 
         return AssertionResult(results=results)

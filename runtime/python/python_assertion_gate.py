@@ -54,6 +54,7 @@ class PythonAssertionGate(QualityGate):
                         passed = False
                         break
 
+
             return AssertionGateResult(
                 gate_id=self.id,
                 task_id=task.id,

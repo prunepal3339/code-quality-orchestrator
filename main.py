@@ -8,6 +8,7 @@ from pipeline.strategy import (
     StagedExecutionStrategy,
     TaskExecutionStrategy,
 )
+from reporter import Reporter
 from runtime.python import PythonAssertionGate, PythonExecutionGate, PythonSyntaxGate
 from runtime.python.python_assertion_executor import SpecAssertionExecutor
 from task.loader import TaskSpecificationLoader
@@ -41,7 +42,8 @@ def main():
         gate_spec_registry
     )
 
-    print(results)
+    r = Reporter({})
+    print(r.generate(results))
 
 if __name__ == "__main__":
     main()
