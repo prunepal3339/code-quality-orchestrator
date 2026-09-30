@@ -11,12 +11,14 @@ from .model import (
     GateId,
     GateSpecification,
     ObjectAssertionRule,
+    ObjectAssertionSpecification,
 )
 
 
 class ConfigurationError(Exception):
     ...
 
+### Only supports Object assertion specifications for now.
 class GateSpecificationLoader:
 
     @staticmethod
@@ -136,7 +138,7 @@ class GateSpecificationLoader:
                     f"Assertion source 'path' must be a string "
                     f"in specification '{spec_id}'"
                 )
-            source_instance = FileAssertionSource(path=source_path)
+            source_instance = FileAssertionSource(path=Path(source_path))
         else:
             raise ConfigurationError(
                 f"Assertion source 'kind' must be 'file' "
@@ -180,7 +182,7 @@ class GateSpecificationLoader:
                 f"in specification '{spec_id}'"
             )
 
-        return AssertionSpecification(
+        return ObjectAssertionSpecification(
             source=source_instance,
             target=target_instance,
             rules=[

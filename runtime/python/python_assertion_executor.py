@@ -3,7 +3,6 @@ from dataclasses import dataclass
 
 from gate.model import (
     AssertionResult,
-    AssertionRuleResult,
     AssertionSpecification,
     FunctionAssertionTarget,
     ObjectAssertionRule,

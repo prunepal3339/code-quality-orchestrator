@@ -1,7 +1,7 @@
 {
   "tasks": {
       "specs": [
-        { "id": 1, "kind": "source", "source_type": "glob", "value": "examples/**/*.py" }
+        { "id": 1, "kind": "source", "source_type": "glob", "value": "sources/unwatermarked/*.py" }
       ],
       "demo-specs": [
         { "id": 1, "kind": "source", "source_type": "string", "value": "import sys\ndef main():    print('Test Python')\nsys.exit(1)\n" },
