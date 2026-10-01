@@ -1,3 +1,5 @@
+import importlib
+import inspect
 import json
 from pathlib import Path
 from typing import Any
@@ -7,11 +9,14 @@ from .model import (
     AssertionRule,
     AssertionSpecification,
     FileAssertionSource,
+    TaskAssertionSource,
     FunctionAssertionTarget,
     GateId,
     GateSpecification,
     ObjectAssertionRule,
     ObjectAssertionSpecification,
+    PythonAssertionRule,
+    PythonAssertionSpecification
 )
 
 
@@ -80,10 +85,59 @@ class GateSpecificationLoader:
                 spec_id,
                 spec,
             )
+        elif kind == "assertion:builder":
+            # import sys;print(spec);sys.exit(0)
+            return GateSpecificationLoader._build_assertion_spec(
+                spec_id,
+                spec
+            )
+
         raise ConfigurationError(
             f"Unidentified gate specification: {kind}"
         )
-
+    @staticmethod
+    def import_string(path: str) -> type:
+        module_name, class_name = path.rsplit(".", 1)
+        module = importlib.import_module(module_name)
+        try:
+            return getattr(module, class_name)
+        except AttributeError:
+            raise ConfigurationError(
+                f"Class '{class_name} not found in module '{module_name}'"
+            )
+    @staticmethod
+    def _build_assertion_spec(
+        spec_id: str,
+        spec: dict[str, Any],
+    ) -> AssertionGateSpecification:
+        source = spec.get("source")
+        mapper = spec.get("mapper")
+        args = spec.get("args")
+        #string representation for classes.
+        if isinstance(mapper, str):
+            mapper_class = GateSpecificationLoader.import_string(mapper)
+            assertion_mapper = mapper_class(Path(source))
+            assertions = assertion_mapper.map(args)
+        
+            assertions = [
+                PythonAssertionSpecification(
+                    rules=[
+                        PythonAssertionRule(
+                            rule=rule,
+                        )
+                        for rule in assertion.get("rules")
+                    ],
+                    source=TaskAssertionSource(assertion.get("task_id"))
+                )
+                for assertion in assertions
+            ]
+            return AssertionGateSpecification(
+                id=spec_id,
+                kind="assertion",
+                assertions=assertions
+            )
+        else:
+            raise TypeError(f"Mapper must be a string representing class.")    
     @staticmethod
     def _load_assertion_spec(
         spec_id: str,

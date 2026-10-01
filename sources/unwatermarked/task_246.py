@@ -1,4 +1,3 @@
-import math
 
 def babylonian_sugareroot(n):
     if n == 0:

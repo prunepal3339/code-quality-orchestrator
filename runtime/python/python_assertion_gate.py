@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from gate import GateExecutionContext, GateResult, QualityGate
 from gate.model import AssertionGateResult, AssertionGateSpecification, GateId
 from runtime.python.python_assertion_executor import ExecAssertionExecutionContext
@@ -42,15 +44,19 @@ class PythonAssertionGate(QualityGate):
             exec(compile(source, origin, "exec"), namespace) #noqa: S102
 
             results = []
+            
             for assertion in spec.assertions:
-                result = self.executor.execute(assertion, ExecAssertionExecutionContext(namespace=namespace))
-                results.append(result)
-            print(results)
-
+                origin_path = Path(origin)
+                original_task_id = origin_path.stem.removeprefix("task_")
+                if assertion.source.task_id == original_task_id: 
+                    print(original_task_id)
+                    result = self.executor.execute(assertion, ExecAssertionExecutionContext(namespace=namespace))
+                    results.append(result)
+                    break
             passed = True
             for result in results:
                 for assertion_result in result.results:
-                    if assertion_result.expected != assertion_result.actual:
+                    if not assertion_result.passed:
                         passed = False
                         break
 

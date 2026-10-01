@@ -18,7 +18,7 @@ parser.add_argument(
 parser.add_argument(
     '--source-dir',
     type=str,
-    default= Path(".").resolve(),
+    default= Path.cwd(),
     help="Path to the source directory."
 )
 
@@ -59,7 +59,7 @@ for spec in specs:
             results.extend(result)
         else:
             results.append(result)
-    except Exception as e:
+    except Exception as e: #noqa: BLE001
         print(f"ErRoRR: {spec} failed: {e}")
 with open(args.output_file, "w", encoding="utf-8") as f:
     f.write(json.dumps([r.to_dict() for r in results], indent=4))

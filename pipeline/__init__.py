@@ -8,6 +8,7 @@ __all__ = [
     "NodeId",
     "Pipeline",
     "PipelineBuildError",
+    "PipelineBuilder",
     "PipelineConfigError",
     "PipelineEdge",
     "PipelineExecutionContext",

@@ -35,6 +35,10 @@ class FileAssertionSource(AssertionSource):
     path: Path
 
 @dataclass
+class TaskAssertionSource(AssertionSource):
+    task_id: TaskId
+
+@dataclass
 class AssertionTarget:
     ...
 
@@ -72,6 +76,7 @@ class ObjectAssertionRuleResult(AssertionRuleResult):
     """
     expected: Any
     actual: Any
+    passed: bool
 
 @dataclass
 class AssertionResult:
@@ -84,10 +89,10 @@ class AssertionResult:
 @dataclass
 class AssertionSpecification:
     rules: list[AssertionRule]
+    source: AssertionSource
 
 @dataclass
 class ObjectAssertionSpecification(AssertionSpecification):
-    source: AssertionSource
     target: AssertionTarget
 
 @dataclass

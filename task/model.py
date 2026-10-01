@@ -2,6 +2,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from gate.model import GateResult
+
 type TaskId = str
 
 @dataclass(frozen=True)
@@ -27,7 +29,7 @@ class SourceTask(Task):
 @dataclass
 class TaskResult:
     task_id: TaskId
-    gate_results: list["GateResult"] = field(default_factory=list)
+    gate_results: list[GateResult] = field(default_factory=list)
 
 #delete me if you find no reference of me in future use case..
 @dataclass

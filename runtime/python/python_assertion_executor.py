@@ -50,6 +50,7 @@ class SpecAssertionExecutor(AssertionExecutor):
                 result = ObjectAssertionRuleResult(
                     expected=rule.expected,
                     actual=actual,
+                    passed=actual == rule.expected,
                 )
                 results.append(result)
             try:

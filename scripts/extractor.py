@@ -6,7 +6,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 CODE_PATTERN = re.compile(
     r"assistant\s*```(?:python|py)\s*\r?\n(.*?)```",
     re.DOTALL | re.IGNORECASE,

@@ -1,6 +1,17 @@
 {
+  "this-is-a-comment": "This file is a configuration for providing additional context named specification for each gates.  Each gate (id) can have bindings to the specification defined here for eg; assertion gate bounded to the myspec binding.",
   "specifications": {
-    "myspec": {
+    "mbppspec": {
+      "kind": "assertion:builder",
+      "source": "sources/result-sanitized-mbpp-it-1.json",
+      "mapper": "provider.mbpp.MBPPAssertionMapper",
+      "args": {
+        "field": "test_list"
+      }
+    }
+  },
+  "demo-specifications": {
+     "myspec": {
       "kind": "assertion",
       "assertions": [
         {
@@ -19,6 +30,6 @@
     }
   },
   "bindings": {
-    "myspec": "assertion"
+    "mbppspec": "assertion"
   }
 }

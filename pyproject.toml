@@ -14,3 +14,8 @@ dev = [
     "debugpy>=1.8.22",
     "ruff>=0.16.7",
 ]
+[tool.ruff]
+exclude = ["sources", "examples"]
+
+[tool.ruff.lint]
+ignore = ["BLE001"]

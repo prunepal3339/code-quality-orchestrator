@@ -43,7 +43,10 @@ def main():
     )
 
     r = Reporter({})
-    print(r.generate(results))
+
+    report = r.generate(results)
+    with open('report.json', 'w') as f:
+        f.write(report)
 
 if __name__ == "__main__":
     main()

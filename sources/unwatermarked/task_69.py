@@ -1,8 +1,6 @@
 def is_sublist(main_list, sub_list):
-    if sub_list == []:
+    if sub_list == [] or sub_list == main_list:
         return True
-    elif sub_list == main_list:
-        return True 
     elif len(sub_list) > len(main_list):
         return False
     else:
