@@ -44,15 +44,16 @@ class PythonAssertionGate(QualityGate):
             exec(compile(source, origin, "exec"), namespace) #noqa: S102
 
             results = []
-            
+
+            origin_path = Path(origin)
+            original_task_id = origin_path.stem.removeprefix("task_")
+
             for assertion in spec.assertions:
-                origin_path = Path(origin)
-                original_task_id = origin_path.stem.removeprefix("task_")
-                if assertion.source.task_id == original_task_id: 
-                    print(original_task_id)
-                    result = self.executor.execute(assertion, ExecAssertionExecutionContext(namespace=namespace))
-                    results.append(result)
-                    break
+                if int(assertion.source.task_id) != int(original_task_id):
+                    continue
+                result = self.executor.execute(assertion, ExecAssertionExecutionContext(namespace=namespace))
+                results.append(result)
+                break
             passed = True
             for result in results:
                 for assertion_result in result.results:

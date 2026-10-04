@@ -1,3 +1,5 @@
+import argparse
+
 from pathlib import Path
 
 from gate import GateRegistry, GateSpecRegistry
@@ -15,7 +17,7 @@ from task.loader import TaskSpecificationLoader
 from task.resolver import TaskSpecificationResolver
 
 
-def main():
+def run_orchestator(reporting_file: str):
     gate_registry = GateRegistry({
         "python": {
             "syntax": PythonSyntaxGate(),
@@ -45,8 +47,22 @@ def main():
     r = Reporter({})
 
     report = r.generate(results)
-    with open('report.json', 'w') as f:
+    with open(reporting_file, 'w') as f:
         f.write(report)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Run quality gate checks on test specifications."
+    )
+    parser.add_argument(
+        '--output-file',
+        '-o',
+        type=str,
+        default="report.json",
+        help="Path to file where report needs to be persisted."
+    )
+    args = parser.parse_args()
+
+    run_orchestator(
+        reporting_file=args.output_file
+    )

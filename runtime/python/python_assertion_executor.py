@@ -34,34 +34,47 @@ class SpecAssertionExecutor(AssertionExecutor):
 
         for rule in spec.rules:
             if isinstance(rule, ObjectAssertionRule):
-                namespace = context.namespace
-                assertion_target = spec.target
-                if not isinstance(assertion_target, FunctionAssertionTarget):
-                    raise TypeError(f"Target not implemented for type: {type(assertion_target).__name__}")
+                try:
+                    namespace = context.namespace
+                    assertion_target = spec.target
+                    if not isinstance(assertion_target, FunctionAssertionTarget):
+                        raise TypeError(f"Target not implemented for type: {type(assertion_target).__name__}")
 
-                function = namespace.get(assertion_target.name)
-                if function is None:
-                    raise ValueError(f"Target {assertion_target.name} not available for assertion.")
+                    function = namespace.get(assertion_target.name)
+                    if function is None:
+                        raise ValueError(f"Target {assertion_target.name} not available for assertion.")
 
-                if rule is None or rule.arguments is None:
-                    continue
-                actual = function(*rule.arguments)
+                    if rule is None or rule.arguments is None:
+                        continue
+                    actual = function(*rule.arguments)
 
-                result = ObjectAssertionRuleResult(
-                    expected=rule.expected,
-                    actual=actual,
-                    passed=actual == rule.expected,
-                )
-                results.append(result)
-            try:
-                if isinstance(rule, PythonAssertionRule):
+                    result = ObjectAssertionRuleResult(
+                        expected=rule.expected,
+                        actual=actual,
+                        passed=actual == rule.expected,
+                    )
+                except Exception as e: #noqa: BLE001
+                    result = ObjectAssertionRuleResult(
+                        expected=rule.expected,
+                        actual=None,
+                        passed=False,
+                        error=str(e)
+                    )
+                finally:
+                    results.append(result)
+
+            if isinstance(rule, PythonAssertionRule):
+                try:
                     namespace = context.namespace
                     exec(rule.rule, namespace) #noqa: S102
-            except Exception as e: #noqa
-                result = PythonAssertionRuleResult(
-                    passed=False,
-                    error=str(e)
-                )
-                results.append(result)
-
+                    result = PythonAssertionRuleResult(
+                        passed=True,
+                    )
+                except Exception as e: #noqa: BLE001
+                    result = PythonAssertionRuleResult(
+                        passed=False,
+                        error=str(e)
+                    )
+                finally:
+                    results.append(result)
         return AssertionResult(results=results)

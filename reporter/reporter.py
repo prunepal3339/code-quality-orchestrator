@@ -13,4 +13,4 @@ class Reporter:
             asdict(task_result)
             for task_result in task_results
         ]
-        return json.dumps(data)
+        return json.dumps(data, indent=4)
