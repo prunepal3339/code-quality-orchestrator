@@ -80,13 +80,10 @@ class GateSpecificationLoader:
                 f"Specification '{spec_id}' must be an object"
             )
         kind = spec.get("kind")
+
         if kind == "assertion":
-            return GateSpecificationLoader._load_assertion_spec(
-                spec_id,
-                spec,
-            )
+            return GateSpecificationLoader._load_assertion_spec(spec_id, spec)
         elif kind == "assertion:builder":
-            # import sys;print(spec);sys.exit(0)
             return GateSpecificationLoader._build_assertion_spec(
                 spec_id,
                 spec
@@ -106,10 +103,7 @@ class GateSpecificationLoader:
                 f"Class '{class_name} not found in module '{module_name}'"
             )
     @staticmethod
-    def _build_assertion_spec(
-        spec_id: str,
-        spec: dict[str, Any],
-    ) -> AssertionGateSpecification:
+    def _build_assertion_spec(spec_id: str, spec: dict[str, Any]) -> AssertionGateSpecification:
         source = spec.get("source")
         mapper = spec.get("mapper")
         args = spec.get("args")
@@ -118,7 +112,7 @@ class GateSpecificationLoader:
             mapper_class = GateSpecificationLoader.import_string(mapper)
             assertion_mapper = mapper_class(Path(source))
             assertions = assertion_mapper.map(args)
-        
+
             assertions = [
                 PythonAssertionSpecification(
                     rules=[
@@ -137,12 +131,9 @@ class GateSpecificationLoader:
                 assertions=assertions
             )
         else:
-            raise TypeError(f"Mapper must be a string representing class.")    
+            raise TypeError(f"Mapper must be a string representing class.")
     @staticmethod
-    def _load_assertion_spec(
-        spec_id: str,
-        spec: dict[str, Any],
-    ) -> AssertionGateSpecification:
+    def _load_assertion_spec(spec_id: str, spec: dict[str, Any]) -> AssertionGateSpecification:
         assertions = spec.get("assertions")
         if not isinstance(assertions, list):
             raise ConfigurationError(

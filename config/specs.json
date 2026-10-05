@@ -3,7 +3,7 @@
   "specifications": {
     "mbppspec": {
       "kind": "assertion:builder",
-      "source": "sources/result-sanitized-mbpp-it-1.json",
+      "source": "sources/mbpp.json",
       "mapper": "provider.mbpp.MBPPAssertionMapper",
       "args": {
         "field": "test_list"

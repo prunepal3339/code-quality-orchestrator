@@ -48,6 +48,7 @@ class StagedExecutionStrategy:
             for i, task in enumerate(tasks):
                 when_condition = context.pipeline.get_config("transition.when")
                 if is_executable(task_results[i].gate_results, when_condition):
+                    print(f"Executing the task {task.id}:{task.origin.path} @ {gate.id} gate")
                     task_results[i].gate_results.append(gate.run(GateExecutionContext(task=task, gate_spec=gate_spec)))
         return task_results
 
