@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
+from datetime import timedelta
 from typing import Any
-
 """
 The concept of node level configuration is different from edge level configuration.
 Node should store information about execution, while
@@ -25,6 +25,18 @@ class PipelineNode:
     gate: str # TODO: Replace str with better type hinting.
     config: dict[str, Any] = field(default_factory=dict)
 
+class PipelineNodeConfig:
+    node_config: dict[str, Any] = field(default_factory=dict)
+    pipeline_config: dict[str, Any] = field(default_factory=dict)
+    def get(self, config_key: str, default_value: Any = None) -> Any:
+        return self.node_config.get(config_key, self.pipeline_config.get(config_key, default_value))
+
+class PipelineEdgeConfig:
+    egde_config: dict[str, Any] = field(default_factory=dict)
+    pipeline_config: dict[str, Any] = field(default_factory=dict)
+    def get(self, config_key: str, default_value: Any = None) -> Any:
+        return self.egde_config.get(config_key, self.pipeline_config.get(config_key, default_value))
+
 @dataclass(frozen=True)
 class PipelineEdge:
     source: NodeId
@@ -37,8 +49,11 @@ class Pipeline:
     nodes: dict[NodeId, PipelineNode] = field(default_factory=dict)
     edges: list[PipelineEdge] = field(default_factory=list)
     config: dict[str, Any] = field(default_factory=dict)
-    def get_config(self, config_key: str) -> Any:
-        value = self.config
-        for key in config_key.split("."):
-            value = value[key]
-        return value
+    def get_config(self, config_key: str, default: Any = None) -> Any:
+        try:
+            value = self.config
+            for key in config_key.split("."):
+                value = value[key]
+            return value
+        except KeyError:
+            return default

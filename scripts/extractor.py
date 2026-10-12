@@ -11,6 +11,7 @@ CODE_PATTERN = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 
+verboseLevel = 0
 
 def get_nested_value(data: dict[str, Any], path: str) -> Any:
     """Get a nested value using a dot-separated path."""
@@ -64,12 +65,23 @@ def extract_tasks(
         output_file = output_dir / f"task_{task_id}.py"
         output_file.write_text(code, encoding="utf-8")
 
-        print(f"[OK] task_{task_id}.py")
+        if verboseLevel >= 2:
+            print(f"[OK] task_{task_id}.py")
 
 
 def main() -> None:
+    global verboseLevel
+
     parser = argparse.ArgumentParser(
         description="Extract Python source code from JSON task outputs."
+    )
+
+    parser.add_argument(
+        "-v", 
+        "--verbose", 
+        action="count", 
+        default=0, 
+        help="Increase verbosity level (e.g., -v, -vv, -vvv)"
     )
 
     parser.add_argument(
@@ -95,6 +107,8 @@ def main() -> None:
 
     args = parser.parse_args()
 
+    verboseLevel = args.verbose
+
     extract_tasks(
         input_file=args.input,
         output_dir=args.output_dir,
@@ -106,6 +120,6 @@ if __name__ == "__main__":
     main()
 
 
-# python3 extractor.py --source outputs.unwatermarked.content --output-dir ../code-quality-orchestrator/sources/unwatermarked/ ../code-quality-orchestrator/sources/result-sanitized-mbpp-it-1.json
+# python3 extractor.py --source outputs.unwatermarked.content --output-dir sources/unwatermarked/ sources/result-sanitized-mbpp-it-1.json
 
-# python3 extractor.py --source outputs.watermarked.content --output-dir ../code-quality-orchestrator/sources/watermarked/ ../code-quality-orchestrator/sources/result-sanitized-mbpp-it-1.json
+# python3 extractor.py --source outputs.watermarked.content --output-dir sources/watermarked/ sources/result-sanitized-mbpp-it-1.json

@@ -48,7 +48,7 @@ class PythonExecutionGate(QualityGate):
                 source=source,
                 origin=origin,
                 passed=False,
-                error = str(e),
+                error = e,
             )
         except TypeError as e:
             return GateResult(
@@ -57,7 +57,7 @@ class PythonExecutionGate(QualityGate):
                 source=source,
                 origin=origin,
                 passed=False,
-                error = str(e),
+                error = e,
             )
         except Exception as e: #noqa: BLE001
             return GateResult(
@@ -66,7 +66,7 @@ class PythonExecutionGate(QualityGate):
                 source=source,
                 origin=origin,
                 passed=False,
-                error = str(e)
+                error = e
             )
         except SystemExit as e:
             return GateResult(
@@ -75,5 +75,5 @@ class PythonExecutionGate(QualityGate):
                 source=source,
                 origin=origin,
                 passed=False,
-                error=str(e)
+                error=e
             )

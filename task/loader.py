@@ -1,10 +1,9 @@
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, TYPE_CHECKING
 from uuid import uuid4
 
-from .model import SourceTaskSpecification, TaskSpecification
-
+from .spec import SourceTaskSpecification, TaskSpecification
 
 class ConfigurationError(Exception):
     ...

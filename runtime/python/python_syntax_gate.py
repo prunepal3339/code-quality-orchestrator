@@ -45,7 +45,7 @@ class PythonSyntaxGate(QualityGate):
                 origin=origin,
                 source=source,
                 passed=False,
-                error = str(e),
+                error = e,
             )
         except TypeError as e:
             return GateResult(
@@ -54,5 +54,5 @@ class PythonSyntaxGate(QualityGate):
                 passed=False,
                 origin=origin,
                 source=source,
-                error = str(e),
+                error = e,
             )

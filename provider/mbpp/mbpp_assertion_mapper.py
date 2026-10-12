@@ -18,5 +18,4 @@ class MBPPAssertionMapper:
                     "rules": item[field]
                 }
             )
-
         return assertions

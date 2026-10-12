@@ -6,6 +6,9 @@
       "execution": {
         "strategy": "staged"
       },
+      "timeout": {
+        "seconds": 5
+      },
       "transition": {
         "when": {
           "passed": true

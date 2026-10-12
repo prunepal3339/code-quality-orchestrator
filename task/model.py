@@ -1,6 +1,7 @@
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from gate.model import GateResult
 
@@ -9,6 +10,7 @@ type TaskId = str
 @dataclass(frozen=True)
 class SourceOrigin:
     ...
+
 @dataclass(frozen=True)
 class StringSourceOrigin(SourceOrigin):
     ...
@@ -20,23 +22,15 @@ class FileSourceOrigin(SourceOrigin):
 @dataclass(frozen=True)
 class Task:
     id: TaskId
+    def __str__(self):
+        return self.id
 
 @dataclass(frozen=True)
 class SourceTask(Task):
     source: str
-    origin: SourceOrigin 
+    origin: SourceOrigin
 
 @dataclass
 class TaskResult:
-    task_id: TaskId
+    task: Task
     gate_results: list[GateResult] = field(default_factory=list)
-
-@dataclass(frozen=True)
-class TaskSpecification:
-    id: TaskId
-    kind: str
-
-@dataclass(frozen=True)
-class SourceTaskSpecification(TaskSpecification):
-    source_type: str
-    value: Any # polymorphic value based on the source_type.

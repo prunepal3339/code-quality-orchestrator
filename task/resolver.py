@@ -3,12 +3,11 @@ from pathlib import Path
 from .model import (
     FileSourceOrigin,
     SourceTask,
-    SourceTaskSpecification,
     StringSourceOrigin,
     Task,
-    TaskSpecification,
 )
 
+from .spec import TaskSpecification, SourceTaskSpecification
 
 class TaskSpecificationResolver:
     @staticmethod

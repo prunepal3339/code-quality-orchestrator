@@ -28,7 +28,7 @@ class PythonAssertionGate(QualityGate):
             raise TypeError(f"Expected type SourceTask, got type {type(task).__name__}")
         source = task.source
         spec = context.gate_spec
-        if  spec is None:
+        if spec is None:
             raise MissingSpecificationError(f"Gate specification missing for assertion gate for task {task.id}.")
         if not isinstance(spec, AssertionGateSpecification):
             raise TypeError(f"Expected type AssertionGateSpecification, got type {type(spec).__name__}")
@@ -61,7 +61,6 @@ class PythonAssertionGate(QualityGate):
                         passed = False
                         break
 
-
             return AssertionGateResult(
                 gate_id=self.id,
                 task_id=task.id,
@@ -77,7 +76,7 @@ class PythonAssertionGate(QualityGate):
                 origin=origin,
                 source=source,
                 passed=False,
-                error = str(e),
+                error = e,
             )
         except TypeError as e:
             return GateResult(
@@ -86,7 +85,7 @@ class PythonAssertionGate(QualityGate):
                 passed=False,
                 origin=origin,
                 source=source,
-                error = str(e),
+                error = e,
             )
         except AssertionError as e:
             return GateResult(
@@ -95,7 +94,7 @@ class PythonAssertionGate(QualityGate):
                 passed=False,
                 origin=origin,
                 source=source,
-                error = str(e),
+                error = e,
             )
         except Exception as e: #noqa: BLE001
             return GateResult(
@@ -104,7 +103,7 @@ class PythonAssertionGate(QualityGate):
                 passed=False,
                 origin=origin,
                 source=source,
-                error = str(e),
+                error = e,
             )
         except SystemExit as e:
             return GateResult(
@@ -113,5 +112,5 @@ class PythonAssertionGate(QualityGate):
                 passed=False,
                 origin=origin,
                 source=source,
-                error = str(e),
+                error = e,
             )
