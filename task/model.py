@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, TYPE_CHECKING
@@ -23,6 +22,8 @@ class FileSourceOrigin(SourceOrigin):
 @dataclass(frozen=True)
 class Task:
     id: TaskId
+    def __str__(self):
+        return self.id
 
 @dataclass(frozen=True)
 class SourceTask(Task):
@@ -31,5 +32,5 @@ class SourceTask(Task):
 
 @dataclass
 class TaskResult:
-    task_id: TaskId
+    task: Task
     gate_results: list[GateResult] = field(default_factory=list)

@@ -8,12 +8,12 @@ def extract_original_task_id(origin: str) -> str:
 def summarize_task(task: dict) -> dict:
     gate_results = task.get("gate_results", [])
     passed = bool(gate_results) and all(
-        gate.get("passed", False) for gate in gate_results if gate.get("gate_id") != "assertion"
+        gate.get("passed", False) for gate in gate_results
     )
     origin = gate_results[0].get("origin") if gate_results else None
     original_task_id = extract_original_task_id(origin) if origin else None
     return {
-        "task_id": task["task_id"],
+        "task_id": task["task"]["id"],
         "original_task_id": original_task_id,
         "passed": passed,
     }

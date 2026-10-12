@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 
-from gate import GateRegistry, GateSpecRegistry
+from gate import GateExecutor, GateRegistry, GateSpecRegistry
 from gate.loader import GateSpecificationLoader
 from pipeline import PipelineBuilder, PipelineExecutor, PipelineLoader
 from pipeline.strategy import (
@@ -38,9 +38,9 @@ def run_orchestator(reporting_file: str):
 
     conduit = PipelineLoader.load(Path("config/pipeline.json"))
     context = PipelineBuilder(conduit).build()
-    results = PipelineExecutor(context, strategy_registry).execute(
-        tasks, gate_registry, gate_spec_registry
-    )
+    
+    gate_executor = GateExecutor()
+    results = PipelineExecutor(context, strategy_registry).execute(tasks, gate_registry, gate_spec_registry, gate_executor)
 
     r = Reporter({})
 

@@ -1,8 +1,13 @@
 #!/usr/bin/python3
 import json
+import sys
 from pathlib import Path
 
-report = json.loads(Path("report.json").read_text())
+
+if len(sys.argv) < 2:
+    print("[USAGE] python3 analyze.py <report_file>")
+
+report = json.loads(Path(sys.argv[1]).read_text())
 
 syntax_passed_count = 0; execution_passed_count = 0; assertion_passed_count = 0
 for item in report:
